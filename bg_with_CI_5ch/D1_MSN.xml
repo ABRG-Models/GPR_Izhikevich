@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<SpineML xsi:schemaLocation="http://www.shef.ac.uk/SpineMLComponentLayer SpineMLComponentLayer.xsd" xmlns="http://www.shef.ac.uk/SpineMLComponentLayer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <ComponentClass type="neuron_body" name="D1 MSN">
+  <Dynamics initial_regime="Main">
+   <Regime name="Main">
+    <TimeDerivative variable="v">
+     <MathInline>(k*(v-v_reset)*(v-v_threshold)-u+I)/C</MathInline>
+    </TimeDerivative>
+    <TimeDerivative variable="u">
+     <MathInline>a*(b*(v-v_reset)-u)</MathInline>
+    </TimeDerivative>
+    <OnCondition target_regime="Main">
+     <StateAssignment variable="v">
+      <MathInline>c</MathInline>
+     </StateAssignment>
+     <StateAssignment variable="u">
+      <MathInline>u+d</MathInline>
+     </StateAssignment>
+     <EventOut port="spike"/>
+     <Trigger>
+      <MathInline>v>v_peak</MathInline>
+     </Trigger>
+    </OnCondition>
+   </Regime>
+   <Alias dimension="?" name="v_reset">
+    <MathInline>v_reset_orig*(1+K*phi_1)</MathInline>
+   </Alias>
+   <Alias dimension="?" name="d">
+    <MathInline>d_orig*(1-L*phi_1)</MathInline>
+   </Alias>
+   <Alias dimension="?" name="I">
+    <MathInline>I_NMDA+I_AMPA+I_GABA</MathInline>
+   </Alias>
+   <Alias dimension="?" name="I_NMDA">
+    <MathInline>I_NMDA_orig*(1+beta_1*phi_1)</MathInline>
+   </Alias>
+   <StateVariable dimension="?" name="u"/>
+   <StateVariable dimension="mV" name="v"/>
+  </Dynamics>
+  <AnalogReducePort dimension="pA" name="I_NMDA_orig" reduce_op="+"/>
+  <AnalogReducePort dimension="pA" name="I_AMPA" reduce_op="+"/>
+  <AnalogReducePort dimension="pA" name="I_GABA" reduce_op="+"/>
+  <AnalogSendPort name="v"/>
+  <EventSendPort name="spike"/>
+  <Parameter dimension="?" name="a"/>
+  <Parameter dimension="?" name="b"/>
+  <Parameter dimension="mV" name="c"/>
+  <Parameter dimension="pF" name="C"/>
+  <Parameter dimension="?" name="d_orig"/>
+  <Parameter dimension="?" name="k"/>
+  <Parameter dimension="?" name="K"/>
+  <Parameter dimension="?" name="L"/>
+  <Parameter dimension="mV" name="v_peak"/>
+  <Parameter dimension="mV" name="v_reset_orig"/>
+  <Parameter dimension="mV" name="v_threshold"/>
+  <Parameter dimension="?" name="beta_1"/>
+  <Parameter dimension="?" name="phi_1"/>
+ </ComponentClass>
+</SpineML>

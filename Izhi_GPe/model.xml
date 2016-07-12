@@ -1,0 +1,43 @@
+<LL:SpineML xmlns="http://www.shef.ac.uk/SpineMLNetworkLayer" xmlns:LL="http://www.shef.ac.uk/SpineMLLowLevelNetworkLayer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="GPe model, after Terman" xsi:schemaLocation="http://www.shef.ac.uk/SpineMLLowLevelNetworkLayer SpineMLLowLevelNetworkLayer.xsd http://www.shef.ac.uk/SpineMLNetworkLayer SpineMLNetworkLayer.xsd">
+    <LL:Population>
+        <LL:Neuron name="Sebtest1" size="1" url="IzhiPaperTscaled.xml">
+            <Property dimension="?" name="a">
+                <FixedValue value="0.1" />
+            </Property>
+            <Property dimension="?" name="b">
+                <FixedValue value="0.26" />
+            </Property>
+            <Property dimension="?" name="c">
+                <FixedValue value="-70" />
+            </Property>
+            <Property dimension="?" name="d">
+                <FixedValue value="2" />
+            </Property>
+            <Property dimension="?" name="Vpeak">
+                <FixedValue value="30" />
+            </Property>
+            <Property dimension="?" name="A">
+                <FixedValue value="0.04" />
+            </Property>
+            <Property dimension="?" name="B">
+                <FixedValue value="5" />
+            </Property>
+            <Property dimension="?" name="C">
+                <FixedValue value="140.25" />
+            </Property>
+            <Property dimension="?" name="T">
+                <FixedValue value="1" />
+            </Property>
+            <Property dimension="?" name="SI">
+                <FixedValue value="8" />
+            </Property>
+            <Property dimension="?" name="v">
+                <FixedValue value="-70" />
+            </Property>
+            <Property dimension="?" name="u">
+                <FixedValue value="-10.0" />
+            </Property>
+        </LL:Neuron>
+        <Layout minimum_distance="0" seed="123" url="none.xml" />
+    </LL:Population>
+</LL:SpineML>

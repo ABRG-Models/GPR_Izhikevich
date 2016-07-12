@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<SpineML xsi:schemaLocation="http://www.shef.ac.uk/SpineMLComponentLayer SpineMLComponentLayer.xsd" xmlns="http://www.shef.ac.uk/SpineMLComponentLayer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <ComponentClass type="weight_update" name="Static weight">
+  <Dynamics initial_regime="Weight">
+   <Regime name="Weight">
+    <OnEvent target_regime="Weight" src_port="spike_rcv">
+     <ImpulseOut port="SPIKYSPIKE"/>
+    </OnEvent>
+   </Regime>
+  </Dynamics>
+  <EventReceivePort name="spike_rcv"/>
+  <ImpulseSendPort name="SPIKYSPIKE"/>
+  <Parameter dimension="?" name="SPIKYSPIKE"/>
+ </ComponentClass>
+</SpineML>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LL:SpineML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.shef.ac.uk/SpineMLNetworkLayer" xmlns:LL="http://www.shef.ac.uk/SpineMLLowLevelNetworkLayer" xsi:schemaLocation="http://www.shef.ac.uk/SpineMLLowLevelNetworkLayer SpineMLLowLevelNetworkLayer.xsd http://www.shef.ac.uk/SpineMLNetworkLayer SpineMLNetworkLayer.xsd" name="D2 MSN (Humphries, Gurney, Buxton)">
+    <LL:Population>
+        <LL:Neuron name="Population" size="1" url="D2_MSN.xml">
+            <Property name="a" dimension="?">
+                <FixedValue value="0.01"/>
+            </Property>
+            <Property name="b" dimension="?">
+                <FixedValue value="-20"/>
+            </Property>
+            <Property name="c" dimension="mV">
+                <FixedValue value="-55"/>
+            </Property>
+            <Property name="C" dimension="pF">
+                <FixedValue value="15.2"/>
+            </Property>
+            <Property name="d" dimension="?">
+                <FixedValue value="91"/>
+            </Property>
+            <Property name="k_orig" dimension="?">
+                <FixedValue value="1"/>
+            </Property>
+            <Property name="v_peak" dimension="mV">
+                <FixedValue value="40"/>
+            </Property>
+            <Property name="v_reset" dimension="mV">
+                <FixedValue value="-80"/>
+            </Property>
+            <Property name="v_threshold" dimension="mV">
+                <FixedValue value="-29.7"/>
+            </Property>
+            <Property name="beta_2" dimension="?">
+                <FixedValue value="0.3"/>
+            </Property>
+            <Property name="phi_2" dimension="?">
+                <FixedValue value="0.3"/>
+            </Property>
+            <Property name="alpha" dimension="?">
+                <FixedValue value="0.032"/>
+            </Property>
+            <Property name="u" dimension="?">
+                <FixedValue value="0"/>
+            </Property>
+            <Property name="v" dimension="mV">
+                <FixedValue value="-80"/>
+            </Property>
+        </LL:Neuron>
+        <Layout url="none.xml" seed="123" minimum_distance="0"/>
+    </LL:Population>
+</LL:SpineML>

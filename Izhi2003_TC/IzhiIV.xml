@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<SpineML xsi:schemaLocation="http://www.shef.ac.uk/SpineMLComponentLayer SpineMLComponentLayer.xsd" xmlns="http://www.shef.ac.uk/SpineMLComponentLayer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <ComponentClass type="neuron_body" name="IzhiIV">
+  <Dynamics initial_regime="R1">
+   <Regime name="R1">
+    <TimeDerivative variable="v">
+     <MathInline>(k/Ca)*(v-vr)*(v-vt)-u+b*vr+I</MathInline>
+    </TimeDerivative>
+    <TimeDerivative variable="u">
+     <MathInline>a*(b*(v-vr)-u+b*vr)</MathInline>
+    </TimeDerivative>
+    <OnCondition target_regime="R1">
+     <StateAssignment variable="v">
+      <MathInline>c</MathInline>
+     </StateAssignment>
+     <StateAssignment variable="u">
+      <MathInline>u+d</MathInline>
+     </StateAssignment>
+     <Trigger>
+      <MathInline>v>Vpeak</MathInline>
+     </Trigger>
+    </OnCondition>
+   </Regime>
+   <StateVariable dimension="?" name="v"/>
+   <StateVariable dimension="?" name="u"/>
+  </Dynamics>
+  <AnalogReceivePort dimension="?" name="I"/>
+  <AnalogSendPort name="v"/>
+  <AnalogSendPort name="u"/>
+  <Parameter dimension="?" name="Vpeak"/>
+  <Parameter dimension="?" name="a"/>
+  <Parameter dimension="?" name="b"/>
+  <Parameter dimension="?" name="c"/>
+  <Parameter dimension="?" name="d"/>
+  <Parameter dimension="?" name="k"/>
+  <Parameter dimension="?" name="Ca"/>
+  <Parameter dimension="?" name="vr"/>
+  <Parameter dimension="?" name="vt"/>
+ </ComponentClass>
+</SpineML>

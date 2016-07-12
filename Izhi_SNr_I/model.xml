@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LL:SpineML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.shef.ac.uk/SpineMLNetworkLayer" xmlns:LL="http://www.shef.ac.uk/SpineMLLowLevelNetworkLayer" xsi:schemaLocation="http://www.shef.ac.uk/SpineMLLowLevelNetworkLayer SpineMLLowLevelNetworkLayer.xsd http://www.shef.ac.uk/SpineMLNetworkLayer SpineMLNetworkLayer.xsd" name="SNr model, Type 1 (Nakanishi et al, 1987)">
+    <LL:Population>
+        <LL:Neuron name="Sebtest1" size="1" url="IzhiABCTExplicit.xml">
+            <Property name="a" dimension="?">
+                <FixedValue value="0.12"/>
+            </Property>
+            <Property name="b" dimension="?">
+                <FixedValue value="0.3"/>
+            </Property>
+            <Property name="c" dimension="?">
+                <FixedValue value="-62"/>
+            </Property>
+            <Property name="d" dimension="?">
+                <FixedValue value="0"/>
+            </Property>
+            <Property name="Vpeak" dimension="?">
+                <FixedValue value="30"/>
+            </Property>
+            <Property name="A" dimension="?">
+                <FixedValue value="0.0618"/>
+            </Property>
+            <Property name="B" dimension="?">
+                <FixedValue value="6.6748"/>
+            </Property>
+            <Property name="C" dimension="?">
+                <FixedValue value="169"/>
+            </Property>
+            <Property name="T" dimension="?">
+                <FixedValue value="0.1"/>
+            </Property>
+            <Property name="SI" dimension="?">
+                <FixedValue value="8"/>
+            </Property>
+            <Property name="v" dimension="?">
+                <FixedValue value="-70"/>
+            </Property>
+            <Property name="u" dimension="?">
+                <FixedValue value="-10"/>
+            </Property>
+        </LL:Neuron>
+        <Layout url="none.xml" seed="123" minimum_distance="0"/>
+    </LL:Population>
+</LL:SpineML>

@@ -1,0 +1,774 @@
+<modelMetaData>
+ <population name="STN">
+  <xPos value="2.0962"/>
+  <yPos value="3.41803"/>
+  <animSpeed value="0.2"/>
+  <aspectRatio value="1.66667"/>
+  <colour blue="0" green="254" red="0"/>
+  <size value="1"/>
+  <tag value="1"/>
+  <x3D value="0"/>
+  <y3D value="-1"/>
+  <z3D value="-2"/>
+  <is_visualised value="1"/>
+ </population>
+ <projection destination="SNr" showlabel="0" source="STN" style="4">
+  <start x="1.2645" y="3.18114"/>
+  <curves>
+   <curve>
+    <C1 xpos="0.718454" ypos="3.17294"/>
+    <C2 xpos="0.574142" ypos="2.93586"/>
+    <end xpos="0.601633" ypos="2.02205"/>
+   </curve>
+  </curves>
+  <synapseConnection name="STN to SNr Synapse 0 weight_update"/>
+  <synapseConnection name="STN to SNr Synapse 1 weight_update"/>
+ </projection>
+ <genericInput destination="STN to SNr Synapse 0 postsynapse" srcPort="v" source="SNr" dstPort="v">
+  <start x="0.7524979710578918" y="2.020999670028687"/>
+  <curves>
+   <curve>
+    <C1 xpos="0.7426093220710754" ypos="2.265626192092896"/>
+    <C2 xpos="0.580677330493927" ypos="2.229004144668579"/>
+    <end xpos="0.6016330122947693" ypos="2.022047758102417"/>
+   </curve>
+  </curves>
+  <connection/>
+ </genericInput>
+ <genericInput destination="STN to SNr Synapse 1 postsynapse" srcPort="v" source="SNr" dstPort="v">
+  <start x="0.7306333184242249" y="2.021016359329224"/>
+  <curves>
+   <curve>
+    <C1 xpos="0.7561036348342896" ypos="2.227088689804077"/>
+    <C2 xpos="0.590316116809845" ypos="2.225165367126465"/>
+    <end xpos="0.6016330122947693" ypos="2.022047758102417"/>
+   </curve>
+  </curves>
+  <connection/>
+ </genericInput>
+ <projection destination="GPe" showlabel="0" source="STN" style="4">
+  <start x="2.93113" y="3.16445"/>
+  <curves>
+   <curve>
+    <C1 xpos="3.55484" ypos="3.15874"/>
+    <C2 xpos="3.55513" ypos="2.92826"/>
+    <end xpos="3.56932" ypos="2.01585"/>
+   </curve>
+  </curves>
+  <synapseConnection name="STN to GPe Synapse 0 weight_update"/>
+  <synapseConnection name="STN to GPe Synapse 1 weight_update"/>
+ </projection>
+ <genericInput destination="STN to GPe Synapse 0 postsynapse" srcPort="v" source="GPe" dstPort="v">
+  <start x="3.744937181472778" y="2.015850067138672"/>
+  <curves>
+   <curve>
+    <C1 xpos="3.729337692260742" ypos="2.201976776123047"/>
+    <C2 xpos="3.569519996643066" ypos="2.21947717666626"/>
+    <end xpos="3.569315195083618" ypos="2.015850067138672"/>
+   </curve>
+  </curves>
+  <connection/>
+ </genericInput>
+ <genericInput destination="STN to GPe Synapse 1 postsynapse" srcPort="v" source="GPe" dstPort="v">
+  <start x="3.759396553039551" y="2.015850067138672"/>
+  <curves>
+   <curve>
+    <C1 xpos="3.729285478591919" ypos="2.226976871490479"/>
+    <C2 xpos="3.561949253082275" ypos="2.24947714805603"/>
+    <end xpos="3.569315195083618" ypos="2.015850067138672"/>
+   </curve>
+  </curves>
+  <connection/>
+ </genericInput>
+ <population name="SNr">
+  <xPos value="0.304595"/>
+  <yPos value="1.52083"/>
+  <animSpeed value="0.2"/>
+  <aspectRatio value="1.66667"/>
+  <colour blue="254" green="254" red="0"/>
+  <size value="1"/>
+  <tag value="1"/>
+  <x3D value="0"/>
+  <y3D value="5"/>
+  <z3D value="-6"/>
+  <is_visualised value="1"/>
+ </population>
+ <population name="GPe">
+  <xPos value="4.05344"/>
+  <yPos value="1.51585"/>
+  <animSpeed value="0.2"/>
+  <aspectRatio value="1.66667"/>
+  <colour blue="254" green="0" red="0"/>
+  <size value="1"/>
+  <tag value="2"/>
+  <x3D value="0"/>
+  <y3D value="-7"/>
+  <z3D value="-6"/>
+  <is_visualised value="1"/>
+ </population>
+ <projection destination="SNr" showlabel="1" source="GPe" style="0">
+  <start x="3.22011" y="1.54912"/>
+  <curves>
+   <curve>
+    <C1 xpos="2.44383" ypos="1.35272"/>
+    <C2 xpos="1.86401" ypos="1.48"/>
+    <end xpos="1.13793" ypos="1.52892"/>
+   </curve>
+  </curves>
+  <synapseConnection name="GPe to SNr Synapse 0 weight_update">
+   <Script text="#Name: StochasticChannels&#xa;#Author: Seb James&#xa;#PARNAME=channels #LOC=1,1&#xa;#PARNAME=conn_prob #LOC=1,2&#xa;def connectionFunc(srclocs,dstlocs,channels,conn_prob):&#xa;&#xa;    import math&#xa;    import random&#xa;&#xa;    weight = 1&#xa;    delay = 0&#xa;    &#xa;    srcsize = len(srclocs)&#xa;    srcrunlen = int(srcsize/channels)&#xa;&#xa;    dstsize = len(dstlocs)&#xa;    dstrunlen = int(dstsize/channels)&#xa;    &#xa;    out = []&#xa;    &#xa;    for channel in xrange(int(channels)):&#xa;    &#xa;        srcstart = channel * srcrunlen&#xa;        srcend = ((channel+1) * srcrunlen)&#xa;&#xa;        dststart = channel * dstrunlen&#xa;        dstend = ((channel+1) * dstrunlen)&#xa;    &#xa;        i = srcstart&#xa;        for srcloc in srclocs[srcstart:srcend]:&#xa;            j = dststart&#xa;            for dstloc in dstlocs[dststart:dstend]:&#xa;                if random.random() &lt; conn_prob:&#xa;                    conn = (i,j,delay)&#xa;                    out.append(conn)&#xa;                j = j + 1&#xa;            i = i + 1&#xa;            &#xa;            &#xa;    return out" conn_prob="0.2" channels="3" name="StochasticChannels"/>
+   <Config/>
+  </synapseConnection>
+ </projection>
+ <genericInput destination="GPe to SNr Synapse 0 postsynapse" srcPort="v" source="SNr" dstPort="v">
+  <start x="1.137929916381836" y="1.384238362312317"/>
+  <curves>
+   <curve>
+    <C1 xpos="1.296016216278076" ypos="1.344192147254944"/>
+    <C2 xpos="1.38771653175354" ypos="1.536762952804565"/>
+    <end xpos="1.137929916381836" ypos="1.528917193412781"/>
+   </curve>
+  </curves>
+  <connection/>
+ </genericInput>
+ <projection destination="GPe" showlabel="1" source="GPe" style="0">
+  <start x="4.88678" y="1.31585"/>
+  <curves>
+   <curve>
+    <C1 xpos="5.88678" ypos="1.31585"/>
+    <C2 xpos="4.55467" ypos="0.0855441"/>
+    <end xpos="4.58678" ypos="1.01585"/>
+   </curve>
+  </curves>
+  <synapseConnection name="GPe to GPe Synapse 0 weight_update">
+   <Script text="#Name: StochasticCrossChannels&#xa;#Divide population into n channels.&#xa;#Each channel stocastically connects to neurons in all&#xa;#other channels with the given connection probability conn_prob.&#xa;#Useful for implementing cross-channel inhibition.&#xa;#Author: Seb James&#xa;#PARNAME=channels #LOC=1,1&#xa;#PARNAME=conn_prob #LOC=1,2&#xa;def connectionFunc(srclocs,dstlocs,channels,conn_prob):&#xa;&#xa;    import math&#xa;    import random&#xa;&#xa;    weight = 1&#xa;    delay = 0&#xa;    &#xa;    srcsize = len(srclocs)&#xa;    srcrunlen = int(srcsize/channels)&#xa;&#xa;    dstsize = len(dstlocs)&#xa;    dstrunlen = int(dstsize/channels)&#xa;    &#xa;    out = []&#xa;    &#xa;    for channel in xrange(int(channels)):&#xa;    &#xa;        srcstart = channel * srcrunlen&#xa;        srcend = ((channel+1) * srcrunlen)&#xa;&#xa;        # Cycle through the channels we'll inhibit now&#xa;        for inhib_channel in xrange(int(channels)):&#xa;&#xa;            # Don't connect to self:&#xa;            if inhib_channel == channel:&#xa;                continue&#xa;            &#xa;            dststart = inhib_channel * dstrunlen&#xa;            dstend = ((inhib_channel+1) * dstrunlen)&#xa;    &#xa;            i = srcstart&#xa;            for srcloc in srclocs[srcstart:srcend]:&#xa;                j = dststart&#xa;                for dstloc in dstlocs[dststart:dstend]:&#xa;                    if random.random() &lt; conn_prob:&#xa;                        conn = (i,j,delay)&#xa;                        out.append(conn)&#xa;                    j = j + 1&#xa;                i = i + 1&#xa;            &#xa;            &#xa;    return out" conn_prob="0.2" channels="3" name="StochasticCrossChannels"/>
+   <Config/>
+  </synapseConnection>
+ </projection>
+ <genericInput destination="GPe to GPe Synapse 0 postsynapse" srcPort="v" source="GPe" dstPort="v">
+  <start x="4.726673126220703" y="1.015849947929382"/>
+  <curves>
+   <curve>
+    <C1 xpos="4.8121018409729" ypos="0.8208945989608765"/>
+    <C2 xpos="4.669396877288818" ypos="0.7495421767234802"/>
+    <end xpos="4.586776733398438" ypos="1.015849947929382"/>
+   </curve>
+  </curves>
+  <connection/>
+ </genericInput>
+ <projection destination="STN" showlabel="1" source="GPe" style="0">
+  <start x="3.22847" y="1.79511"/>
+  <curves>
+   <curve>
+    <C1 xpos="2.73928" ypos="1.87086"/>
+    <C2 xpos="2.64508" ypos="2.24536"/>
+    <end xpos="2.59471" ypos="2.91955"/>
+   </curve>
+  </curves>
+  <synapseConnection name="GPe to STN Synapse 0 weight_update">
+   <Script text="#Name: StochasticChannels&#xa;#Author: Seb James&#xa;#PARNAME=channels #LOC=1,1&#xa;#PARNAME=conn_prob #LOC=1,2&#xa;def connectionFunc(srclocs,dstlocs,channels,conn_prob):&#xa;&#xa;    import math&#xa;    import random&#xa;&#xa;    weight = 1&#xa;    delay = 0&#xa;    &#xa;    srcsize = len(srclocs)&#xa;    srcrunlen = int(srcsize/channels)&#xa;&#xa;    dstsize = len(dstlocs)&#xa;    dstrunlen = int(dstsize/channels)&#xa;    &#xa;    out = []&#xa;    &#xa;    for channel in xrange(int(channels)):&#xa;    &#xa;        srcstart = channel * srcrunlen&#xa;        srcend = ((channel+1) * srcrunlen)&#xa;&#xa;        dststart = channel * dstrunlen&#xa;        dstend = ((channel+1) * dstrunlen)&#xa;    &#xa;        i = srcstart&#xa;        for srcloc in srclocs[srcstart:srcend]:&#xa;            j = dststart&#xa;            for dstloc in dstlocs[dststart:dstend]:&#xa;                if random.random() &lt; conn_prob:&#xa;                    conn = (i,j,delay)&#xa;                    out.append(conn)&#xa;                j = j + 1&#xa;            i = i + 1&#xa;            &#xa;            &#xa;    return out" conn_prob="0.2" channels="3" name="StochasticChannels"/>
+   <Config/>
+  </synapseConnection>
+ </projection>
+ <genericInput destination="GPe to STN Synapse 0 postsynapse" srcPort="v" source="STN" dstPort="v">
+  <start x="2.737397193908691" y="2.919548749923706"/>
+  <curves>
+   <curve>
+    <C1 xpos="2.951361656188965" ypos="2.873170375823975"/>
+    <C2 xpos="2.795470952987671" ypos="2.552219152450562"/>
+    <end xpos="2.594712257385254" ypos="2.919548749923706"/>
+   </curve>
+  </curves>
+  <connection/>
+ </genericInput>
+ <population name="D1 MSN">
+  <xPos value="0.298492"/>
+  <yPos value="5.31186"/>
+  <animSpeed value="0.2"/>
+  <aspectRatio value="1.66667"/>
+  <colour blue="51" green="102" red="152"/>
+  <size value="1"/>
+  <tag value="3"/>
+  <x3D value="0"/>
+  <y3D value="5"/>
+  <z3D value="1"/>
+  <is_visualised value="1"/>
+ </population>
+ <projection destination="SNr" showlabel="1" source="D1 MSN" style="0">
+  <start x="0.152815" y="4.81186"/>
+  <curves>
+   <curve>
+    <C1 xpos="-0.0288387" ypos="4.18912"/>
+    <C2 xpos="-0.206429" ypos="4.99965"/>
+    <end xpos="0.291718" ypos="2.02205"/>
+   </curve>
+  </curves>
+  <synapseConnection name="D1 MSN to SNr Synapse 0 weight_update">
+   <Script text="#Name: StochasticChannels&#xa;#Author: Seb James&#xa;#PARNAME=channels #LOC=1,1&#xa;#PARNAME=conn_prob #LOC=1,2&#xa;def connectionFunc(srclocs,dstlocs,channels,conn_prob):&#xa;&#xa;    import math&#xa;    import random&#xa;&#xa;    weight = 1&#xa;    delay = 0&#xa;    &#xa;    srcsize = len(srclocs)&#xa;    srcrunlen = int(srcsize/channels)&#xa;&#xa;    dstsize = len(dstlocs)&#xa;    dstrunlen = int(dstsize/channels)&#xa;    &#xa;    out = []&#xa;    &#xa;    for channel in xrange(int(channels)):&#xa;    &#xa;        srcstart = channel * srcrunlen&#xa;        srcend = ((channel+1) * srcrunlen)&#xa;&#xa;        dststart = channel * dstrunlen&#xa;        dstend = ((channel+1) * dstrunlen)&#xa;    &#xa;        i = srcstart&#xa;        for srcloc in srclocs[srcstart:srcend]:&#xa;            j = dststart&#xa;            for dstloc in dstlocs[dststart:dstend]:&#xa;                if random.random() &lt; conn_prob:&#xa;                    conn = (i,j,delay)&#xa;                    out.append(conn)&#xa;                j = j + 1&#xa;            i = i + 1&#xa;            &#xa;            &#xa;    return out" conn_prob="0.2" channels="3" name="StochasticChannels"/>
+   <Config/>
+  </synapseConnection>
+ </projection>
+ <genericInput destination="D1 MSN to SNr Synapse 0 postsynapse" srcPort="v" source="SNr" dstPort="v">
+  <start x="0.1378707438707352" y="2.021036863327026"/>
+  <curves>
+   <curve>
+    <C1 xpos="-0.007950590923428535" ypos="2.20812201499939"/>
+    <C2 xpos="0.2895852625370026" ypos="2.200119733810425"/>
+    <end xpos="0.2917182445526123" ypos="2.022047758102417"/>
+   </curve>
+  </curves>
+  <connection/>
+ </genericInput>
+ <population name="D2 MSN">
+  <xPos value="4.18719"/>
+  <yPos value="5.3302"/>
+  <animSpeed value="0.2"/>
+  <aspectRatio value="1.66667"/>
+  <colour blue="51" green="102" red="152"/>
+  <size value="1"/>
+  <tag value="4"/>
+  <x3D value="0"/>
+  <y3D value="-7"/>
+  <z3D value="1"/>
+  <is_visualised value="1"/>
+ </population>
+ <projection destination="GPe" showlabel="1" source="D2 MSN" style="0">
+  <start x="4.14499" y="4.8302"/>
+  <curves>
+   <curve>
+    <C1 xpos="4.17509" ypos="3.7719"/>
+    <C2 xpos="4.18786" ypos="3.54265"/>
+    <end xpos="4.07553" ypos="2.01585"/>
+   </curve>
+  </curves>
+  <synapseConnection name="D2 MSN to GPe Synapse 0 weight_update">
+   <Script text="#Name: StochasticChannels&#xa;#Author: Seb James&#xa;#PARNAME=channels #LOC=1,1&#xa;#PARNAME=conn_prob #LOC=1,2&#xa;def connectionFunc(srclocs,dstlocs,channels,conn_prob):&#xa;&#xa;    import math&#xa;    import random&#xa;&#xa;    weight = 1&#xa;    delay = 0&#xa;    &#xa;    srcsize = len(srclocs)&#xa;    srcrunlen = int(srcsize/channels)&#xa;&#xa;    dstsize = len(dstlocs)&#xa;    dstrunlen = int(dstsize/channels)&#xa;    &#xa;    out = []&#xa;    &#xa;    for channel in xrange(int(channels)):&#xa;    &#xa;        srcstart = channel * srcrunlen&#xa;        srcend = ((channel+1) * srcrunlen)&#xa;&#xa;        dststart = channel * dstrunlen&#xa;        dstend = ((channel+1) * dstrunlen)&#xa;    &#xa;        i = srcstart&#xa;        for srcloc in srclocs[srcstart:srcend]:&#xa;            j = dststart&#xa;            for dstloc in dstlocs[dststart:dstend]:&#xa;                if random.random() &lt; conn_prob:&#xa;                    conn = (i,j,delay)&#xa;                    out.append(conn)&#xa;                j = j + 1&#xa;            i = i + 1&#xa;            &#xa;            &#xa;    return out" conn_prob="0.2" channels="3" name="StochasticChannels"/>
+   <Config/>
+  </synapseConnection>
+ </projection>
+ <genericInput destination="D2 MSN to GPe Synapse 0 postsynapse" srcPort="v" source="GPe" dstPort="v">
+  <start x="4.240740776062012" y="2.015850067138672"/>
+  <curves>
+   <curve>
+    <C1 xpos="4.241405010223389" ypos="2.233281135559082"/>
+    <C2 xpos="4.082401275634766" ypos="2.227334976196289"/>
+    <end xpos="4.07552433013916" ypos="2.015850067138672"/>
+   </curve>
+  </curves>
+  <connection/>
+ </genericInput>
+ <population name="Background">
+  <xPos value="2.1846"/>
+  <yPos value="6.81116"/>
+  <animSpeed value="0.2"/>
+  <aspectRatio value="1.66667"/>
+  <colour blue="0" green="0" red="0"/>
+  <size value="1"/>
+  <tag value="5"/>
+  <x3D value="10"/>
+  <y3D value="0"/>
+  <z3D value="4"/>
+  <is_visualised value="1"/>
+ </population>
+ <projection destination="D1 MSN" showlabel="1" source="Background" style="4">
+  <start x="1.68508" y="6.8067"/>
+  <curves>
+   <curve>
+    <C1 xpos="0.811576" ypos="7.0741"/>
+    <C2 xpos="0.264713" ypos="7.83519"/>
+    <end xpos="0.298692" ypos="5.80828"/>
+   </curve>
+  </curves>
+  <synapseConnection name="Background to D1 MSN Synapse 0 weight_update"/>
+  <synapseConnection name="Background to D1 MSN Synapse 1 weight_update"/>
+ </projection>
+ <genericInput destination="Background to D1 MSN Synapse 0 postsynapse" srcPort="v" source="D1 MSN" dstPort="v">
+  <start x="0.4084096252918243" y="5.811860084533691"/>
+  <curves>
+   <curve>
+    <C1 xpos="0.4274137020111084" ypos="5.898442268371582"/>
+    <C2 xpos="0.3202615976333618" ypos="5.968907833099365"/>
+    <end xpos="0.2986913621425629" ypos="5.808283805847168"/>
+   </curve>
+  </curves>
+  <connection/>
+ </genericInput>
+ <genericInput destination="Background to D1 MSN Synapse 1 postsynapse" srcPort="v" source="D1 MSN" dstPort="v">
+  <start x="0.422904372215271" y="5.811860084533691"/>
+  <curves>
+   <curve>
+    <C1 xpos="0.4352615475654602" ypos="5.958907604217529"/>
+    <C2 xpos="0.2852616310119629" ypos="5.958907604217529"/>
+    <end xpos="0.2986913621425629" ypos="5.808283805847168"/>
+   </curve>
+  </curves>
+  <connection/>
+ </genericInput>
+ <projection destination="D2 MSN" showlabel="0" source="Background" style="4">
+  <start x="2.66372" y="6.66473"/>
+  <curves>
+   <curve>
+    <C1 xpos="3.23756" ypos="6.70545"/>
+    <C2 xpos="4.25122" ypos="6.86004"/>
+    <end xpos="4.18968" ypos="5.83027"/>
+   </curve>
+  </curves>
+  <synapseConnection name="Background to D2 MSN Synapse 0 weight_update"/>
+  <synapseConnection name="Background to D2 MSN Synapse 1 weight_update"/>
+ </projection>
+ <genericInput destination="Background to D2 MSN Synapse 0 postsynapse" srcPort="v" source="D2 MSN" dstPort="v">
+  <start x="4.363800525665283" y="5.8302001953125"/>
+  <curves>
+   <curve>
+    <C1 xpos="4.401649951934814" ypos="5.949187755584717"/>
+    <C2 xpos="4.211649894714355" ypos="6.03668737411499"/>
+    <end xpos="4.189673900604248" ypos="5.830267906188965"/>
+   </curve>
+  </curves>
+  <connection/>
+ </genericInput>
+ <genericInput destination="Background to D2 MSN Synapse 1 postsynapse" srcPort="v" source="D2 MSN" dstPort="v">
+  <start x="4.387959480285645" y="5.8302001953125"/>
+  <curves>
+   <curve>
+    <C1 xpos="4.379149913787842" ypos="6.041687488555908"/>
+    <C2 xpos="4.151649951934814" ypos="6.009187698364258"/>
+    <end xpos="4.189673900604248" ypos="5.830267906188965"/>
+   </curve>
+  </curves>
+  <connection/>
+ </genericInput>
+ <projection destination="STN" showlabel="0" source="Background" style="4">
+  <start x="2.17919" y="6.31019"/>
+  <curves>
+   <curve>
+    <C1 xpos="2.17919" ypos="5.07886"/>
+    <C2 xpos="2.11045" ypos="5.09981"/>
+    <end xpos="2.11045" ypos="3.91897"/>
+   </curve>
+  </curves>
+  <synapseConnection name="Background to STN Synapse 0 weight_update"/>
+  <synapseConnection name="Background to STN Synapse 1 weight_update"/>
+ </projection>
+ <genericInput destination="Background to STN Synapse 0 postsynapse" srcPort="v" source="STN" dstPort="v">
+  <start x="2.284487247467041" y="3.91869044303894"/>
+  <curves>
+   <curve>
+    <C1 xpos="2.426093101501465" ypos="4.284357070922852"/>
+    <C2 xpos="2.033654928207397" ypos="4.343829154968262"/>
+    <end xpos="2.110448360443115" ypos="3.918966054916382"/>
+   </curve>
+  </curves>
+  <connection/>
+ </genericInput>
+ <genericInput destination="Background to STN Synapse 1 postsynapse" srcPort="v" source="STN" dstPort="v">
+  <start x="2.296448945999146" y="3.918678760528564"/>
+  <curves>
+   <curve>
+    <C1 xpos="2.378524780273438" ypos="4.284381866455078"/>
+    <C2 xpos="2.081223011016846" ypos="4.284388542175293"/>
+    <end xpos="2.110448360443115" ypos="3.918966054916382"/>
+   </curve>
+  </curves>
+  <connection/>
+ </genericInput>
+ <population name="CortIntCh2">
+  <xPos value="3.22385"/>
+  <yPos value="9.45282"/>
+  <animSpeed value="0.2"/>
+  <aspectRatio value="1.66667"/>
+  <colour blue="197" green="8" red="226"/>
+  <size value="1"/>
+  <tag value="1"/>
+  <x3D value="0"/>
+  <y3D value="0"/>
+  <z3D value="0"/>
+  <is_visualised value="0"/>
+ </population>
+ <projection destination="D1 MSN" showlabel="0" source="CortIntCh2" style="4">
+  <start x="2.64367" y="8.94932"/>
+  <curves>
+   <curve>
+    <C1 xpos="2.64367" ypos="7.43217"/>
+    <C2 xpos="0.864455" ypos="7.17566"/>
+    <end xpos="0.864455" ypos="5.81186"/>
+   </curve>
+  </curves>
+  <synapseConnection name="CortIntCh2 to D1 MSN Synapse 0 weight_update">
+   <Script text="#Name: StochasticToOneChannel&#xa;#Author: Seb James&#xa;#PARNAME=dst_channels #LOC=1,1&#xa;#PARNAME=conn_to_channel #LOC=1,2&#xa;#Note: conn_to_channel counts from 0&#xa;#PARNAME=conn_prob #LOC=2,1&#xa;def connectionFunc(srclocs,dstlocs,dst_channels,conn_to_channel,conn_prob):&#xa;&#xa;    import math&#xa;    import random&#xa;&#xa;    weight = 1&#xa;    delay = 0&#xa;&#xa;    dstsize = len(dstlocs)&#xa;    dstrunlen = int(dstsize/dst_channels)&#xa;    &#xa;    out = []&#xa;    &#xa;    dststart = int(conn_to_channel) * dstrunlen&#xa;    dstend = ((int(conn_to_channel)+1) * dstrunlen)&#xa;    &#xa;    i = 0&#xa;    for srcloc in srclocs:&#xa;        j = dststart&#xa;        for dstloc in dstlocs[dststart:dstend]:&#xa;            if random.random() &lt; conn_prob:&#xa;                conn = (i,j,delay)&#xa;                out.append(conn)&#xa;            j = j + 1&#xa;        i = i + 1    &#xa;    &#xa;    return out" conn_prob="0.1" dst_channels="3" name="StochasticToOneChannel" conn_to_channel="1"/>
+   <Config/>
+  </synapseConnection>
+  <synapseConnection name="CortIntCh2 to D1 MSN Synapse 1 weight_update">
+   <Script text="#Name: StochasticToOneChannel&#xa;#Author: Seb James&#xa;#PARNAME=dst_channels #LOC=1,1&#xa;#PARNAME=conn_to_channel #LOC=1,2&#xa;#Note: conn_to_channel counts from 0&#xa;#PARNAME=conn_prob #LOC=2,1&#xa;def connectionFunc(srclocs,dstlocs,dst_channels,conn_to_channel,conn_prob):&#xa;&#xa;    import math&#xa;    import random&#xa;&#xa;    weight = 1&#xa;    delay = 0&#xa;&#xa;    dstsize = len(dstlocs)&#xa;    dstrunlen = int(dstsize/dst_channels)&#xa;    &#xa;    out = []&#xa;    &#xa;    dststart = int(conn_to_channel) * dstrunlen&#xa;    dstend = ((int(conn_to_channel)+1) * dstrunlen)&#xa;    &#xa;    i = 0&#xa;    for srcloc in srclocs:&#xa;        j = dststart&#xa;        for dstloc in dstlocs[dststart:dstend]:&#xa;            if random.random() &lt; conn_prob:&#xa;                conn = (i,j,delay)&#xa;                out.append(conn)&#xa;            j = j + 1&#xa;        i = i + 1    &#xa;    &#xa;    return out" conn_prob="0.1" dst_channels="3" name="StochasticToOneChannel" conn_to_channel="1"/>
+   <Config/>
+  </synapseConnection>
+ </projection>
+ <genericInput destination="CortIntCh2 to D1 MSN Synapse 0 postsynapse" srcPort="v" source="D1 MSN" dstPort="v">
+  <start x="1.131826996803284" y="5.480782985687256"/>
+  <curves>
+   <curve>
+    <C1 xpos="1.866599440574646" ypos="5.629726409912109"/>
+    <C2 xpos="1.49757969379425" ypos="6.371194362640381"/>
+    <end xpos="0.8644549250602722" ypos="5.811860084533691"/>
+   </curve>
+  </curves>
+  <connection/>
+ </genericInput>
+ <genericInput destination="CortIntCh2 to D1 MSN Synapse 1 postsynapse" srcPort="v" source="D1 MSN" dstPort="v">
+  <start x="1.131826996803284" y="5.480782985687256"/>
+  <curves>
+   <curve>
+    <C1 xpos="1.866599440574646" ypos="5.629726409912109"/>
+    <C2 xpos="1.49757969379425" ypos="6.371194362640381"/>
+    <end xpos="0.8644549250602722" ypos="5.811860084533691"/>
+   </curve>
+  </curves>
+  <connection/>
+ </genericInput>
+ <projection destination="STN" showlabel="0" source="CortIntCh2" style="4">
+  <start x="3.04664" y="8.95003"/>
+  <curves>
+   <curve>
+    <C1 xpos="3.04664" ypos="6.50212"/>
+    <C2 xpos="2.32672" ypos="6.2449"/>
+    <end xpos="2.32672" ypos="3.91803"/>
+   </curve>
+  </curves>
+  <synapseConnection name="CortIntCh2 to STN Synapse 0 weight_update">
+   <Script text="#Name: StochasticToOneChannel&#xa;#Author: Seb James&#xa;#PARNAME=dst_channels #LOC=1,1&#xa;#PARNAME=conn_to_channel #LOC=1,2&#xa;#Note: conn_to_channel counts from 0&#xa;#PARNAME=conn_prob #LOC=2,1&#xa;def connectionFunc(srclocs,dstlocs,dst_channels,conn_to_channel,conn_prob):&#xa;&#xa;    import math&#xa;    import random&#xa;&#xa;    weight = 1&#xa;    delay = 0&#xa;&#xa;    dstsize = len(dstlocs)&#xa;    dstrunlen = int(dstsize/dst_channels)&#xa;    &#xa;    out = []&#xa;    &#xa;    dststart = int(conn_to_channel) * dstrunlen&#xa;    dstend = ((int(conn_to_channel)+1) * dstrunlen)&#xa;    &#xa;    i = 0&#xa;    for srcloc in srclocs:&#xa;        j = dststart&#xa;        for dstloc in dstlocs[dststart:dstend]:&#xa;            if random.random() &lt; conn_prob:&#xa;                conn = (i,j,delay)&#xa;                out.append(conn)&#xa;            j = j + 1&#xa;        i = i + 1    &#xa;    &#xa;    return out" conn_prob="0.1" dst_channels="3" name="StochasticToOneChannel" conn_to_channel="1"/>
+   <Config/>
+  </synapseConnection>
+  <synapseConnection name="CortIntCh2 to STN Synapse 1 weight_update">
+   <Script text="#Name: StochasticToOneChannel&#xa;#Author: Seb James&#xa;#PARNAME=dst_channels #LOC=1,1&#xa;#PARNAME=conn_to_channel #LOC=1,2&#xa;#Note: conn_to_channel counts from 0&#xa;#PARNAME=conn_prob #LOC=2,1&#xa;def connectionFunc(srclocs,dstlocs,dst_channels,conn_to_channel,conn_prob):&#xa;&#xa;    import math&#xa;    import random&#xa;&#xa;    weight = 1&#xa;    delay = 0&#xa;&#xa;    dstsize = len(dstlocs)&#xa;    dstrunlen = int(dstsize/dst_channels)&#xa;    &#xa;    out = []&#xa;    &#xa;    dststart = int(conn_to_channel) * dstrunlen&#xa;    dstend = ((int(conn_to_channel)+1) * dstrunlen)&#xa;    &#xa;    i = 0&#xa;    for srcloc in srclocs:&#xa;        j = dststart&#xa;        for dstloc in dstlocs[dststart:dstend]:&#xa;            if random.random() &lt; conn_prob:&#xa;                conn = (i,j,delay)&#xa;                out.append(conn)&#xa;            j = j + 1&#xa;        i = i + 1    &#xa;    &#xa;    return out" conn_prob="0.1" dst_channels="3" name="StochasticToOneChannel" conn_to_channel="1"/>
+   <Config/>
+  </synapseConnection>
+ </projection>
+ <genericInput destination="CortIntCh2 to STN Synapse 0 postsynapse" srcPort="v" source="STN" dstPort="v">
+  <start x="2.61439847946167" y="3.918030023574829"/>
+  <curves>
+   <curve>
+    <C1 xpos="2.76067590713501" ypos="4.092422962188721"/>
+    <C2 xpos="2.463374137878418" ypos="4.187559604644775"/>
+    <end xpos="2.32672119140625" ypos="3.918030023574829"/>
+   </curve>
+  </curves>
+  <connection/>
+ </genericInput>
+ <genericInput destination="CortIntCh2 to STN Synapse 1 postsynapse" srcPort="v" source="STN" dstPort="v">
+  <start x="2.471618890762329" y="3.918030023574829"/>
+  <curves>
+   <curve>
+    <C1 xpos="2.677431344985962" ypos="3.937825918197632"/>
+    <C2 xpos="2.570402860641479" ypos="4.199451446533203"/>
+    <end xpos="2.32672119140625" ypos="3.918030023574829"/>
+   </curve>
+  </curves>
+  <connection/>
+ </genericInput>
+ <projection destination="D2 MSN" showlabel="0" source="CortIntCh2" style="4">
+  <start x="3.2448" y="8.95079"/>
+  <curves>
+   <curve>
+    <C1 xpos="3.2448" ypos="7.30984"/>
+    <C2 xpos="4.26729" ypos="7.05187"/>
+    <end xpos="4.26729" ypos="5.8302"/>
+   </curve>
+  </curves>
+  <synapseConnection name="CortIntCh2 to D2 MSN Synapse 0 weight_update">
+   <Script text="#Name: StochasticToOneChannel&#xa;#Author: Seb James&#xa;#PARNAME=dst_channels #LOC=1,1&#xa;#PARNAME=conn_to_channel #LOC=1,2&#xa;#Note: conn_to_channel counts from 0&#xa;#PARNAME=conn_prob #LOC=2,1&#xa;def connectionFunc(srclocs,dstlocs,dst_channels,conn_to_channel,conn_prob):&#xa;&#xa;    import math&#xa;    import random&#xa;&#xa;    weight = 1&#xa;    delay = 0&#xa;&#xa;    dstsize = len(dstlocs)&#xa;    dstrunlen = int(dstsize/dst_channels)&#xa;    &#xa;    out = []&#xa;    &#xa;    dststart = int(conn_to_channel) * dstrunlen&#xa;    dstend = ((int(conn_to_channel)+1) * dstrunlen)&#xa;    &#xa;    i = 0&#xa;    for srcloc in srclocs:&#xa;        j = dststart&#xa;        for dstloc in dstlocs[dststart:dstend]:&#xa;            if random.random() &lt; conn_prob:&#xa;                conn = (i,j,delay)&#xa;                out.append(conn)&#xa;            j = j + 1&#xa;        i = i + 1    &#xa;    &#xa;    return out" conn_prob="0.1" dst_channels="3" name="StochasticToOneChannel" conn_to_channel="1"/>
+   <Config/>
+  </synapseConnection>
+  <synapseConnection name="CortIntCh2 to D2 MSN Synapse 1 weight_update">
+   <Script text="#Name: StochasticToOneChannel&#xa;#Author: Seb James&#xa;#PARNAME=dst_channels #LOC=1,1&#xa;#PARNAME=conn_to_channel #LOC=1,2&#xa;#Note: conn_to_channel counts from 0&#xa;#PARNAME=conn_prob #LOC=2,1&#xa;def connectionFunc(srclocs,dstlocs,dst_channels,conn_to_channel,conn_prob):&#xa;&#xa;    import math&#xa;    import random&#xa;&#xa;    weight = 1&#xa;    delay = 0&#xa;&#xa;    dstsize = len(dstlocs)&#xa;    dstrunlen = int(dstsize/dst_channels)&#xa;    &#xa;    out = []&#xa;    &#xa;    dststart = int(conn_to_channel) * dstrunlen&#xa;    dstend = ((int(conn_to_channel)+1) * dstrunlen)&#xa;    &#xa;    i = 0&#xa;    for srcloc in srclocs:&#xa;        j = dststart&#xa;        for dstloc in dstlocs[dststart:dstend]:&#xa;            if random.random() &lt; conn_prob:&#xa;                conn = (i,j,delay)&#xa;                out.append(conn)&#xa;            j = j + 1&#xa;        i = i + 1    &#xa;    &#xa;    return out" conn_prob="0.1" dst_channels="3" name="StochasticToOneChannel" conn_to_channel="1"/>
+   <Config/>
+  </synapseConnection>
+ </projection>
+ <genericInput destination="CortIntCh2 to D2 MSN Synapse 0 postsynapse" srcPort="v" source="D2 MSN" dstPort="v">
+  <start x="4.593550205230713" y="5.8302001953125"/>
+  <curves>
+   <curve>
+    <C1 xpos="5.035573482513428" ypos="6.575514316558838"/>
+    <C2 xpos="4.440283298492432" ypos="6.910055637359619"/>
+    <end xpos="4.267290115356445" ypos="5.8302001953125"/>
+   </curve>
+  </curves>
+  <connection/>
+ </genericInput>
+ <genericInput destination="CortIntCh2 to D2 MSN Synapse 1 postsynapse" srcPort="v" source="D2 MSN" dstPort="v">
+  <start x="4.593550205230713" y="5.8302001953125"/>
+  <curves>
+   <curve>
+    <C1 xpos="5.196302890777588" ypos="6.57184886932373"/>
+    <C2 xpos="4.440283298492432" ypos="6.910055637359619"/>
+    <end xpos="4.267290115356445" ypos="5.8302001953125"/>
+   </curve>
+  </curves>
+  <connection/>
+ </genericInput>
+ <population name="CortIntCh3">
+  <xPos value="5.38385"/>
+  <yPos value="9.47282"/>
+  <animSpeed value="0.2"/>
+  <aspectRatio value="1.66667"/>
+  <colour blue="197" green="8" red="226"/>
+  <size value="1"/>
+  <tag value="1"/>
+  <x3D value="0"/>
+  <y3D value="0"/>
+  <z3D value="0"/>
+  <is_visualised value="0"/>
+ </population>
+ <projection destination="D1 MSN" showlabel="0" source="CortIntCh3" style="4">
+  <start x="4.80348" y="8.96984"/>
+  <curves>
+   <curve>
+    <C1 xpos="4.80348" ypos="7.45269"/>
+    <C2 xpos="0.864455" ypos="7.17566"/>
+    <end xpos="0.864455" ypos="5.81186"/>
+   </curve>
+  </curves>
+  <synapseConnection name="CortIntCh3 to D1 MSN Synapse 0 weight_update">
+   <Script text="#Name: StochasticToOneChannel&#xa;#Author: Seb James&#xa;#PARNAME=dst_channels #LOC=1,1&#xa;#PARNAME=conn_to_channel #LOC=1,2&#xa;#Note: conn_to_channel counts from 0&#xa;#PARNAME=conn_prob #LOC=2,1&#xa;def connectionFunc(srclocs,dstlocs,dst_channels,conn_to_channel,conn_prob):&#xa;&#xa;    import math&#xa;    import random&#xa;&#xa;    weight = 1&#xa;    delay = 0&#xa;&#xa;    dstsize = len(dstlocs)&#xa;    dstrunlen = int(dstsize/dst_channels)&#xa;    &#xa;    out = []&#xa;    &#xa;    dststart = int(conn_to_channel) * dstrunlen&#xa;    dstend = ((int(conn_to_channel)+1) * dstrunlen)&#xa;    &#xa;    i = 0&#xa;    for srcloc in srclocs:&#xa;        j = dststart&#xa;        for dstloc in dstlocs[dststart:dstend]:&#xa;            if random.random() &lt; conn_prob:&#xa;                conn = (i,j,delay)&#xa;                out.append(conn)&#xa;            j = j + 1&#xa;        i = i + 1    &#xa;    &#xa;    return out" conn_prob="0.1" dst_channels="3" name="StochasticToOneChannel" conn_to_channel="2"/>
+   <Config/>
+  </synapseConnection>
+  <synapseConnection name="CortIntCh3 to D1 MSN Synapse 1 weight_update">
+   <Script text="#Name: StochasticToOneChannel&#xa;#Author: Seb James&#xa;#PARNAME=dst_channels #LOC=1,1&#xa;#PARNAME=conn_to_channel #LOC=1,2&#xa;#Note: conn_to_channel counts from 0&#xa;#PARNAME=conn_prob #LOC=2,1&#xa;def connectionFunc(srclocs,dstlocs,dst_channels,conn_to_channel,conn_prob):&#xa;&#xa;    import math&#xa;    import random&#xa;&#xa;    weight = 1&#xa;    delay = 0&#xa;&#xa;    dstsize = len(dstlocs)&#xa;    dstrunlen = int(dstsize/dst_channels)&#xa;    &#xa;    out = []&#xa;    &#xa;    dststart = int(conn_to_channel) * dstrunlen&#xa;    dstend = ((int(conn_to_channel)+1) * dstrunlen)&#xa;    &#xa;    i = 0&#xa;    for srcloc in srclocs:&#xa;        j = dststart&#xa;        for dstloc in dstlocs[dststart:dstend]:&#xa;            if random.random() &lt; conn_prob:&#xa;                conn = (i,j,delay)&#xa;                out.append(conn)&#xa;            j = j + 1&#xa;        i = i + 1    &#xa;    &#xa;    return out" conn_prob="0.1" dst_channels="3" name="StochasticToOneChannel" conn_to_channel="2"/>
+   <Config/>
+  </synapseConnection>
+ </projection>
+ <genericInput destination="CortIntCh3 to D1 MSN Synapse 0 postsynapse" srcPort="v" source="D1 MSN" dstPort="v">
+  <start x="1.131826996803284" y="5.480782985687256"/>
+  <curves>
+   <curve>
+    <C1 xpos="1.866599440574646" ypos="5.629726409912109"/>
+    <C2 xpos="1.49757969379425" ypos="6.371194362640381"/>
+    <end xpos="0.8644549250602722" ypos="5.811860084533691"/>
+   </curve>
+  </curves>
+  <connection/>
+ </genericInput>
+ <genericInput destination="CortIntCh3 to D1 MSN Synapse 1 postsynapse" srcPort="v" source="D1 MSN" dstPort="v">
+  <start x="1.131826996803284" y="5.480782985687256"/>
+  <curves>
+   <curve>
+    <C1 xpos="1.866599440574646" ypos="5.629726409912109"/>
+    <C2 xpos="1.49757969379425" ypos="6.371194362640381"/>
+    <end xpos="0.8644549250602722" ypos="5.811860084533691"/>
+   </curve>
+  </curves>
+  <connection/>
+ </genericInput>
+ <projection destination="STN" showlabel="0" source="CortIntCh3" style="4">
+  <start x="5.20645" y="8.97055"/>
+  <curves>
+   <curve>
+    <C1 xpos="5.20645" ypos="6.52264"/>
+    <C2 xpos="2.32672" ypos="6.2449"/>
+    <end xpos="2.32672" ypos="3.91803"/>
+   </curve>
+  </curves>
+  <synapseConnection name="CortIntCh3 to STN Synapse 0 weight_update">
+   <Script text="#Name: StochasticToOneChannel&#xa;#Author: Seb James&#xa;#PARNAME=dst_channels #LOC=1,1&#xa;#PARNAME=conn_to_channel #LOC=1,2&#xa;#Note: conn_to_channel counts from 0&#xa;#PARNAME=conn_prob #LOC=2,1&#xa;def connectionFunc(srclocs,dstlocs,dst_channels,conn_to_channel,conn_prob):&#xa;&#xa;    import math&#xa;    import random&#xa;&#xa;    weight = 1&#xa;    delay = 0&#xa;&#xa;    dstsize = len(dstlocs)&#xa;    dstrunlen = int(dstsize/dst_channels)&#xa;    &#xa;    out = []&#xa;    &#xa;    dststart = int(conn_to_channel) * dstrunlen&#xa;    dstend = ((int(conn_to_channel)+1) * dstrunlen)&#xa;    &#xa;    i = 0&#xa;    for srcloc in srclocs:&#xa;        j = dststart&#xa;        for dstloc in dstlocs[dststart:dstend]:&#xa;            if random.random() &lt; conn_prob:&#xa;                conn = (i,j,delay)&#xa;                out.append(conn)&#xa;            j = j + 1&#xa;        i = i + 1    &#xa;    &#xa;    return out" conn_prob="0.1" dst_channels="3" name="StochasticToOneChannel" conn_to_channel="2"/>
+   <Config/>
+  </synapseConnection>
+  <synapseConnection name="CortIntCh3 to STN Synapse 1 weight_update">
+   <Script text="#Name: StochasticToOneChannel&#xa;#Author: Seb James&#xa;#PARNAME=dst_channels #LOC=1,1&#xa;#PARNAME=conn_to_channel #LOC=1,2&#xa;#Note: conn_to_channel counts from 0&#xa;#PARNAME=conn_prob #LOC=2,1&#xa;def connectionFunc(srclocs,dstlocs,dst_channels,conn_to_channel,conn_prob):&#xa;&#xa;    import math&#xa;    import random&#xa;&#xa;    weight = 1&#xa;    delay = 0&#xa;&#xa;    dstsize = len(dstlocs)&#xa;    dstrunlen = int(dstsize/dst_channels)&#xa;    &#xa;    out = []&#xa;    &#xa;    dststart = int(conn_to_channel) * dstrunlen&#xa;    dstend = ((int(conn_to_channel)+1) * dstrunlen)&#xa;    &#xa;    i = 0&#xa;    for srcloc in srclocs:&#xa;        j = dststart&#xa;        for dstloc in dstlocs[dststart:dstend]:&#xa;            if random.random() &lt; conn_prob:&#xa;                conn = (i,j,delay)&#xa;                out.append(conn)&#xa;            j = j + 1&#xa;        i = i + 1    &#xa;    &#xa;    return out" conn_prob="0.1" dst_channels="3" name="StochasticToOneChannel" conn_to_channel="2"/>
+   <Config/>
+  </synapseConnection>
+ </projection>
+ <genericInput destination="CortIntCh3 to STN Synapse 0 postsynapse" srcPort="v" source="STN" dstPort="v">
+  <start x="2.61439847946167" y="3.918030023574829"/>
+  <curves>
+   <curve>
+    <C1 xpos="2.76067590713501" ypos="4.092422962188721"/>
+    <C2 xpos="2.463374137878418" ypos="4.187559604644775"/>
+    <end xpos="2.32672119140625" ypos="3.918030023574829"/>
+   </curve>
+  </curves>
+  <connection/>
+ </genericInput>
+ <genericInput destination="CortIntCh3 to STN Synapse 1 postsynapse" srcPort="v" source="STN" dstPort="v">
+  <start x="2.471618890762329" y="3.918030023574829"/>
+  <curves>
+   <curve>
+    <C1 xpos="2.677431344985962" ypos="3.937825918197632"/>
+    <C2 xpos="2.570402860641479" ypos="4.199451446533203"/>
+    <end xpos="2.32672119140625" ypos="3.918030023574829"/>
+   </curve>
+  </curves>
+  <connection/>
+ </genericInput>
+ <projection destination="D2 MSN" showlabel="0" source="CortIntCh3" style="4">
+  <start x="5.40461" y="8.97131"/>
+  <curves>
+   <curve>
+    <C1 xpos="5.40461" ypos="7.33036"/>
+    <C2 xpos="4.26729" ypos="7.05187"/>
+    <end xpos="4.26729" ypos="5.8302"/>
+   </curve>
+  </curves>
+  <synapseConnection name="CortIntCh3 to D2 MSN Synapse 0 weight_update">
+   <Script text="#Name: StochasticToOneChannel&#xa;#Author: Seb James&#xa;#PARNAME=dst_channels #LOC=1,1&#xa;#PARNAME=conn_to_channel #LOC=1,2&#xa;#Note: conn_to_channel counts from 0&#xa;#PARNAME=conn_prob #LOC=2,1&#xa;def connectionFunc(srclocs,dstlocs,dst_channels,conn_to_channel,conn_prob):&#xa;&#xa;    import math&#xa;    import random&#xa;&#xa;    weight = 1&#xa;    delay = 0&#xa;&#xa;    dstsize = len(dstlocs)&#xa;    dstrunlen = int(dstsize/dst_channels)&#xa;    &#xa;    out = []&#xa;    &#xa;    dststart = int(conn_to_channel) * dstrunlen&#xa;    dstend = ((int(conn_to_channel)+1) * dstrunlen)&#xa;    &#xa;    i = 0&#xa;    for srcloc in srclocs:&#xa;        j = dststart&#xa;        for dstloc in dstlocs[dststart:dstend]:&#xa;            if random.random() &lt; conn_prob:&#xa;                conn = (i,j,delay)&#xa;                out.append(conn)&#xa;            j = j + 1&#xa;        i = i + 1    &#xa;    &#xa;    return out" conn_prob="0.1" dst_channels="3" name="StochasticToOneChannel" conn_to_channel="2"/>
+   <Config/>
+  </synapseConnection>
+  <synapseConnection name="CortIntCh3 to D2 MSN Synapse 1 weight_update">
+   <Script text="#Name: StochasticToOneChannel&#xa;#Author: Seb James&#xa;#PARNAME=dst_channels #LOC=1,1&#xa;#PARNAME=conn_to_channel #LOC=1,2&#xa;#Note: conn_to_channel counts from 0&#xa;#PARNAME=conn_prob #LOC=2,1&#xa;def connectionFunc(srclocs,dstlocs,dst_channels,conn_to_channel,conn_prob):&#xa;&#xa;    import math&#xa;    import random&#xa;&#xa;    weight = 1&#xa;    delay = 0&#xa;&#xa;    dstsize = len(dstlocs)&#xa;    dstrunlen = int(dstsize/dst_channels)&#xa;    &#xa;    out = []&#xa;    &#xa;    dststart = int(conn_to_channel) * dstrunlen&#xa;    dstend = ((int(conn_to_channel)+1) * dstrunlen)&#xa;    &#xa;    i = 0&#xa;    for srcloc in srclocs:&#xa;        j = dststart&#xa;        for dstloc in dstlocs[dststart:dstend]:&#xa;            if random.random() &lt; conn_prob:&#xa;                conn = (i,j,delay)&#xa;                out.append(conn)&#xa;            j = j + 1&#xa;        i = i + 1    &#xa;    &#xa;    return out" conn_prob="0.1" dst_channels="3" name="StochasticToOneChannel" conn_to_channel="2"/>
+   <Config/>
+  </synapseConnection>
+ </projection>
+ <genericInput destination="CortIntCh3 to D2 MSN Synapse 0 postsynapse" srcPort="v" source="D2 MSN" dstPort="v">
+  <start x="4.593550205230713" y="5.8302001953125"/>
+  <curves>
+   <curve>
+    <C1 xpos="5.035573482513428" ypos="6.575514316558838"/>
+    <C2 xpos="4.440283298492432" ypos="6.910055637359619"/>
+    <end xpos="4.267290115356445" ypos="5.8302001953125"/>
+   </curve>
+  </curves>
+  <connection/>
+ </genericInput>
+ <genericInput destination="CortIntCh3 to D2 MSN Synapse 1 postsynapse" srcPort="v" source="D2 MSN" dstPort="v">
+  <start x="4.593550205230713" y="5.8302001953125"/>
+  <curves>
+   <curve>
+    <C1 xpos="5.196302890777588" ypos="6.57184886932373"/>
+    <C2 xpos="4.440283298492432" ypos="6.910055637359619"/>
+    <end xpos="4.267290115356445" ypos="5.8302001953125"/>
+   </curve>
+  </curves>
+  <connection/>
+ </genericInput>
+ <population name="CortIntCh1">
+  <xPos value="1.0336"/>
+  <yPos value="9.51863"/>
+  <animSpeed value="0.2"/>
+  <aspectRatio value="1.66667"/>
+  <colour blue="238" green="0" red="249"/>
+  <size value="1"/>
+  <tag value="2"/>
+  <x3D value="0"/>
+  <y3D value="0"/>
+  <z3D value="0"/>
+  <is_visualised value="0"/>
+ </population>
+ <projection destination="D2 MSN" showlabel="0" source="CortIntCh1" style="4">
+  <start x="0.970349" y="9.01054"/>
+  <curves>
+   <curve>
+    <C1 xpos="0.970349" ypos="7.74054"/>
+    <C2 xpos="5.19" ypos="7.69"/>
+    <end xpos="4.78156" ypos="5.8302"/>
+   </curve>
+  </curves>
+  <synapseConnection name="CortIntCh1 to D2 MSN Synapse 0 weight_update">
+   <Script text="#Name: StochasticToOneChannel&#xa;#Author: Seb James&#xa;#PARNAME=dst_channels #LOC=1,1&#xa;#PARNAME=conn_to_channel #LOC=1,2&#xa;#Note: conn_to_channel counts from 0&#xa;#PARNAME=conn_prob #LOC=2,1&#xa;def connectionFunc(srclocs,dstlocs,dst_channels,conn_to_channel,conn_prob):&#xa;&#xa;    import math&#xa;    import random&#xa;&#xa;    weight = 1&#xa;    delay = 0&#xa;&#xa;    dstsize = len(dstlocs)&#xa;    dstrunlen = int(dstsize/dst_channels)&#xa;    &#xa;    out = []&#xa;    &#xa;    dststart = int(conn_to_channel) * dstrunlen&#xa;    dstend = ((int(conn_to_channel)+1) * dstrunlen)&#xa;    &#xa;    i = 0&#xa;    for srcloc in srclocs:&#xa;        j = dststart&#xa;        for dstloc in dstlocs[dststart:dstend]:&#xa;            if random.random() &lt; conn_prob:&#xa;                conn = (i,j,delay)&#xa;                out.append(conn)&#xa;            j = j + 1&#xa;        i = i + 1    &#xa;    &#xa;    return out" conn_prob="0.1" dst_channels="3" name="StochasticToOneChannel" conn_to_channel="0"/>
+   <Config/>
+  </synapseConnection>
+  <synapseConnection name="CortIntCh1 to D2 MSN Synapse 1 weight_update">
+   <Script text="#Name: StochasticToOneChannel&#xa;#Author: Seb James&#xa;#PARNAME=dst_channels #LOC=1,1&#xa;#PARNAME=conn_to_channel #LOC=1,2&#xa;#Note: conn_to_channel counts from 0&#xa;#PARNAME=conn_prob #LOC=2,1&#xa;def connectionFunc(srclocs,dstlocs,dst_channels,conn_to_channel,conn_prob):&#xa;&#xa;    import math&#xa;    import random&#xa;&#xa;    weight = 1&#xa;    delay = 0&#xa;&#xa;    dstsize = len(dstlocs)&#xa;    dstrunlen = int(dstsize/dst_channels)&#xa;    &#xa;    out = []&#xa;    &#xa;    dststart = int(conn_to_channel) * dstrunlen&#xa;    dstend = ((int(conn_to_channel)+1) * dstrunlen)&#xa;    &#xa;    i = 0&#xa;    for srcloc in srclocs:&#xa;        j = dststart&#xa;        for dstloc in dstlocs[dststart:dstend]:&#xa;            if random.random() &lt; conn_prob:&#xa;                conn = (i,j,delay)&#xa;                out.append(conn)&#xa;            j = j + 1&#xa;        i = i + 1    &#xa;    &#xa;    return out" conn_prob="0.1" dst_channels="3" name="StochasticToOneChannel" conn_to_channel="0"/>
+   <Config/>
+  </synapseConnection>
+ </projection>
+ <genericInput destination="CortIntCh1 to D2 MSN Synapse 0 postsynapse" srcPort="v" source="D2 MSN" dstPort="v">
+  <start x="5.020524978637695" y="5.478209018707275"/>
+  <curves>
+   <curve>
+    <C1 xpos="5.704986572265625" ypos="5.750210762023926"/>
+    <C2 xpos="5.411580562591553" ypos="6.360184669494629"/>
+    <end xpos="4.781563282012939" ypos="5.8302001953125"/>
+   </curve>
+  </curves>
+  <connection/>
+ </genericInput>
+ <genericInput destination="CortIntCh1 to D2 MSN Synapse 1 postsynapse" srcPort="v" source="D2 MSN" dstPort="v">
+  <start x="5.020524978637695" y="5.478209018707275"/>
+  <curves>
+   <curve>
+    <C1 xpos="5.762535572052002" ypos="5.609997749328613"/>
+    <C2 xpos="5.411580562591553" ypos="6.360184669494629"/>
+    <end xpos="4.781563282012939" ypos="5.8302001953125"/>
+   </curve>
+  </curves>
+  <connection/>
+ </genericInput>
+ <projection destination="STN" showlabel="0" source="CortIntCh1" style="4">
+  <start x="0.73112" y="9.01171"/>
+  <curves>
+   <curve>
+    <C1 xpos="0.73112" ypos="6.78171"/>
+    <C2 xpos="2.07094" ypos="7.20815"/>
+    <end xpos="1.87231" ypos="3.91803"/>
+   </curve>
+  </curves>
+  <synapseConnection name="CortIntCh1 to STN Synapse 0 weight_update">
+   <Script text="#Name: StochasticToOneChannel&#xa;#Author: Seb James&#xa;#PARNAME=dst_channels #LOC=1,1&#xa;#PARNAME=conn_to_channel #LOC=1,2&#xa;#Note: conn_to_channel counts from 0&#xa;#PARNAME=conn_prob #LOC=2,1&#xa;def connectionFunc(srclocs,dstlocs,dst_channels,conn_to_channel,conn_prob):&#xa;&#xa;    import math&#xa;    import random&#xa;&#xa;    weight = 1&#xa;    delay = 0&#xa;&#xa;    dstsize = len(dstlocs)&#xa;    dstrunlen = int(dstsize/dst_channels)&#xa;    &#xa;    out = []&#xa;    &#xa;    dststart = int(conn_to_channel) * dstrunlen&#xa;    dstend = ((int(conn_to_channel)+1) * dstrunlen)&#xa;    &#xa;    i = 0&#xa;    for srcloc in srclocs:&#xa;        j = dststart&#xa;        for dstloc in dstlocs[dststart:dstend]:&#xa;            if random.random() &lt; conn_prob:&#xa;                conn = (i,j,delay)&#xa;                out.append(conn)&#xa;            j = j + 1&#xa;        i = i + 1    &#xa;    &#xa;    return out" conn_prob="0.1" dst_channels="3" name="StochasticToOneChannel" conn_to_channel="0"/>
+   <Config/>
+  </synapseConnection>
+  <synapseConnection name="CortIntCh1 to STN Synapse 1 weight_update">
+   <Script text="#Name: StochasticToOneChannel&#xa;#Author: Seb James&#xa;#PARNAME=dst_channels #LOC=1,1&#xa;#PARNAME=conn_to_channel #LOC=1,2&#xa;#Note: conn_to_channel counts from 0&#xa;#PARNAME=conn_prob #LOC=2,1&#xa;def connectionFunc(srclocs,dstlocs,dst_channels,conn_to_channel,conn_prob):&#xa;&#xa;    import math&#xa;    import random&#xa;&#xa;    weight = 1&#xa;    delay = 0&#xa;&#xa;    dstsize = len(dstlocs)&#xa;    dstrunlen = int(dstsize/dst_channels)&#xa;    &#xa;    out = []&#xa;    &#xa;    dststart = int(conn_to_channel) * dstrunlen&#xa;    dstend = ((int(conn_to_channel)+1) * dstrunlen)&#xa;    &#xa;    i = 0&#xa;    for srcloc in srclocs:&#xa;        j = dststart&#xa;        for dstloc in dstlocs[dststart:dstend]:&#xa;            if random.random() &lt; conn_prob:&#xa;                conn = (i,j,delay)&#xa;                out.append(conn)&#xa;            j = j + 1&#xa;        i = i + 1    &#xa;    &#xa;    return out" conn_prob="0.1" dst_channels="3" name="StochasticToOneChannel" conn_to_channel="0"/>
+   <Config/>
+  </synapseConnection>
+ </projection>
+ <genericInput destination="CortIntCh1 to STN Synapse 0 postsynapse" srcPort="v" source="STN" dstPort="v">
+  <start x="1.658658862113953" y="3.918030023574829"/>
+  <curves>
+   <curve>
+    <C1 xpos="1.559576749801636" ypos="4.032962322235107"/>
+    <C2 xpos="1.630929231643677" ypos="4.258912086486816"/>
+    <end xpos="1.872309803962708" ypos="3.918030023574829"/>
+   </curve>
+  </curves>
+  <connection/>
+ </genericInput>
+ <genericInput destination="CortIntCh1 to STN Synapse 1 postsynapse" srcPort="v" source="STN" dstPort="v">
+  <start x="1.581370711326599" y="3.918030023574829"/>
+  <curves>
+   <curve>
+    <C1 xpos="1.614399433135986" ypos="3.885952711105347"/>
+    <C2 xpos="1.61903715133667" ypos="4.235127925872803"/>
+    <end xpos="1.872309803962708" ypos="3.918030023574829"/>
+   </curve>
+  </curves>
+  <connection/>
+ </genericInput>
+ <projection destination="D1 MSN" showlabel="0" source="CortIntCh1" style="4">
+  <start x="0.450368" y="9.0138"/>
+  <curves>
+   <curve>
+    <C1 xpos="0.450368" ypos="7.44836"/>
+    <C2 xpos="0.762335" ypos="6.99734"/>
+    <end xpos="0.581476" ypos="5.81186"/>
+   </curve>
+  </curves>
+  <synapseConnection name="CortIntCh1 to D1 MSN Synapse 0 weight_update">
+   <Script text="#Name: StochasticToOneChannel&#xa;#Author: Seb James&#xa;#PARNAME=dst_channels #LOC=1,1&#xa;#PARNAME=conn_to_channel #LOC=1,2&#xa;#Note: conn_to_channel counts from 0&#xa;#PARNAME=conn_prob #LOC=2,1&#xa;def connectionFunc(srclocs,dstlocs,dst_channels,conn_to_channel,conn_prob):&#xa;&#xa;    import math&#xa;    import random&#xa;&#xa;    weight = 1&#xa;    delay = 0&#xa;&#xa;    dstsize = len(dstlocs)&#xa;    dstrunlen = int(dstsize/dst_channels)&#xa;    &#xa;    out = []&#xa;    &#xa;    dststart = int(conn_to_channel) * dstrunlen&#xa;    dstend = ((int(conn_to_channel)+1) * dstrunlen)&#xa;    &#xa;    i = 0&#xa;    for srcloc in srclocs:&#xa;        j = dststart&#xa;        for dstloc in dstlocs[dststart:dstend]:&#xa;            if random.random() &lt; conn_prob:&#xa;                conn = (i,j,delay)&#xa;                out.append(conn)&#xa;            j = j + 1&#xa;        i = i + 1    &#xa;    &#xa;    return out" conn_prob="0.1" dst_channels="3" name="StochasticToOneChannel" conn_to_channel="0"/>
+   <Config/>
+  </synapseConnection>
+  <synapseConnection name="CortIntCh1 to D1 MSN Synapse 1 weight_update">
+   <Script text="#Name: StochasticToOneChannel&#xa;#Author: Seb James&#xa;#PARNAME=dst_channels #LOC=1,1&#xa;#PARNAME=conn_to_channel #LOC=1,2&#xa;#Note: conn_to_channel counts from 0&#xa;#PARNAME=conn_prob #LOC=2,1&#xa;def connectionFunc(srclocs,dstlocs,dst_channels,conn_to_channel,conn_prob):&#xa;&#xa;    import math&#xa;    import random&#xa;&#xa;    weight = 1&#xa;    delay = 0&#xa;&#xa;    dstsize = len(dstlocs)&#xa;    dstrunlen = int(dstsize/dst_channels)&#xa;    &#xa;    out = []&#xa;    &#xa;    dststart = int(conn_to_channel) * dstrunlen&#xa;    dstend = ((int(conn_to_channel)+1) * dstrunlen)&#xa;    &#xa;    i = 0&#xa;    for srcloc in srclocs:&#xa;        j = dststart&#xa;        for dstloc in dstlocs[dststart:dstend]:&#xa;            if random.random() &lt; conn_prob:&#xa;                conn = (i,j,delay)&#xa;                out.append(conn)&#xa;            j = j + 1&#xa;        i = i + 1    &#xa;    &#xa;    return out" conn_prob="0.1" dst_channels="3" name="StochasticToOneChannel" conn_to_channel="0"/>
+   <Config/>
+  </synapseConnection>
+ </projection>
+ <genericInput destination="CortIntCh1 to D1 MSN Synapse 0 postsynapse" srcPort="v" source="D1 MSN" dstPort="v">
+  <start x="1.131826996803284" y="5.406425952911377"/>
+  <curves>
+   <curve>
+    <C1 xpos="1.888288497924805" ypos="5.492268085479736"/>
+    <C2 xpos="1.585092306137085" ypos="6.262996196746826"/>
+    <end xpos="0.581476092338562" ypos="5.811860084533691"/>
+   </curve>
+  </curves>
+  <connection/>
+ </genericInput>
+ <genericInput destination="CortIntCh1 to D1 MSN Synapse 1 postsynapse" srcPort="v" source="D1 MSN" dstPort="v">
+  <start x="1.131826996803284" y="5.406425952911377"/>
+  <curves>
+   <curve>
+    <C1 xpos="1.888288497924805" ypos="5.492268085479736"/>
+    <C2 xpos="1.585092306137085" ypos="6.262996196746826"/>
+    <end xpos="0.581476092338562" ypos="5.811860084533691"/>
+   </curve>
+  </curves>
+  <connection/>
+ </genericInput>
+</modelMetaData>

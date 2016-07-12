@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<SpineML xsi:schemaLocation="http://www.shef.ac.uk/SpineMLComponentLayer SpineMLComponentLayer.xsd" xmlns="http://www.shef.ac.uk/SpineMLComponentLayer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <ComponentClass type="neuron_body" name="IzhiIntegEvidence">
+  <Dynamics initial_regime="R1">
+   <Regime name="R1">
+    <TimeDerivative variable="v">
+     <MathInline>AT*v*v + BT*v + CT - u*T + I*ToverSI</MathInline>
+    </TimeDerivative>
+    <TimeDerivative variable="u">
+     <MathInline>aT*(b*v-u)</MathInline>
+    </TimeDerivative>
+    <OnCondition target_regime="R1">
+     <StateAssignment variable="v">
+      <MathInline>c</MathInline>
+     </StateAssignment>
+     <StateAssignment variable="u">
+      <MathInline>u+d</MathInline>
+     </StateAssignment>
+     <EventOut port="spike"/>
+     <Trigger>
+      <MathInline>v>Vpeak</MathInline>
+     </Trigger>
+    </OnCondition>
+    <OnCondition target_regime="R1">
+     <StateAssignment variable="I">
+      <MathInline>I + (randomNormal * I_sample_sigma) + I_sample_mean</MathInline>
+     </StateAssignment>
+     <Trigger>
+      <MathInline>t>2000 &amp;&amp; disable_spiking&lt;0.1</MathInline>
+     </Trigger>
+    </OnCondition>
+    <OnCondition target_regime="R1">
+     <StateAssignment variable="I">
+      <MathInline>-10</MathInline>
+     </StateAssignment>
+     <Trigger>
+      <MathInline>disable_spiking >= 0.1</MathInline>
+     </Trigger>
+    </OnCondition>
+   </Regime>
+   <StateVariable dimension="mV" name="v"/>
+   <StateVariable dimension="?" name="u"/>
+   <StateVariable dimension="?" name="I"/>
+  </Dynamics>
+  <AnalogSendPort name="v"/>
+  <AnalogSendPort name="u"/>
+  <AnalogSendPort name="I"/>
+  <EventSendPort name="spike"/>
+  <Parameter dimension="?" name="aT"/>
+  <Parameter dimension="?" name="b"/>
+  <Parameter dimension="?" name="c"/>
+  <Parameter dimension="?" name="d"/>
+  <Parameter dimension="?" name="Vpeak"/>
+  <Parameter dimension="?" name="AT"/>
+  <Parameter dimension="?" name="BT"/>
+  <Parameter dimension="?" name="CT"/>
+  <Parameter dimension="?" name="T"/>
+  <Parameter dimension="?" name="ToverSI"/>
+  <Parameter dimension="?" name="I_sample_mean"/>
+  <Parameter dimension="?" name="I_sample_sigma"/>
+  <Parameter dimension="?" name="disable_spiking"/>
+ </ComponentClass>
+</SpineML>

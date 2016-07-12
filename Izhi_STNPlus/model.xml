@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LL:SpineML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.shef.ac.uk/SpineMLNetworkLayer" xmlns:LL="http://www.shef.ac.uk/SpineMLLowLevelNetworkLayer" xsi:schemaLocation="http://www.shef.ac.uk/SpineMLLowLevelNetworkLayer SpineMLLowLevelNetworkLayer.xsd http://www.shef.ac.uk/SpineMLNetworkLayer SpineMLNetworkLayer.xsd" name="STN neuron modelled after Terman">
+    <LL:Population>
+        <LL:Neuron name="Sebtest1" size="1" url="IzhiPaperABCTIsig.xml">
+            <Property name="a" dimension="?">
+                <FixedValue value="0.03"/>
+            </Property>
+            <Property name="b" dimension="?">
+                <FixedValue value="0.193"/>
+            </Property>
+            <Property name="c" dimension="?">
+                <FixedValue value="-65"/>
+            </Property>
+            <Property name="d" dimension="?">
+                <FixedValue value="0.05"/>
+            </Property>
+            <Property name="Vpeak" dimension="?">
+                <FixedValue value="30"/>
+            </Property>
+            <Property name="A" dimension="?">
+                <FixedValue value="0.032"/>
+            </Property>
+            <Property name="B" dimension="?">
+                <FixedValue value="4"/>
+            </Property>
+            <Property name="C" dimension="?">
+                <FixedValue value="113.147"/>
+            </Property>
+            <Property name="T" dimension="?">
+                <FixedValue value="0.4"/>
+            </Property>
+            <Property name="SI" dimension="?">
+                <FixedValue value="20"/>
+            </Property>
+            <Property name="k" dimension="?">
+                <FixedValue value="0.014"/>
+            </Property>
+            <Property name="I0" dimension="?">
+                <FixedValue value="300"/>
+            </Property>
+            <Property name="Imax" dimension="?">
+                <FixedValue value="600"/>
+            </Property>
+            <Property name="v" dimension="?">
+                <FixedValue value="-70"/>
+            </Property>
+            <Property name="u" dimension="?">
+                <FixedValue value="-10"/>
+            </Property>
+        </LL:Neuron>
+        <Layout url="none.xml" seed="123" minimum_distance="0"/>
+    </LL:Population>
+    <LL:Population>
+        <LL:Neuron name="Isig_cmpt" size="1" url="IzhiABCTFastSigI.xml">
+            <Property name="aT" dimension="?">
+                <FixedValue value="0.012"/>
+            </Property>
+            <Property name="b" dimension="?">
+                <FixedValue value="0.193"/>
+            </Property>
+            <Property name="c" dimension="?">
+                <FixedValue value="-65"/>
+            </Property>
+            <Property name="d" dimension="?">
+                <FixedValue value="0.05"/>
+            </Property>
+            <Property name="Vpeak" dimension="?">
+                <FixedValue value="30"/>
+            </Property>
+            <Property name="AT" dimension="?">
+                <FixedValue value="0.0128"/>
+            </Property>
+            <Property name="BT" dimension="?">
+                <FixedValue value="1.6"/>
+            </Property>
+            <Property name="CT" dimension="?">
+                <FixedValue value="4"/>
+            </Property>
+            <Property name="T" dimension="?">
+                <FixedValue value="0.4"/>
+            </Property>
+            <Property name="ToverSI" dimension="?">
+                <FixedValue value="0.02"/>
+            </Property>
+            <Property name="Imax" dimension="?">
+                <FixedValue value="600"/>
+            </Property>
+            <Property name="I0" dimension="?">
+                <FixedValue value="300"/>
+            </Property>
+            <Property name="k" dimension="?">
+                <FixedValue value="0.014"/>
+            </Property>
+            <Property name="Ioff" dimension="?">
+                <FixedValue value="8.86442"/>
+            </Property>
+            <Property name="v" dimension="mV">
+                <FixedValue value="-70"/>
+            </Property>
+            <Property name="u" dimension="?">
+                <FixedValue value="-10"/>
+            </Property>
+        </LL:Neuron>
+        <Layout url="none.xml" seed="123" minimum_distance="0"/>
+    </LL:Population>
+</LL:SpineML>

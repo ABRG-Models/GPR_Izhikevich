@@ -1,0 +1,46 @@
+<LL:SpineML xmlns="http://www.shef.ac.uk/SpineMLNetworkLayer" xmlns:LL="http://www.shef.ac.uk/SpineMLLowLevelNetworkLayer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="STN neuron after Terman, scaled IV" xsi:schemaLocation="http://www.shef.ac.uk/SpineMLLowLevelNetworkLayer SpineMLLowLevelNetworkLayer.xsd http://www.shef.ac.uk/SpineMLNetworkLayer SpineMLNetworkLayer.xsd">
+    <LL:Population>
+        <LL:Neuron name="Sebtest2" size="1" url="IzhiIVscaled.xml">
+            <Property dimension="?" name="Vpeak">
+                <FixedValue value="30" />
+            </Property>
+            <Property dimension="?" name="a">
+                <FixedValue value="0.02" />
+            </Property>
+            <Property dimension="?" name="b">
+                <FixedValue value="0.191" />
+            </Property>
+            <Property dimension="?" name="c">
+                <FixedValue value="-65" />
+            </Property>
+            <Property dimension="?" name="d">
+                <FixedValue value="0.05" />
+            </Property>
+            <Property dimension="?" name="k">
+                <FixedValue value="0.032" />
+            </Property>
+            <Property dimension="?" name="Ca">
+                <FixedValue value="2.5" />
+            </Property>
+            <Property dimension="?" name="vr">
+                <FixedValue value="-57.01245" />
+            </Property>
+            <Property dimension="?" name="vt">
+                <FixedValue value="-67.98755" />
+            </Property>
+            <Property dimension="?" name="SI">
+                <FixedValue value="5.0" />
+            </Property>
+            <Property dimension="?" name="T">
+                <FixedValue value="1" />
+            </Property>
+            <Property dimension="?" name="v">
+                <FixedValue value="-87.5" />
+            </Property>
+            <Property dimension="?" name="u">
+                <FixedValue value="-3.6" />
+            </Property>
+        </LL:Neuron>
+        <Layout minimum_distance="0" seed="123" url="none.xml" />
+    </LL:Population>
+</LL:SpineML>

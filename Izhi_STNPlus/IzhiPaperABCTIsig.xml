@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<SpineML xsi:schemaLocation="http://www.shef.ac.uk/SpineMLComponentLayer SpineMLComponentLayer.xsd" xmlns="http://www.shef.ac.uk/SpineMLComponentLayer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <ComponentClass type="neuron_body" name="IzhiPaperABCTIsig">
+  <Dynamics initial_regime="Depolarising">
+   <Regime name="Depolarising">
+    <TimeDerivative variable="v">
+     <MathInline>A*T*v*v + B*T*v + C*T - u*T + Isig*T/SI</MathInline>
+    </TimeDerivative>
+    <TimeDerivative variable="u">
+     <MathInline>a*T*(b*v-u)</MathInline>
+    </TimeDerivative>
+    <OnCondition target_regime="Depolarising">
+     <StateAssignment variable="v">
+      <MathInline>c</MathInline>
+     </StateAssignment>
+     <StateAssignment variable="u">
+      <MathInline>u+d</MathInline>
+     </StateAssignment>
+     <Trigger>
+      <MathInline>v>Vpeak</MathInline>
+     </Trigger>
+    </OnCondition>
+    <OnCondition target_regime="Hyperpolarising">
+     <Trigger>
+      <MathInline>I&lt;0</MathInline>
+     </Trigger>
+    </OnCondition>
+   </Regime>
+   <Regime name="Hyperpolarising">
+    <TimeDerivative variable="v">
+     <MathInline>A*T*v*v + B*T*v + C*T - u*T + I*T/SI</MathInline>
+    </TimeDerivative>
+    <TimeDerivative variable="u">
+     <MathInline>a*T*(b*v-u)</MathInline>
+    </TimeDerivative>
+    <OnCondition target_regime="Depolarising">
+     <Trigger>
+      <MathInline>I>=0</MathInline>
+     </Trigger>
+    </OnCondition>
+    <OnCondition target_regime="Hyperpolarising">
+     <StateAssignment variable="v">
+      <MathInline>c</MathInline>
+     </StateAssignment>
+     <StateAssignment variable="u">
+      <MathInline>u+d</MathInline>
+     </StateAssignment>
+     <Trigger>
+      <MathInline>v>Vpeak</MathInline>
+     </Trigger>
+    </OnCondition>
+   </Regime>
+   <Alias dimension="?" name="Isig">
+    <MathInline>Imax/(1+exp(-k*(I-I0))) - Imax/(1+exp(k*I0))</MathInline>
+   </Alias>
+   <StateVariable dimension="?" name="v"/>
+   <StateVariable dimension="?" name="u"/>
+  </Dynamics>
+  <AnalogReceivePort dimension="?" name="I"/>
+  <AnalogSendPort name="v"/>
+  <AnalogSendPort name="u"/>
+  <Parameter dimension="?" name="a"/>
+  <Parameter dimension="?" name="b"/>
+  <Parameter dimension="?" name="c"/>
+  <Parameter dimension="?" name="d"/>
+  <Parameter dimension="?" name="Vpeak"/>
+  <Parameter dimension="?" name="A"/>
+  <Parameter dimension="?" name="B"/>
+  <Parameter dimension="?" name="C"/>
+  <Parameter dimension="?" name="T"/>
+  <Parameter dimension="?" name="SI"/>
+  <Parameter dimension="?" name="k"/>
+  <Parameter dimension="?" name="I0"/>
+  <Parameter dimension="?" name="Imax"/>
+ </ComponentClass>
+</SpineML>

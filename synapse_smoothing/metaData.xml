@@ -1,0 +1,144 @@
+<modelMetaData>
+ <population name="STN">
+  <xPos value="-0.0475683"/>
+  <yPos value="5.45846"/>
+  <animSpeed value="0.2"/>
+  <aspectRatio value="1.66667"/>
+  <colour blue="0" green="0" red="0"/>
+  <size value="1"/>
+  <tag value="1"/>
+  <x3D value="0"/>
+  <y3D value="0"/>
+  <z3D value="0"/>
+  <is_visualised value="0"/>
+ </population>
+ <population name="Exciting">
+  <xPos value="-0.899147"/>
+  <yPos value="7.5356"/>
+  <animSpeed value="0.2"/>
+  <aspectRatio value="1.66667"/>
+  <colour blue="0" green="0" red="0"/>
+  <size value="1"/>
+  <tag value="2"/>
+  <x3D value="0"/>
+  <y3D value="0"/>
+  <z3D value="0"/>
+  <is_visualised value="0"/>
+ </population>
+ <projection destination="STN" source="Exciting" style="4">
+  <start x="-0.9342977404594421" y="7.035053730010986"/>
+  <curves>
+   <curve>
+    <C1 xpos="-0.9465835690498352" ypos="5.667250156402588"/>
+    <C2 xpos="-0.007251239847391844" ypos="7.382272243499756"/>
+    <end xpos="-0.03700456768274307" ypos="5.960100650787354"/>
+   </curve>
+  </curves>
+  <synapseConnection name="Exciting to STN Synapse 0 weight_update"/>
+  <synapseConnection name="Exciting to STN Synapse 1 weight_update"/>
+ </projection>
+ <genericInput destination="Exciting to STN Synapse 0 postsynapse" srcPort="v" source="STN" dstPort="v">
+  <start x="-0.2106234282255173" y="5.959447383880615"/>
+  <curves>
+   <curve>
+    <C1 xpos="-0.2709849178791046" ypos="6.144550323486328"/>
+    <C2 xpos="-0.03103376366198063" ypos="6.216603755950928"/>
+    <end xpos="-0.03700456768274307" ypos="5.960100650787354"/>
+   </curve>
+  </curves>
+  <connection/>
+ </genericInput>
+ <genericInput destination="Exciting to STN Synapse 1 postsynapse" srcPort="v" source="STN" dstPort="v">
+  <start x="-0.2588803470134735" y="5.959053993225098"/>
+  <curves>
+   <curve>
+    <C1 xpos="-0.3283320665359497" ypos="6.144809246063232"/>
+    <C2 xpos="-0.007245922461152077" ypos="6.287482261657715"/>
+    <end xpos="-0.03700456768274307" ypos="5.960100650787354"/>
+   </curve>
+  </curves>
+  <connection/>
+ </genericInput>
+ <population name="Inhibiting">
+  <xPos value="0.967908"/>
+  <yPos value="7.73777"/>
+  <animSpeed value="0.2"/>
+  <aspectRatio value="1.66667"/>
+  <colour blue="0" green="0" red="0"/>
+  <size value="1"/>
+  <tag value="4"/>
+  <x3D value="0"/>
+  <y3D value="0"/>
+  <z3D value="0"/>
+  <is_visualised value="0"/>
+ </population>
+ <projection destination="STN" source="Inhibiting" style="0">
+  <start x="0.9572879672050476" y="7.237978935241699"/>
+  <curves>
+   <curve>
+    <C1 xpos="0.9677262306213379" ypos="5.990746974945068"/>
+    <C2 xpos="0.3257281184196472" ypos="7.073300361633301"/>
+    <end xpos="0.2549014687538147" ypos="5.959935665130615"/>
+   </curve>
+  </curves>
+  <synapseConnection name="Inhibiting to STN Synapse 0 weight_update"/>
+ </projection>
+ <genericInput destination="Inhibiting to STN Synapse 0 postsynapse" srcPort="v" source="STN" dstPort="v">
+  <start x="0.3859229683876038" y="5.95925235748291"/>
+  <curves>
+   <curve>
+    <C1 xpos="0.3970828950405121" ypos="6.10930061340332"/>
+    <C2 xpos="0.2543778717517853" ypos="6.121214389801025"/>
+    <end xpos="0.2549014687538147" ypos="5.959935665130615"/>
+   </curve>
+  </curves>
+  <connection/>
+ </genericInput>
+ <population name="Smooth Exciting">
+  <xPos value="-3.03972"/>
+  <yPos value="6.10855"/>
+  <animSpeed value="0.2"/>
+  <aspectRatio value="1.66667"/>
+  <colour blue="0" green="0" red="0"/>
+  <size value="1"/>
+  <tag value="6"/>
+  <x3D value="0"/>
+  <y3D value="0"/>
+  <z3D value="0"/>
+  <is_visualised value="0"/>
+ </population>
+ <projection destination="STN" source="Smooth Exciting" style="4">
+  <start x="-2.548540592193604" y="6.009710311889648"/>
+  <curves>
+   <curve>
+    <C1 xpos="-1.481793999671936" ypos="6.073062419891357"/>
+    <C2 xpos="-1.898082375526428" ypos="5.478456020355225"/>
+    <end xpos="-0.8809036016464233" ypos="5.539306640625"/>
+   </curve>
+  </curves>
+  <synapseConnection name="Smooth Exciting to STN Synapse 0 weight_update"/>
+  <synapseConnection name="Smooth Exciting to STN Synapse 1 weight_update"/>
+ </projection>
+ <genericInput destination="Smooth Exciting to STN Synapse 0 postsynapse" srcPort="v" source="STN" dstPort="v">
+  <start x="-0.8809033036231995" y="5.364112854003906"/>
+  <curves>
+   <curve>
+    <C1 xpos="-1.11320424079895" ypos="5.311786651611328"/>
+    <C2 xpos="-1.255909085273743" ypos="5.561520099639893"/>
+    <end xpos="-0.8809036016464233" ypos="5.539306640625"/>
+   </curve>
+  </curves>
+  <connection/>
+ </genericInput>
+ <genericInput destination="Smooth Exciting to STN Synapse 1 postsynapse" srcPort="v" source="STN" dstPort="v">
+  <start x="-0.8809033036231995" y="5.352608680725098"/>
+  <curves>
+   <curve>
+    <C1 xpos="-1.089420080184937" ypos="5.216650009155273"/>
+    <C2 xpos="-1.386721849441528" ypos="5.620980262756348"/>
+    <end xpos="-0.8809036016464233" ypos="5.539306640625"/>
+   </curve>
+  </curves>
+  <connection/>
+ </genericInput>
+</modelMetaData>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<SpineML xsi:schemaLocation="http://www.shef.ac.uk/SpineMLComponentLayer SpineMLComponentLayer.xsd" xmlns="http://www.shef.ac.uk/SpineMLComponentLayer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <ComponentClass type="postsynapse" name="Current injection">
+  <Dynamics initial_regime="None">
+   <Regime name="None"/>
+   <Alias dimension="?" name="I">
+    <MathInline>I_inj</MathInline>
+   </Alias>
+  </Dynamics>
+  <AnalogSendPort name="I"/>
+  <AnalogReceivePort dimension="mV" name="v"/>
+  <ImpulseReceivePort dimension="?" name="S"/>
+  <Parameter dimension="pA" name="I_inj"/>
+ </ComponentClass>
+</SpineML>

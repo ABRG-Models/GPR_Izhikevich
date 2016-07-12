@@ -1,0 +1,26 @@
+def plot_izhi (title, v, u, Vn, nc_v, nc_u, Vg, ug, vdot, udot,
+               qvlowerv, qvupperv, qvloweru, qvupperu, qpspacing, qpveclen):
+
+    #%matplotlib inline
+    import matplotlib.pyplot as plt
+
+    plt.figure(figsize=(18,10))
+    plt.clf;
+
+    # Plot vector field
+    if qpspacing != 0:
+        # Note arbitrary scaling of udot by factor of 10 here:
+        Q = plt.quiver(Vg, ug, vdot, udot*10, pivot='mid', color='k', width=0.001, scale=qpveclen)
+        lef,rgt,bot,top = plt.axis()
+        plt.axis([lef, rgt, bot, top])
+    else:
+        plt.axis([qvlowerv, qvupperv, qvloweru, qvupperu])
+
+    plt.plot(Vn, nc_v, color='b')
+    plt.plot(Vn, nc_u, color='r')
+
+    plt.title(title)
+    plt.xlabel('v');
+    plt.ylabel('u');
+
+    plt.plot(v, u, color='g')

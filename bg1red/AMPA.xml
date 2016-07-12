@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<SpineML xsi:schemaLocation="http://www.shef.ac.uk/SpineMLComponentLayer SpineMLComponentLayer.xsd" xmlns="http://www.shef.ac.uk/SpineMLComponentLayer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <ComponentClass type="postsynapse" name="AMPA">
+  <Dynamics initial_regime="Current">
+   <Regime name="Current">
+    <TimeDerivative variable="h_ampa">
+     <MathInline>-h_ampa/tau_ampa</MathInline>
+    </TimeDerivative>
+    <OnImpulse target_regime="Current" src_port="S">
+     <StateAssignment variable="h_ampa">
+      <MathInline>h_ampa+(1-h_ampa/N_ampa)*S</MathInline>
+     </StateAssignment>
+    </OnImpulse>
+   </Regime>
+   <Alias dimension="?" name="I_ampa">
+    <MathInline>g_ampa*h_ampa*(E_ampa-v)</MathInline>
+   </Alias>
+   <StateVariable dimension="?" name="h_ampa"/>
+  </Dynamics>
+  <AnalogReducePort dimension="mV" name="v" reduce_op="+"/>
+  <AnalogSendPort name="I_ampa"/>
+  <ImpulseReceivePort dimension="?" name="S"/>
+  <Parameter dimension="ms" name="tau_ampa"/>
+  <Parameter dimension="mV" name="E_ampa"/>
+  <Parameter dimension="nS" name="g_ampa"/>
+  <Parameter dimension="?" name="N_ampa"/>
+ </ComponentClass>
+</SpineML>

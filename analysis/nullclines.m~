@@ -1,0 +1,82 @@
+% Quick scheme to view nullclines and poss. quiver plots for given
+% set of params.
+
+lowerV = -80;
+upperV = 30;
+qvlowerv = lowerV;
+qvupperv = upperV;
+qvloweru = -20;
+qvupperu = -10;
+qpscale = 5;
+
+% Params
+A=0.03;
+B=4;
+C=113.147;
+a=0.015;
+b=0.191;
+c=-65;
+d=0.05;
+T=0.4;
+constI=0;
+
+%  nullclines
+nullcline_fig = figure(44);
+clf;
+tstr = sprintf ('Nullclines');
+%sz = size(y(:,1));
+Vn = linspace (lowerV, upperV, 1000);
+
+wv = A.*Vn.*Vn + B.*Vn + C + constI;%./T;
+plot(Vn', wv, 'b')
+hold on
+
+ww = b .* Vn;
+
+plot(Vn, ww, 'r')
+ylim([-50 50]);
+xlabel('v');
+ylabel('u');
+
+%  find zeros
+warning off MATLAB:fzero:UndeterminedSyntax
+
+opts = optimset('fzero');
+optimset(opts, 'TolX', 1e-15);
+
+initV=-50;
+display(['Calling model_Iz_zeros_paperform with initV=' ...
+         num2str(initV) ' and constI=' num2str(constI)]);
+[vz, fval, exitflag] = fzero(@model_Iz_zeros_paperform, initV, ...
+                             opts, constI, a, b, A, B, C, T);
+uz = b .* vz;
+        
+% Now quiverit.
+thescale = abs(qvlowerv-qvupperv)./qpscale;
+Vgv = linspace(qvlowerv, qvupperv, thescale);
+ugv = linspace(qvloweru, qvupperu, thescale);
+
+% Create trajectory grid
+[Vg, ug] = meshgrid(Vgv, ugv);
+
+% Calculate v/u for the trajectory region:
+dv = A.*T.*Vg.*Vg + B.*T.*Vg + C.*T - ug.*T + constI.*T;
+du = a.*T.*(b.*Vg - ug);
+
+do_power = 1;
+[stem_x, stem_y, arrow1_x, arrow1_y, arrow2_x, arrow2_y, vlens] = KG_quiver(Vg, ug, dv, du, qpscale/.00001, do_power);
+hold on
+v = axis;
+plot(vz, uz, 'og')
+%plot(y(:,1), y(:,2), 'g')
+axis(v);
+
+% Add nullclines in after vector field
+plot(Vn', wv, 'b')
+plot(Vn, ww, 'r')
+
+max_len = max(vlens);
+fprintf('maximum vector length in vector field is %.5g\n', max_len);
+ylabel('u');
+xlabel('v');
+

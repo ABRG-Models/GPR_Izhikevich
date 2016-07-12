@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<SpineML xsi:schemaLocation="http://www.shef.ac.uk/SpineMLComponentLayer SpineMLComponentLayer.xsd" xmlns="http://www.shef.ac.uk/SpineMLComponentLayer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <ComponentClass type="postsynapse" name="GABAvsyn">
+  <Dynamics initial_regime="Current">
+   <Regime name="Current">
+    <TimeDerivative variable="h_gaba">
+     <MathInline>-h_gaba/tau_gaba</MathInline>
+    </TimeDerivative>
+    <TimeDerivative variable="v_syn">
+     <MathInline>(-v_syn+v)/tau_syn</MathInline>
+    </TimeDerivative>
+    <OnImpulse target_regime="Current" src_port="S">
+     <StateAssignment variable="h_gaba">
+      <MathInline>h_gaba+(1-h_gaba/N_gaba)*S</MathInline>
+     </StateAssignment>
+    </OnImpulse>
+   </Regime>
+   <Alias dimension="?" name="I_gaba">
+    <MathInline>g_gaba*h_gaba*(E_gaba-v_syn)</MathInline>
+   </Alias>
+   <StateVariable dimension="?" name="h_gaba"/>
+   <StateVariable dimension="mV" name="v_syn"/>
+  </Dynamics>
+  <AnalogReducePort dimension="mV" name="v" reduce_op="+"/>
+  <AnalogSendPort name="I_gaba"/>
+  <ImpulseReceivePort dimension="?" name="S"/>
+  <Parameter dimension="ms" name="tau_gaba"/>
+  <Parameter dimension="mV" name="E_gaba"/>
+  <Parameter dimension="nS" name="g_gaba"/>
+  <Parameter dimension="?" name="N_gaba"/>
+  <Parameter dimension="ms" name="tau_syn"/>
+ </ComponentClass>
+</SpineML>

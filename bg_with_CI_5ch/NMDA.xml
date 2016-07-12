@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<SpineML xsi:schemaLocation="http://www.shef.ac.uk/SpineMLComponentLayer SpineMLComponentLayer.xsd" xmlns="http://www.shef.ac.uk/SpineMLComponentLayer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <ComponentClass type="postsynapse" name="NMDA">
+  <Dynamics initial_regime="Current">
+   <Regime name="Current">
+    <TimeDerivative variable="h_nmda">
+     <MathInline>-h_nmda/tau_nmda</MathInline>
+    </TimeDerivative>
+    <OnImpulse target_regime="Current" src_port="S">
+     <StateAssignment variable="h_nmda">
+      <MathInline>h_nmda+(1-h_nmda/N_nmda)*S</MathInline>
+     </StateAssignment>
+    </OnImpulse>
+   </Regime>
+   <Alias dimension="?" name="I_nmda">
+    <MathInline>Bv*(g_nmda*h_nmda*(E_nmda-v))</MathInline>
+   </Alias>
+   <Alias dimension="?" name="Bv">
+    <MathInline>1/(1+(MgIon/3.57)*exp(-v*0.062))</MathInline>
+   </Alias>
+   <StateVariable dimension="?" name="h_nmda"/>
+  </Dynamics>
+  <AnalogReducePort dimension="mV" name="v" reduce_op="+"/>
+  <AnalogSendPort name="I_nmda"/>
+  <ImpulseReceivePort dimension="?" name="S"/>
+  <Parameter dimension="ms" name="tau_nmda"/>
+  <Parameter dimension="mV" name="E_nmda"/>
+  <Parameter dimension="nS" name="g_nmda"/>
+  <Parameter dimension="mmol" name="MgIon"/>
+  <Parameter dimension="?" name="N_nmda"/>
+ </ComponentClass>
+</SpineML>

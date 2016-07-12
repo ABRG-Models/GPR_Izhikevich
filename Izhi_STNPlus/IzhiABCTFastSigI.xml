@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<SpineML xsi:schemaLocation="http://www.shef.ac.uk/SpineMLComponentLayer SpineMLComponentLayer.xsd" xmlns="http://www.shef.ac.uk/SpineMLComponentLayer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <ComponentClass type="neuron_body" name="IzhiABCTFastSigI">
+  <Dynamics initial_regime="Depolarising">
+   <Regime name="Depolarising">
+    <TimeDerivative variable="v">
+     <MathInline>AT*v*v + BT*v + CT - u*T + Isig*ToverSI</MathInline>
+    </TimeDerivative>
+    <TimeDerivative variable="u">
+     <MathInline>aT*(b*v-u)</MathInline>
+    </TimeDerivative>
+    <OnCondition target_regime="Depolarising">
+     <StateAssignment variable="v">
+      <MathInline>c</MathInline>
+     </StateAssignment>
+     <StateAssignment variable="u">
+      <MathInline>u+d</MathInline>
+     </StateAssignment>
+     <EventOut port="spike"/>
+     <Trigger>
+      <MathInline>v>Vpeak</MathInline>
+     </Trigger>
+    </OnCondition>
+    <OnCondition target_regime="Hyperpolarising">
+     <Trigger>
+      <MathInline>I&lt;0</MathInline>
+     </Trigger>
+    </OnCondition>
+   </Regime>
+   <Regime name="Hyperpolarising">
+    <TimeDerivative variable="v">
+     <MathInline>AT*v*v + BT*v + CT - u*T + I*ToverSI</MathInline>
+    </TimeDerivative>
+    <TimeDerivative variable="u">
+     <MathInline>aT*(b*v-u)</MathInline>
+    </TimeDerivative>
+    <OnCondition target_regime="Depolarising">
+     <Trigger>
+      <MathInline>I>=0</MathInline>
+     </Trigger>
+    </OnCondition>
+    <OnCondition target_regime="Hyperpolarising">
+     <StateAssignment variable="v">
+      <MathInline>c</MathInline>
+     </StateAssignment>
+     <StateAssignment variable="u">
+      <MathInline>u+d</MathInline>
+     </StateAssignment>
+     <EventOut port="spike"/>
+     <Trigger>
+      <MathInline>v>Vpeak</MathInline>
+     </Trigger>
+    </OnCondition>
+   </Regime>
+   <Alias dimension="?" name="I">
+    <MathInline>I_AMPA + I_NMDA + I_GABA</MathInline>
+   </Alias>
+   <Alias dimension="?" name="Isig">
+    <MathInline>Imax/(1+exp(-k*(I-I0))) - Imax/(1+exp(k*I0))</MathInline>
+   </Alias>
+   <StateVariable dimension="mV" name="v"/>
+   <StateVariable dimension="?" name="u"/>
+  </Dynamics>
+  <AnalogReducePort dimension="pA" name="I_AMPA" reduce_op="+"/>
+  <AnalogSendPort name="v"/>
+  <AnalogSendPort name="u"/>
+  <AnalogReducePort dimension="pA" name="I_NMDA" reduce_op="+"/>
+  <AnalogReducePort dimension="pA" name="I_GABA" reduce_op="+"/>
+  <AnalogSendPort name="I"/>
+  <EventSendPort name="spike"/>
+  <Parameter dimension="?" name="aT"/>
+  <Parameter dimension="?" name="b"/>
+  <Parameter dimension="?" name="c"/>
+  <Parameter dimension="?" name="d"/>
+  <Parameter dimension="?" name="Vpeak"/>
+  <Parameter dimension="?" name="AT"/>
+  <Parameter dimension="?" name="BT"/>
+  <Parameter dimension="?" name="CT"/>
+  <Parameter dimension="?" name="T"/>
+  <Parameter dimension="?" name="ToverSI"/>
+  <Parameter dimension="?" name="Imax"/>
+  <Parameter dimension="?" name="I0"/>
+  <Parameter dimension="?" name="k"/>
+  <Parameter dimension="?" name="Ioff"/>
+ </ComponentClass>
+</SpineML>
