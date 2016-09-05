@@ -55,7 +55,7 @@
         <LL:Projection dst_population="SNr">
             <LL:Synapse>
                 <AllToAllConnection>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="2"/>
                     </Delay>
                 </AllToAllConnection>
@@ -86,7 +86,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="SNr" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -95,7 +95,7 @@
             </LL:Synapse>
             <LL:Synapse>
                 <AllToAllConnection>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="2"/>
                     </Delay>
                 </AllToAllConnection>
@@ -129,7 +129,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="SNr" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -140,7 +140,7 @@
         <LL:Projection dst_population="GPe">
             <LL:Synapse>
                 <AllToAllConnection>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="2"/>
                     </Delay>
                 </AllToAllConnection>
@@ -171,7 +171,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="GPe" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -180,7 +180,7 @@
             </LL:Synapse>
             <LL:Synapse>
                 <AllToAllConnection>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="2"/>
                     </Delay>
                 </AllToAllConnection>
@@ -214,7 +214,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="GPe" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -308,7 +308,7 @@
             <LL:Synapse>
                 <ConnectionList>
                     <BinaryFile file_name="conn_GPe_to_SNr_syn0.bin" num_connections="241" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="2"/>
                     </Delay>
                 </ConnectionList>
@@ -339,7 +339,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="SNr" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -351,7 +351,7 @@
             <LL:Synapse>
                 <ConnectionList>
                     <BinaryFile file_name="conn_GPe_to_GPe_syn0.bin" num_connections="485" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="1"/>
                     </Delay>
                 </ConnectionList>
@@ -382,7 +382,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="GPe" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -393,8 +393,8 @@
         <LL:Projection dst_population="STN">
             <LL:Synapse>
                 <ConnectionList>
-                    <BinaryFile file_name="connection0.bin" num_connections="261" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <BinaryFile file_name="conn_GPe_to_STN_syn0.bin" num_connections="261" explicit_delay_flag="0" packed_data="true"/>
+                    <Delay dimension="ms">
                         <FixedValue value="2"/>
                     </Delay>
                 </ConnectionList>
@@ -425,7 +425,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="STN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -486,8 +486,8 @@
         <LL:Projection dst_population="SNr">
             <LL:Synapse>
                 <ConnectionList>
-                    <BinaryFile file_name="connection1.bin" num_connections="244" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <BinaryFile file_name="conn_D1_MSN_to_SNr_syn0.bin" num_connections="244" explicit_delay_flag="0" packed_data="true"/>
+                    <Delay dimension="ms">
                         <FixedValue value="2"/>
                     </Delay>
                 </ConnectionList>
@@ -518,7 +518,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="SNr" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -576,8 +576,8 @@
         <LL:Projection dst_population="GPe">
             <LL:Synapse>
                 <ConnectionList>
-                    <BinaryFile file_name="connection2.bin" num_connections="238" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <BinaryFile file_name="conn_D2_MSN_to_GPe_syn0.bin" num_connections="238" explicit_delay_flag="0" packed_data="true"/>
+                    <Delay dimension="ms">
                         <FixedValue value="2"/>
                     </Delay>
                 </ConnectionList>
@@ -608,7 +608,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="GPe" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -623,7 +623,7 @@
         <LL:Projection dst_population="D1 MSN">
             <LL:Synapse>
                 <FixedProbabilityConnection probability="0.1" seed="123">
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </FixedProbabilityConnection>
@@ -652,7 +652,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="D1 MSN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -661,7 +661,7 @@
             </LL:Synapse>
             <LL:Synapse>
                 <FixedProbabilityConnection probability="0.1" seed="123">
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </FixedProbabilityConnection>
@@ -695,7 +695,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="D1 MSN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -706,7 +706,7 @@
         <LL:Projection dst_population="D2 MSN">
             <LL:Synapse>
                 <FixedProbabilityConnection probability="0.1" seed="123">
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </FixedProbabilityConnection>
@@ -735,7 +735,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="D2 MSN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -744,7 +744,7 @@
             </LL:Synapse>
             <LL:Synapse>
                 <FixedProbabilityConnection probability="0.1" seed="123">
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </FixedProbabilityConnection>
@@ -778,7 +778,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="D2 MSN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -789,7 +789,7 @@
         <LL:Projection dst_population="STN">
             <LL:Synapse>
                 <FixedProbabilityConnection probability="0.1" seed="123">
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </FixedProbabilityConnection>
@@ -818,7 +818,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="STN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -827,7 +827,7 @@
             </LL:Synapse>
             <LL:Synapse>
                 <FixedProbabilityConnection probability="0.1" seed="123">
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </FixedProbabilityConnection>
@@ -861,7 +861,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="STN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -876,8 +876,8 @@
         <LL:Projection dst_population="D1 MSN">
             <LL:Synapse>
                 <ConnectionList>
-                    <BinaryFile file_name="connection3.bin" num_connections="390" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <BinaryFile file_name="conn_Selected_to_D1_MSN_syn0.bin" num_connections="390" explicit_delay_flag="0" packed_data="true"/>
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -908,7 +908,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="D1 MSN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -918,7 +918,7 @@
             <LL:Synapse>
                 <ConnectionList>
                     <BinaryFile file_name="conn_Selected_to_D1_MSN_syn1.bin" num_connections="368" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -952,7 +952,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="D1 MSN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -963,8 +963,8 @@
         <LL:Projection dst_population="D2 MSN">
             <LL:Synapse>
                 <ConnectionList>
-                    <BinaryFile file_name="connection5.bin" num_connections="418" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <BinaryFile file_name="conn_Selected_to_D2_MSN_syn0.bin" num_connections="418" explicit_delay_flag="0" packed_data="true"/>
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -995,7 +995,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="D2 MSN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -1005,7 +1005,7 @@
             <LL:Synapse>
                 <ConnectionList>
                     <BinaryFile file_name="conn_Selected_to_D2_MSN_syn1.bin" num_connections="382" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -1039,7 +1039,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="D2 MSN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -1051,7 +1051,7 @@
             <LL:Synapse>
                 <ConnectionList>
                     <BinaryFile file_name="conn_Selected_to_STN_syn0.bin" num_connections="406" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -1082,7 +1082,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="STN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -1092,7 +1092,7 @@
             <LL:Synapse>
                 <ConnectionList>
                     <BinaryFile file_name="conn_Selected_to_STN_syn1.bin" num_connections="392" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -1126,7 +1126,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="STN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -1142,7 +1142,7 @@
             <LL:Synapse>
                 <ConnectionList>
                     <BinaryFile file_name="conn_Selected2_to_D2_MSN_syn0.bin" num_connections="425" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -1173,7 +1173,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="D2 MSN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -1183,7 +1183,7 @@
             <LL:Synapse>
                 <ConnectionList>
                     <BinaryFile file_name="conn_Selected2_to_D2_MSN_syn1.bin" num_connections="417" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -1217,7 +1217,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="D2 MSN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -1229,7 +1229,7 @@
             <LL:Synapse>
                 <ConnectionList>
                     <BinaryFile file_name="conn_Selected2_to_D1_MSN_syn0.bin" num_connections="372" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -1260,7 +1260,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="D1 MSN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -1270,7 +1270,7 @@
             <LL:Synapse>
                 <ConnectionList>
                     <BinaryFile file_name="conn_Selected2_to_D1_MSN_syn1.bin" num_connections="363" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -1304,7 +1304,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="D1 MSN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -1316,7 +1316,7 @@
             <LL:Synapse>
                 <ConnectionList>
                     <BinaryFile file_name="conn_Selected2_to_STN_syn0.bin" num_connections="425" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -1347,7 +1347,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="STN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -1357,7 +1357,7 @@
             <LL:Synapse>
                 <ConnectionList>
                     <BinaryFile file_name="conn_Selected2_to_STN_syn1.bin" num_connections="367" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -1391,7 +1391,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="STN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
