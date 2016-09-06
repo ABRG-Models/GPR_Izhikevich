@@ -317,7 +317,7 @@
                         <FixedValue value="2"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="GPe to SNr Synapse 0 postsynapse" url="GABAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_gaba" output_dst_port="I_AMPA">
+                <LL:PostSynapse name="GPe to SNr Synapse 0 postsynapse" url="GABAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_gaba" output_dst_port="I_GABA">
                     <Property name="tau_gaba" dimension="ms">
                         <FixedValue value="4"/>
                     </Property>
@@ -360,7 +360,7 @@
                         <FixedValue value="10"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="GPe to GPe Synapse 0 postsynapse" url="GABAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_gaba" output_dst_port="I_AMPA">
+                <LL:PostSynapse name="GPe to GPe Synapse 0 postsynapse" url="GABAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_gaba" output_dst_port="I_GABA">
                     <Property name="tau_gaba" dimension="ms">
                         <FixedValue value="4"/>
                     </Property>
@@ -403,7 +403,7 @@
                         <FixedValue value="2"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="GPe to STN Synapse 0 postsynapse" url="GABAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_gaba" output_dst_port="I_AMPA">
+                <LL:PostSynapse name="GPe to STN Synapse 0 postsynapse" url="GABAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_gaba" output_dst_port="I_GABA">
                     <Property name="tau_gaba" dimension="ms">
                         <FixedValue value="4"/>
                     </Property>
@@ -836,7 +836,7 @@
                         <FixedValue value="1"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="Background to STN Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_AMPA">
+                <LL:PostSynapse name="Background to STN Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_NMDA">
                     <Property name="tau_nmda" dimension="ms">
                         <FixedValue value="160"/>
                     </Property>
@@ -886,7 +886,7 @@
                         <FixedValue value="4"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="Selected to D1 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_NMDA_orig">
+                <LL:PostSynapse name="Selected to D1 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA">
                     <Property name="tau_ampa" dimension="ms">
                         <FixedValue value="6"/>
                     </Property>
@@ -973,7 +973,7 @@
                         <FixedValue value="4"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="Selected to D2 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_NMDA">
+                <LL:PostSynapse name="Selected to D2 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA_orig">
                     <Property name="tau_ampa" dimension="ms">
                         <FixedValue value="6"/>
                     </Property>
@@ -1101,7 +1101,7 @@
                         <FixedValue value="1"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="Selected to STN Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_AMPA">
+                <LL:PostSynapse name="Selected to STN Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_NMDA">
                     <Property name="tau_nmda" dimension="ms">
                         <FixedValue value="160"/>
                     </Property>
@@ -1151,7 +1151,7 @@
                         <FixedValue value="4"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="Selected2 to D2 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_NMDA">
+                <LL:PostSynapse name="Selected2 to D2 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA_orig">
                     <Property name="tau_ampa" dimension="ms">
                         <FixedValue value="6"/>
                     </Property>
@@ -1238,7 +1238,7 @@
                         <FixedValue value="4"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="Selected2 to D1 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_NMDA_orig">
+                <LL:PostSynapse name="Selected2 to D1 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA">
                     <Property name="tau_ampa" dimension="ms">
                         <FixedValue value="6"/>
                     </Property>
@@ -1366,7 +1366,7 @@
                         <FixedValue value="1"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="Selected2 to STN Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_AMPA">
+                <LL:PostSynapse name="Selected2 to STN Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_NMDA">
                     <Property name="tau_nmda" dimension="ms">
                         <FixedValue value="160"/>
                     </Property>
