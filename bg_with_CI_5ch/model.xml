@@ -55,7 +55,7 @@
         <LL:Projection dst_population="SNr">
             <LL:Synapse>
                 <AllToAllConnection>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="2"/>
                     </Delay>
                 </AllToAllConnection>
@@ -86,7 +86,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="SNr" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -95,7 +95,7 @@
             </LL:Synapse>
             <LL:Synapse>
                 <AllToAllConnection>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="2"/>
                     </Delay>
                 </AllToAllConnection>
@@ -129,7 +129,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="SNr" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -140,7 +140,7 @@
         <LL:Projection dst_population="GPe">
             <LL:Synapse>
                 <AllToAllConnection>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="2"/>
                     </Delay>
                 </AllToAllConnection>
@@ -171,7 +171,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="GPe" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -180,7 +180,7 @@
             </LL:Synapse>
             <LL:Synapse>
                 <AllToAllConnection>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="2"/>
                     </Delay>
                 </AllToAllConnection>
@@ -214,7 +214,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="GPe" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -308,7 +308,7 @@
             <LL:Synapse>
                 <ConnectionList>
                     <BinaryFile file_name="conn_GPe_to_SNr_syn0.bin" num_connections="370" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="2"/>
                     </Delay>
                 </ConnectionList>
@@ -317,7 +317,7 @@
                         <FixedValue value="2"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="GPe to SNr Synapse 0 postsynapse" url="GABAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_gaba" output_dst_port="I_AMPA">
+                <LL:PostSynapse name="GPe to SNr Synapse 0 postsynapse" url="GABAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_gaba" output_dst_port="I_GABA">
                     <Property name="tau_gaba" dimension="ms">
                         <FixedValue value="4"/>
                     </Property>
@@ -339,7 +339,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="SNr" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -351,7 +351,7 @@
             <LL:Synapse>
                 <ConnectionList>
                     <BinaryFile file_name="conn_GPe_to_GPe_syn0.bin" num_connections="1638" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="1"/>
                     </Delay>
                 </ConnectionList>
@@ -360,7 +360,7 @@
                         <FixedValue value="5"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="GPe to GPe Synapse 0 postsynapse" url="GABAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_gaba" output_dst_port="I_AMPA">
+                <LL:PostSynapse name="GPe to GPe Synapse 0 postsynapse" url="GABAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_gaba" output_dst_port="I_GABA">
                     <Property name="tau_gaba" dimension="ms">
                         <FixedValue value="4"/>
                     </Property>
@@ -382,7 +382,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="GPe" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -394,7 +394,7 @@
             <LL:Synapse>
                 <ConnectionList>
                     <BinaryFile file_name="conn_GPe_to_STN_syn0.bin" num_connections="440" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="2"/>
                     </Delay>
                 </ConnectionList>
@@ -403,7 +403,7 @@
                         <FixedValue value="2"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="GPe to STN Synapse 0 postsynapse" url="GABAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_gaba" output_dst_port="I_AMPA">
+                <LL:PostSynapse name="GPe to STN Synapse 0 postsynapse" url="GABAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_gaba" output_dst_port="I_GABA">
                     <Property name="tau_gaba" dimension="ms">
                         <FixedValue value="4"/>
                     </Property>
@@ -425,7 +425,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="STN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -487,7 +487,7 @@
             <LL:Synapse>
                 <ConnectionList>
                     <BinaryFile file_name="conn_D1_MSN_to_SNr_syn0.bin" num_connections="431" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="2"/>
                     </Delay>
                 </ConnectionList>
@@ -518,7 +518,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="SNr" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -577,7 +577,7 @@
             <LL:Synapse>
                 <ConnectionList>
                     <BinaryFile file_name="conn_D2_MSN_to_GPe_syn0.bin" num_connections="420" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="2"/>
                     </Delay>
                 </ConnectionList>
@@ -608,7 +608,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="GPe" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -623,7 +623,7 @@
         <LL:Projection dst_population="D1 MSN">
             <LL:Synapse>
                 <FixedProbabilityConnection probability="0.1" seed="123">
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </FixedProbabilityConnection>
@@ -652,7 +652,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="D1 MSN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -661,7 +661,7 @@
             </LL:Synapse>
             <LL:Synapse>
                 <FixedProbabilityConnection probability="0.1" seed="123">
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </FixedProbabilityConnection>
@@ -695,7 +695,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="D1 MSN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -706,7 +706,7 @@
         <LL:Projection dst_population="D2 MSN">
             <LL:Synapse>
                 <FixedProbabilityConnection probability="0.1" seed="123">
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </FixedProbabilityConnection>
@@ -735,7 +735,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="D2 MSN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -744,7 +744,7 @@
             </LL:Synapse>
             <LL:Synapse>
                 <FixedProbabilityConnection probability="0.1" seed="123">
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </FixedProbabilityConnection>
@@ -778,7 +778,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="D2 MSN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -789,7 +789,7 @@
         <LL:Projection dst_population="STN">
             <LL:Synapse>
                 <FixedProbabilityConnection probability="0.1" seed="123">
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </FixedProbabilityConnection>
@@ -818,7 +818,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="STN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -827,7 +827,7 @@
             </LL:Synapse>
             <LL:Synapse>
                 <FixedProbabilityConnection probability="0.1" seed="123">
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </FixedProbabilityConnection>
@@ -836,7 +836,7 @@
                         <FixedValue value="1"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="Background to STN Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_AMPA">
+                <LL:PostSynapse name="Background to STN Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_NMDA">
                     <Property name="tau_nmda" dimension="ms">
                         <FixedValue value="160"/>
                     </Property>
@@ -861,7 +861,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="STN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -926,7 +926,7 @@
             <LL:Synapse>
                 <ConnectionList>
                     <BinaryFile file_name="conn_CortIntCh2_to_D1_MSN_syn0.bin" num_connections="49" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -935,7 +935,7 @@
                         <FixedValue value="4"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="CortIntCh2 to D1 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_NMDA_orig">
+                <LL:PostSynapse name="CortIntCh2 to D1 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA">
                     <Property name="tau_ampa" dimension="ms">
                         <FixedValue value="6"/>
                     </Property>
@@ -957,7 +957,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="D1 MSN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -967,7 +967,7 @@
             <LL:Synapse>
                 <ConnectionList>
                     <BinaryFile file_name="conn_CortIntCh2_to_D1_MSN_syn1.bin" num_connections="64" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -1001,7 +1001,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="D1 MSN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -1013,7 +1013,7 @@
             <LL:Synapse>
                 <ConnectionList>
                     <BinaryFile file_name="conn_CortIntCh2_to_STN_syn0.bin" num_connections="37" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -1044,7 +1044,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="STN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -1054,7 +1054,7 @@
             <LL:Synapse>
                 <ConnectionList>
                     <BinaryFile file_name="conn_CortIntCh2_to_STN_syn1.bin" num_connections="47" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -1063,7 +1063,7 @@
                         <FixedValue value="1"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="CortIntCh2 to STN Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_AMPA">
+                <LL:PostSynapse name="CortIntCh2 to STN Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_NMDA">
                     <Property name="tau_nmda" dimension="ms">
                         <FixedValue value="160"/>
                     </Property>
@@ -1088,7 +1088,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="STN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -1100,7 +1100,7 @@
             <LL:Synapse>
                 <ConnectionList>
                     <BinaryFile file_name="conn_CortIntCh2_to_D2_MSN_syn0.bin" num_connections="35" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -1131,7 +1131,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="D2 MSN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -1141,7 +1141,7 @@
             <LL:Synapse>
                 <ConnectionList>
                     <BinaryFile file_name="conn_CortIntCh2_to_D2_MSN_syn1.bin" num_connections="49" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -1177,7 +1177,7 @@
                     </Property>
                     <LL:Input src="D2 MSN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -1242,7 +1242,7 @@
             <LL:Synapse>
                 <ConnectionList>
                     <BinaryFile file_name="conn_CortIntCh1_to_D2_MSN_syn0.bin" num_connections="33" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -1273,7 +1273,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="D2 MSN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -1283,7 +1283,7 @@
             <LL:Synapse>
                 <ConnectionList>
                     <BinaryFile file_name="conn_CortIntCh1_to_D2_MSN_syn1.bin" num_connections="64" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -1317,7 +1317,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="D2 MSN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -1357,7 +1357,7 @@
                     <Connection src_neuron="12" dst_neuron="16"/>
                     <Connection src_neuron="12" dst_neuron="19"/>
                     <Connection src_neuron="14" dst_neuron="6"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -1388,7 +1388,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="STN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -1398,7 +1398,7 @@
             <LL:Synapse>
                 <ConnectionList>
                     <BinaryFile file_name="conn_CortIntCh1_to_STN_syn1.bin" num_connections="58" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -1407,7 +1407,7 @@
                         <FixedValue value="1"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="CortIntCh1 to STN Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_AMPA">
+                <LL:PostSynapse name="CortIntCh1 to STN Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_NMDA">
                     <Property name="tau_nmda" dimension="ms">
                         <FixedValue value="160"/>
                     </Property>
@@ -1432,7 +1432,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="STN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -1444,7 +1444,7 @@
             <LL:Synapse>
                 <ConnectionList>
                     <BinaryFile file_name="conn_CortIntCh1_to_D1_MSN_syn0.bin" num_connections="52" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -1453,7 +1453,7 @@
                         <FixedValue value="4"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="CortIntCh1 to D1 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_NMDA_orig">
+                <LL:PostSynapse name="CortIntCh1 to D1 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA">
                     <Property name="tau_ampa" dimension="ms">
                         <FixedValue value="6"/>
                     </Property>
@@ -1475,7 +1475,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="D1 MSN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -1485,7 +1485,7 @@
             <LL:Synapse>
                 <ConnectionList>
                     <BinaryFile file_name="conn_CortIntCh1_to_D1_MSN_syn1.bin" num_connections="64" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -1519,7 +1519,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="D1 MSN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -1584,7 +1584,7 @@
             <LL:Synapse>
                 <ConnectionList>
                     <BinaryFile file_name="conn_CortIntCh3_to_D2_MSN_syn0.bin" num_connections="37" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -1615,7 +1615,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="D2 MSN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -1638,7 +1638,7 @@
                     <Connection src_neuron="4" dst_neuron="59"/>
                     <Connection src_neuron="5" dst_neuron="43"/>
                     <Connection src_neuron="5" dst_neuron="44"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -1674,7 +1674,7 @@
                     </Property>
                     <LL:Input src="D2 MSN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -1686,7 +1686,7 @@
             <LL:Synapse>
                 <ConnectionList>
                     <BinaryFile file_name="conn_CortIntCh3_to_STN_syn0.bin" num_connections="40" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -1717,7 +1717,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="STN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -1742,7 +1742,7 @@
                     <Connection src_neuron="7" dst_neuron="45"/>
                     <Connection src_neuron="7" dst_neuron="52"/>
                     <Connection src_neuron="7" dst_neuron="57"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -1751,7 +1751,7 @@
                         <FixedValue value="1"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="CortIntCh3 to STN Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_AMPA">
+                <LL:PostSynapse name="CortIntCh3 to STN Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_NMDA">
                     <Property name="tau_nmda" dimension="ms">
                         <FixedValue value="160"/>
                     </Property>
@@ -1776,7 +1776,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="STN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -1788,7 +1788,7 @@
             <LL:Synapse>
                 <ConnectionList>
                     <BinaryFile file_name="conn_CortIntCh3_to_D1_MSN_syn0.bin" num_connections="39" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -1797,7 +1797,7 @@
                         <FixedValue value="4"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="CortIntCh3 to D1 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_NMDA_orig">
+                <LL:PostSynapse name="CortIntCh3 to D1 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA">
                     <Property name="tau_ampa" dimension="ms">
                         <FixedValue value="6"/>
                     </Property>
@@ -1819,7 +1819,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="D1 MSN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -1848,7 +1848,7 @@
                     <Connection src_neuron="7" dst_neuron="46"/>
                     <Connection src_neuron="8" dst_neuron="45"/>
                     <Connection src_neuron="8" dst_neuron="50"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -1882,7 +1882,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="D1 MSN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -1947,7 +1947,7 @@
             <LL:Synapse>
                 <ConnectionList>
                     <BinaryFile file_name="conn_CortIntCh4_to_D2_MSN_syn0.bin" num_connections="32" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -1978,7 +1978,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="D2 MSN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -2007,7 +2007,7 @@
                     <Connection src_neuron="17" dst_neuron="39"/>
                     <Connection src_neuron="18" dst_neuron="31"/>
                     <Connection src_neuron="18" dst_neuron="38"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -2043,7 +2043,7 @@
                     </Property>
                     <LL:Input src="D2 MSN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -2055,7 +2055,7 @@
             <LL:Synapse>
                 <ConnectionList>
                     <BinaryFile file_name="conn_CortIntCh4_to_STN_syn0.bin" num_connections="34" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -2086,7 +2086,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="STN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -2117,7 +2117,7 @@
                     <Connection src_neuron="17" dst_neuron="34"/>
                     <Connection src_neuron="17" dst_neuron="36"/>
                     <Connection src_neuron="17" dst_neuron="38"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -2126,7 +2126,7 @@
                         <FixedValue value="1"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="CortIntCh4 to STN Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_AMPA">
+                <LL:PostSynapse name="CortIntCh4 to STN Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_NMDA">
                     <Property name="tau_nmda" dimension="ms">
                         <FixedValue value="160"/>
                     </Property>
@@ -2151,7 +2151,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="STN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -2163,7 +2163,7 @@
             <LL:Synapse>
                 <ConnectionList>
                     <BinaryFile file_name="conn_CortIntCh4_to_D1_MSN_syn0.bin" num_connections="53" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -2172,7 +2172,7 @@
                         <FixedValue value="4"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="CortIntCh4 to D1 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_NMDA_orig">
+                <LL:PostSynapse name="CortIntCh4 to D1 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA">
                     <Property name="tau_ampa" dimension="ms">
                         <FixedValue value="6"/>
                     </Property>
@@ -2194,7 +2194,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="D1 MSN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -2220,7 +2220,7 @@
                     <Connection src_neuron="18" dst_neuron="34"/>
                     <Connection src_neuron="18" dst_neuron="38"/>
                     <Connection src_neuron="19" dst_neuron="35"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -2254,7 +2254,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="D1 MSN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -2319,7 +2319,7 @@
             <LL:Synapse>
                 <ConnectionList>
                     <BinaryFile file_name="conn_CortIntCh5_to_D2_MSN_syn0.bin" num_connections="39" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -2350,7 +2350,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="D2 MSN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -2372,7 +2372,7 @@
                     <Connection src_neuron="14" dst_neuron="45"/>
                     <Connection src_neuron="17" dst_neuron="41"/>
                     <Connection src_neuron="17" dst_neuron="49"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -2408,7 +2408,7 @@
                     </Property>
                     <LL:Input src="D2 MSN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -2420,7 +2420,7 @@
             <LL:Synapse>
                 <ConnectionList>
                     <BinaryFile file_name="conn_CortIntCh5_to_STN_syn0.bin" num_connections="35" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -2451,7 +2451,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="STN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -2481,7 +2481,7 @@
                     <Connection src_neuron="13" dst_neuron="42"/>
                     <Connection src_neuron="13" dst_neuron="43"/>
                     <Connection src_neuron="19" dst_neuron="48"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -2490,7 +2490,7 @@
                         <FixedValue value="1"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="CortIntCh5 to STN Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_AMPA">
+                <LL:PostSynapse name="CortIntCh5 to STN Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_NMDA">
                     <Property name="tau_nmda" dimension="ms">
                         <FixedValue value="160"/>
                     </Property>
@@ -2515,7 +2515,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="STN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -2527,7 +2527,7 @@
             <LL:Synapse>
                 <ConnectionList>
                     <BinaryFile file_name="conn_CortIntCh5_to_D1_MSN_syn0.bin" num_connections="49" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -2536,7 +2536,7 @@
                         <FixedValue value="4"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="CortIntCh5 to D1 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_NMDA_orig">
+                <LL:PostSynapse name="CortIntCh5 to D1 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA">
                     <Property name="tau_ampa" dimension="ms">
                         <FixedValue value="6"/>
                     </Property>
@@ -2558,7 +2558,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="D1 MSN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
@@ -2590,7 +2590,7 @@
                     <Connection src_neuron="19" dst_neuron="40"/>
                     <Connection src_neuron="19" dst_neuron="45"/>
                     <Connection src_neuron="19" dst_neuron="46"/>
-                    <Delay Dimension="ms">
+                    <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
@@ -2624,7 +2624,7 @@
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="D1 MSN" src_port="v" dst_port="v">
                         <OneToOneConnection>
-                            <Delay Dimension="ms">
+                            <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
