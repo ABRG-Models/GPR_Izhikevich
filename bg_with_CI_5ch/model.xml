@@ -1109,7 +1109,7 @@
                         <FixedValue value="4"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="CortIntCh2 to D2 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_NMDA">
+                <LL:PostSynapse name="CortIntCh2 to D2 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA_orig">
                     <Property name="tau_ampa" dimension="ms">
                         <FixedValue value="6"/>
                     </Property>
@@ -1251,7 +1251,7 @@
                         <FixedValue value="4"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="CortIntCh1 to D2 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_NMDA">
+                <LL:PostSynapse name="CortIntCh1 to D2 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA_orig">
                     <Property name="tau_ampa" dimension="ms">
                         <FixedValue value="6"/>
                     </Property>
@@ -1593,7 +1593,7 @@
                         <FixedValue value="4"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="CortIntCh3 to D2 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_NMDA">
+                <LL:PostSynapse name="CortIntCh3 to D2 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA_orig">
                     <Property name="tau_ampa" dimension="ms">
                         <FixedValue value="6"/>
                     </Property>
@@ -1956,7 +1956,7 @@
                         <FixedValue value="4"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="CortIntCh4 to D2 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_NMDA">
+                <LL:PostSynapse name="CortIntCh4 to D2 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA_orig">
                     <Property name="tau_ampa" dimension="ms">
                         <FixedValue value="6"/>
                     </Property>
@@ -2328,7 +2328,7 @@
                         <FixedValue value="4"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="CortIntCh5 to D2 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_NMDA">
+                <LL:PostSynapse name="CortIntCh5 to D2 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA_orig">
                     <Property name="tau_ampa" dimension="ms">
                         <FixedValue value="6"/>
                     </Property>
