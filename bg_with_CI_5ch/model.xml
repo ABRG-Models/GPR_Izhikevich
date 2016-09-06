@@ -146,7 +146,7 @@
                 </AllToAllConnection>
                 <LL:WeightUpdate name="STN to GPe Synapse 0 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
                     <Property name="S" dimension="?">
-                        <FixedValue value="0.0141"/>
+                        <FixedValue value="0.141"/>
                     </Property>
                 </LL:WeightUpdate>
                 <LL:PostSynapse name="STN to GPe Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA">
@@ -186,7 +186,7 @@
                 </AllToAllConnection>
                 <LL:WeightUpdate name="STN to GPe Synapse 1 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
                     <Property name="S" dimension="?">
-                        <FixedValue value="0.0141"/>
+                        <FixedValue value="0.141"/>
                     </Property>
                 </LL:WeightUpdate>
                 <LL:PostSynapse name="STN to GPe Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_NMDA">
