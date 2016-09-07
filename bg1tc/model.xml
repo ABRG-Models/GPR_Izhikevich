@@ -661,21 +661,22 @@
         </LL:Projection>
     </LL:Population>
     <LL:Population>
-        <LL:Neuron name="Background" size="600" url="SpikeSource"/>
+        <LL:Neuron name="Ch2_input" size="200" url="SpikeSource"/>
         <Layout url="none.xml" seed="123" minimum_distance="0"/>
         <LL:Projection dst_population="Cortex">
             <LL:Synapse>
-                <FixedProbabilityConnection probability="0.1" seed="123">
+                <ConnectionList>
+                    <BinaryFile file_name="conn_Ch2_input_to_Cortex_syn0.bin" num_connections="421" explicit_delay_flag="0" packed_data="true"/>
                     <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
-                </FixedProbabilityConnection>
-                <LL:WeightUpdate name="Background to Cortex Synapse 0 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
+                </ConnectionList>
+                <LL:WeightUpdate name="Ch2_input to Cortex Synapse 0 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
                     <Property name="S" dimension="?">
                         <FixedValue value="0.01"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="Background to Cortex Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA">
+                <LL:PostSynapse name="Ch2_input to Cortex Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA">
                     <Property name="tau_ampa" dimension="ms">
                         <FixedValue value="6"/>
                     </Property>
@@ -691,7 +692,9 @@
                     <Property name="tau_syn" dimension="ms">
                         <FixedValue value="1"/>
                     </Property>
-                    <Property name="h_ampa" dimension="?"/>
+                    <Property name="h_ampa" dimension="?">
+                        <FixedValue value="0"/>
+                    </Property>
                     <Property name="v_syn" dimension="mV"/>
                     <LL:Input src="Cortex" src_port="v" dst_port="v">
                         <OneToOneConnection>
@@ -703,15 +706,18 @@
                 </LL:PostSynapse>
             </LL:Synapse>
             <LL:Synapse>
-                <FixedProbabilityConnection probability="0.1" seed="123">
+                <ConnectionList>
+                    <BinaryFile file_name="conn_Ch2_input_to_Cortex_syn1.bin" num_connections="389" explicit_delay_flag="0" packed_data="true"/>
                     <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
-                </FixedProbabilityConnection>
-                <LL:WeightUpdate name="Background to Cortex Synapse 1 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
-                    <Property name="S" dimension="?"/>
+                </ConnectionList>
+                <LL:WeightUpdate name="Ch2_input to Cortex Synapse 1 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
+                    <Property name="S" dimension="?">
+                        <FixedValue value="0.01"/>
+                    </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="Background to Cortex Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_NMDA">
+                <LL:PostSynapse name="Ch2_input to Cortex Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_NMDA">
                     <Property name="tau_nmda" dimension="ms">
                         <FixedValue value="160"/>
                     </Property>
@@ -746,22 +752,22 @@
         </LL:Projection>
     </LL:Population>
     <LL:Population>
-        <LL:Neuron name="Selected" size="200" url="SpikeSource"/>
+        <LL:Neuron name="Ch1_input" size="200" url="SpikeSource"/>
         <Layout url="none.xml" seed="123" minimum_distance="0"/>
         <LL:Projection dst_population="Cortex">
             <LL:Synapse>
                 <ConnectionList>
-                    <BinaryFile file_name="conn_Selected_to_Cortex_syn0.bin" num_connections="409" explicit_delay_flag="0" packed_data="true"/>
+                    <BinaryFile file_name="conn_Ch1_input_to_Cortex_syn0.bin" num_connections="430" explicit_delay_flag="0" packed_data="true"/>
                     <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
-                <LL:WeightUpdate name="Selected to Cortex Synapse 0 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
+                <LL:WeightUpdate name="Ch1_input to Cortex Synapse 0 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
                     <Property name="S" dimension="?">
                         <FixedValue value="0.01"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="Selected to Cortex Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA">
+                <LL:PostSynapse name="Ch1_input to Cortex Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA">
                     <Property name="tau_ampa" dimension="ms">
                         <FixedValue value="6"/>
                     </Property>
@@ -792,17 +798,17 @@
             </LL:Synapse>
             <LL:Synapse>
                 <ConnectionList>
-                    <BinaryFile file_name="conn_Selected_to_Cortex_syn1.bin" num_connections="389" explicit_delay_flag="0" packed_data="true"/>
+                    <BinaryFile file_name="conn_Ch1_input_to_Cortex_syn1.bin" num_connections="420" explicit_delay_flag="0" packed_data="true"/>
                     <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
-                <LL:WeightUpdate name="Selected to Cortex Synapse 1 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
+                <LL:WeightUpdate name="Ch1_input to Cortex Synapse 1 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
                     <Property name="S" dimension="?">
-                        <FixedValue value="1"/>
+                        <FixedValue value="0.01"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="Selected to Cortex Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_NMDA">
+                <LL:PostSynapse name="Ch1_input to Cortex Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_NMDA">
                     <Property name="tau_nmda" dimension="ms">
                         <FixedValue value="160"/>
                     </Property>
@@ -837,22 +843,22 @@
         </LL:Projection>
     </LL:Population>
     <LL:Population>
-        <LL:Neuron name="Selected2" size="200" url="SpikeSource"/>
+        <LL:Neuron name="Ch0_input" size="200" url="SpikeSource"/>
         <Layout url="none.xml" seed="123" minimum_distance="0"/>
         <LL:Projection dst_population="Cortex">
             <LL:Synapse>
                 <ConnectionList>
-                    <BinaryFile file_name="conn_Selected2_to_Cortex_syn0.bin" num_connections="426" explicit_delay_flag="0" packed_data="true"/>
+                    <BinaryFile file_name="conn_Ch0_input_to_Cortex_syn0.bin" num_connections="387" explicit_delay_flag="0" packed_data="true"/>
                     <Delay dimension="ms">
-                        <FixedValue value="1"/>
+                        <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
-                <LL:WeightUpdate name="Selected2 to Cortex Synapse 0 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
+                <LL:WeightUpdate name="Ch0_input to Cortex Synapse 0 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
                     <Property name="S" dimension="?">
                         <FixedValue value="0.01"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="Selected2 to Cortex Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA">
+                <LL:PostSynapse name="Ch0_input to Cortex Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA">
                     <Property name="tau_ampa" dimension="ms">
                         <FixedValue value="6"/>
                     </Property>
@@ -883,17 +889,17 @@
             </LL:Synapse>
             <LL:Synapse>
                 <ConnectionList>
-                    <BinaryFile file_name="conn_Selected2_to_Cortex_syn1.bin" num_connections="422" explicit_delay_flag="0" packed_data="true"/>
+                    <BinaryFile file_name="conn_Ch0_input_to_Cortex_syn1.bin" num_connections="389" explicit_delay_flag="0" packed_data="true"/>
                     <Delay dimension="ms">
                         <FixedValue value="1"/>
                     </Delay>
                 </ConnectionList>
-                <LL:WeightUpdate name="Selected2 to Cortex Synapse 1 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
+                <LL:WeightUpdate name="Ch0_input to Cortex Synapse 1 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
                     <Property name="S" dimension="?">
-                        <FixedValue value="1"/>
+                        <FixedValue value="0.01"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="Selected2 to Cortex Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_NMDA">
+                <LL:PostSynapse name="Ch0_input to Cortex Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_NMDA">
                     <Property name="tau_nmda" dimension="ms">
                         <FixedValue value="160"/>
                     </Property>
@@ -966,7 +972,7 @@
         <LL:Projection dst_population="Thalamus">
             <LL:Synapse>
                 <ConnectionList>
-                    <BinaryFile file_name="conn_Cortex_to_Thalamus_syn0.bin" num_connections="116" explicit_delay_flag="0" packed_data="true"/>
+                    <BinaryFile file_name="conn_Cortex_to_Thalamus_syn0.bin" num_connections="126" explicit_delay_flag="0" packed_data="true"/>
                     <Delay dimension="ms">
                         <FixedValue value="1"/>
                     </Delay>
@@ -1007,7 +1013,7 @@
             </LL:Synapse>
             <LL:Synapse>
                 <ConnectionList>
-                    <BinaryFile file_name="conn_Cortex_to_Thalamus_syn1.bin" num_connections="123" explicit_delay_flag="0" packed_data="true"/>
+                    <BinaryFile file_name="conn_Cortex_to_Thalamus_syn1.bin" num_connections="116" explicit_delay_flag="0" packed_data="true"/>
                     <Delay dimension="ms">
                         <FixedValue value="1"/>
                     </Delay>
@@ -1060,7 +1066,7 @@
                 </ConnectionList>
                 <LL:WeightUpdate name="Cortex to D1 MSN Synapse 0 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
                     <Property name="S" dimension="?">
-                        <FixedValue value="4"/>
+                        <FixedValue value="1"/>
                     </Property>
                 </LL:WeightUpdate>
                 <LL:PostSynapse name="Cortex to D1 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA">
@@ -1145,7 +1151,7 @@
                 </ConnectionList>
                 <LL:WeightUpdate name="Cortex to STN Synapse 0 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
                     <Property name="S" dimension="?">
-                        <FixedValue value="1"/>
+                        <FixedValue value="0.25"/>
                     </Property>
                 </LL:WeightUpdate>
                 <LL:PostSynapse name="Cortex to STN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA">
@@ -1230,7 +1236,7 @@
                 </ConnectionList>
                 <LL:WeightUpdate name="Cortex to D2 MSN Synapse 0 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
                     <Property name="S" dimension="?">
-                        <FixedValue value="4"/>
+                        <FixedValue value="1"/>
                     </Property>
                 </LL:WeightUpdate>
                 <LL:PostSynapse name="Cortex to D2 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA_orig">
@@ -1345,14 +1351,14 @@
         <LL:Projection dst_population="Cortex">
             <LL:Synapse>
                 <ConnectionList>
-                    <BinaryFile file_name="conn_Thalamus_to_Cortex_syn0.bin" num_connections="115" explicit_delay_flag="0" packed_data="true"/>
+                    <BinaryFile file_name="conn_Thalamus_to_Cortex_syn0.bin" num_connections="125" explicit_delay_flag="0" packed_data="true"/>
                     <Delay dimension="ms">
                         <FixedValue value="1"/>
                     </Delay>
                 </ConnectionList>
                 <LL:WeightUpdate name="Thalamus to Cortex Synapse 0 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
                     <Property name="S" dimension="?">
-                        <FixedValue value="0.08"/>
+                        <FixedValue value="0.06"/>
                     </Property>
                 </LL:WeightUpdate>
                 <LL:PostSynapse name="Thalamus to Cortex Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA">
@@ -1386,14 +1392,14 @@
             </LL:Synapse>
             <LL:Synapse>
                 <ConnectionList>
-                    <BinaryFile file_name="conn_Thalamus_to_Cortex_syn1.bin" num_connections="109" explicit_delay_flag="0" packed_data="true"/>
+                    <BinaryFile file_name="conn_Thalamus_to_Cortex_syn1.bin" num_connections="124" explicit_delay_flag="0" packed_data="true"/>
                     <Delay dimension="ms">
                         <FixedValue value="1"/>
                     </Delay>
                 </ConnectionList>
                 <LL:WeightUpdate name="Thalamus to Cortex Synapse 1 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
                     <Property name="S" dimension="?">
-                        <FixedValue value="0.08"/>
+                        <FixedValue value="0.06"/>
                     </Property>
                 </LL:WeightUpdate>
                 <LL:PostSynapse name="Thalamus to Cortex Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_NMDA">

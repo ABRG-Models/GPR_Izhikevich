@@ -59,23 +59,23 @@
   <synapseConnection name="STN to GPe Synapse 1 weight_update"/>
  </projection>
  <genericInput destination="STN to GPe Synapse 0 postsynapse" srcPort="v" source="GPe" dstPort="v">
-  <start x="3.729272222059109" y="2.000367235753373"/>
+  <start x="3.729272127151489" y="2.000367164611816"/>
   <curves>
    <curve>
-    <C1 xpos="3.713672732847073" ypos="2.186493944737748"/>
-    <C2 xpos="3.553855037229397" ypos="2.203994345280961"/>
-    <end xpos="3.553650235669949" ypos="2.000367235753373"/>
+    <C1 xpos="3.713672637939453" ypos="2.186493873596191"/>
+    <C2 xpos="3.553854942321777" ypos="2.203994274139404"/>
+    <end xpos="3.553650140762329" ypos="2.000367164611816"/>
    </curve>
   </curves>
   <connection/>
  </genericInput>
  <genericInput destination="STN to GPe Synapse 1 postsynapse" srcPort="v" source="GPe" dstPort="v">
-  <start x="3.743731593625881" y="2.000367235753373"/>
+  <start x="3.743731498718262" y="2.000367164611816"/>
   <curves>
    <curve>
-    <C1 xpos="3.713620519178249" ypos="2.21149404010518"/>
-    <C2 xpos="3.546284293668606" ypos="2.233994316670731"/>
-    <end xpos="3.553650235669949" ypos="2.000367235753373"/>
+    <C1 xpos="3.71362042427063" ypos="2.211493968963623"/>
+    <C2 xpos="3.546284198760986" ypos="2.233994245529175"/>
+    <end xpos="3.553650140762329" ypos="2.000367164611816"/>
    </curve>
   </curves>
   <connection/>
@@ -108,12 +108,12 @@
   </synapseConnection>
  </projection>
  <genericInput destination="SNr to Thalamus Synapse 0 postsynapse" srcPort="v" source="Thalamus" dstPort="v">
-  <start x="-4.219235897253412" y="4.005256175994873"/>
+  <start x="-4.219235897064209" y="4.005256175994873"/>
   <curves>
    <curve>
-    <C1 xpos="-4.330529689978022" ypos="3.557803392410278"/>
-    <C2 xpos="-3.790755987356562" ypos="3.773692846298218"/>
-    <end xpos="-3.947655439566034" ypos="4.005066394805908"/>
+    <C1 xpos="-4.330529689788818" ypos="3.557803392410278"/>
+    <C2 xpos="-3.790755987167358" ypos="3.773692846298218"/>
+    <end xpos="-3.947655439376831" ypos="4.005066394805908"/>
    </curve>
   </curves>
   <connection/>
@@ -171,17 +171,17 @@
   </synapseConnection>
  </projection>
  <genericInput destination="GPe to GPe Synapse 0 postsynapse" srcPort="v" source="GPe" dstPort="v">
-  <start x="4.711008166807034" y="1.000367116544084"/>
+  <start x="4.711008071899414" y="1.000367164611816"/>
   <curves>
    <curve>
-    <C1 xpos="4.796436881559231" ypos="0.8054117675755776"/>
-    <C2 xpos="4.653731917875149" ypos="0.7340593453381814"/>
-    <end xpos="4.571111773984768" ypos="1.000367116544084"/>
+    <C1 xpos="4.796436786651611" ypos="0.8054117560386658"/>
+    <C2 xpos="4.653731822967529" ypos="0.7340593338012695"/>
+    <end xpos="4.571111679077148" ypos="1.000367164611816"/>
    </curve>
   </curves>
   <connection/>
  </genericInput>
- <projection destination="STN" showlabel="1" source="GPe" style="0">
+ <projection destination="STN" showlabel="0" source="GPe" style="0">
   <start x="3.21281" y="1.77963"/>
   <curves>
    <curve>
@@ -196,12 +196,12 @@
   </synapseConnection>
  </projection>
  <genericInput destination="GPe to STN Synapse 0 postsynapse" srcPort="v" source="STN" dstPort="v">
-  <start x="2.737397193908691" y="2.903961753406051"/>
+  <start x="2.737397193908691" y="2.903961658477783"/>
   <curves>
    <curve>
-    <C1 xpos="2.951361656188965" ypos="2.85758337930632"/>
-    <C2 xpos="2.795470952987671" ypos="2.536632155932907"/>
-    <end xpos="2.594712257385254" ypos="2.903961753406051"/>
+    <C1 xpos="2.951361656188965" ypos="2.857583284378052"/>
+    <C2 xpos="2.795470952987671" ypos="2.536632061004639"/>
+    <end xpos="2.594712257385254" ypos="2.903961658477783"/>
    </curve>
   </curves>
   <connection/>
@@ -219,7 +219,7 @@
   <z3D value="1"/>
   <is_visualised value="1"/>
  </population>
- <projection destination="SNr" showlabel="1" source="D1 MSN" style="0">
+ <projection destination="SNr" showlabel="0" source="D1 MSN" style="0">
   <start x="0.174379" y="4.80952"/>
   <curves>
    <curve>
@@ -272,19 +272,19 @@
   </synapseConnection>
  </projection>
  <genericInput destination="D2 MSN to GPe Synapse 0 postsynapse" srcPort="v" source="GPe" dstPort="v">
-  <start x="4.225075816648342" y="2.000367235753373"/>
+  <start x="4.225075721740723" y="2.000367164611816"/>
   <curves>
    <curve>
-    <C1 xpos="4.225740050809719" ypos="2.217798304173783"/>
-    <C2 xpos="4.066736316221096" ypos="2.21185214481099"/>
-    <end xpos="4.059859370725491" ypos="2.000367235753373"/>
+    <C1 xpos="4.2257399559021" ypos="2.217798233032227"/>
+    <C2 xpos="4.066736221313477" ypos="2.211852073669434"/>
+    <end xpos="4.059859275817871" ypos="2.000367164611816"/>
    </curve>
   </curves>
   <connection/>
  </genericInput>
- <population name="Background">
-  <xPos value="0.507492"/>
-  <yPos value="10.0939"/>
+ <population name="Ch2_input">
+  <xPos value="0.152784"/>
+  <yPos value="10.2019"/>
   <animSpeed value="0.2"/>
   <aspectRatio value="1.66667"/>
   <colour blue="0" green="0" red="0"/>
@@ -295,43 +295,49 @@
   <z3D value="4"/>
   <is_visualised value="1"/>
  </population>
- <projection destination="Cortex" showlabel="0" source="Background" style="4">
-  <start x="0.114253" y="9.78542"/>
+ <projection destination="Cortex" showlabel="0" source="Ch2_input" style="4">
+  <start x="-0.240504" y="9.89108"/>
   <curves>
    <curve>
-    <C1 xpos="-0.479806" ypos="9.31616"/>
-    <C2 xpos="-1.41862" ypos="9.87251"/>
-    <end xpos="-1.60067" ypos="9.1696"/>
+    <C1 xpos="-0.834563" ypos="9.42182"/>
+    <C2 xpos="-1.41862" ypos="9.85592"/>
+    <end xpos="-1.60067" ypos="9.15301"/>
    </curve>
   </curves>
-  <synapseConnection name="Background to Cortex Synapse 0 weight_update"/>
-  <synapseConnection name="Background to Cortex Synapse 1 weight_update"/>
+  <synapseConnection name="Ch2_input to Cortex Synapse 0 weight_update">
+   <Script text="#Name: StochasticToOneChannel&#xa;#Author: Seb James&#xa;#PARNAME=dst_channels #LOC=1,1&#xa;#PARNAME=conn_to_channel #LOC=1,2&#xa;#Note: conn_to_channel counts from 0&#xa;#PARNAME=conn_prob #LOC=2,1&#xa;def connectionFunc(srclocs,dstlocs,dst_channels,conn_to_channel,conn_prob):&#xa;&#xa;    import math&#xa;    import random&#xa;&#xa;    weight = 1&#xa;    delay = 0&#xa;&#xa;    dstsize = len(dstlocs)&#xa;    dstrunlen = int(dstsize/dst_channels)&#xa;    &#xa;    out = []&#xa;    &#xa;    dststart = int(conn_to_channel) * dstrunlen&#xa;    dstend = ((int(conn_to_channel)+1) * dstrunlen)&#xa;    &#xa;    i = 0&#xa;    for srcloc in srclocs:&#xa;        j = dststart&#xa;        for dstloc in dstlocs[dststart:dstend]:&#xa;            if random.random() &lt; conn_prob:&#xa;                conn = (i,j,delay)&#xa;                out.append(conn)&#xa;            j = j + 1&#xa;        i = i + 1    &#xa;    &#xa;    return out" conn_prob="0.1" dst_channels="3" name="StochasticToOneChannel" conn_to_channel="2"/>
+   <Config/>
+  </synapseConnection>
+  <synapseConnection name="Ch2_input to Cortex Synapse 1 weight_update">
+   <Script text="#Name: StochasticToOneChannel&#xa;#Author: Seb James&#xa;#PARNAME=dst_channels #LOC=1,1&#xa;#PARNAME=conn_to_channel #LOC=1,2&#xa;#Note: conn_to_channel counts from 0&#xa;#PARNAME=conn_prob #LOC=2,1&#xa;def connectionFunc(srclocs,dstlocs,dst_channels,conn_to_channel,conn_prob):&#xa;&#xa;    import math&#xa;    import random&#xa;&#xa;    weight = 1&#xa;    delay = 0&#xa;&#xa;    dstsize = len(dstlocs)&#xa;    dstrunlen = int(dstsize/dst_channels)&#xa;    &#xa;    out = []&#xa;    &#xa;    dststart = int(conn_to_channel) * dstrunlen&#xa;    dstend = ((int(conn_to_channel)+1) * dstrunlen)&#xa;    &#xa;    i = 0&#xa;    for srcloc in srclocs:&#xa;        j = dststart&#xa;        for dstloc in dstlocs[dststart:dstend]:&#xa;            if random.random() &lt; conn_prob:&#xa;                conn = (i,j,delay)&#xa;                out.append(conn)&#xa;            j = j + 1&#xa;        i = i + 1    &#xa;    &#xa;    return out" conn_prob="0.1" dst_channels="3" name="StochasticToOneChannel" conn_to_channel="2"/>
+   <Config/>
+  </synapseConnection>
  </projection>
- <genericInput destination="Background to Cortex Synapse 0 postsynapse" srcPort="v" source="Cortex" dstPort="v">
-  <start x="-1.83622050291897" y="9.169597053744951"/>
+ <genericInput destination="Ch2_input to Cortex Synapse 0 postsynapse" srcPort="v" source="Cortex" dstPort="v">
+  <start x="-1.836220502853394" y="9.153005218089106"/>
   <curves>
    <curve>
-    <C1 xpos="-1.838463902539026" ypos="9.567168617465654"/>
-    <C2 xpos="-1.609457373684656" ypos="9.507190132358232"/>
-    <end xpos="-1.600671768254053" ypos="9.169597053744951"/>
+    <C1 xpos="-1.83846390247345" ypos="9.550576781809809"/>
+    <C2 xpos="-1.60945737361908" ypos="9.490598296702387"/>
+    <end xpos="-1.600671768188477" ypos="9.153005218089106"/>
    </curve>
   </curves>
   <connection/>
  </genericInput>
- <genericInput destination="Background to Cortex Synapse 1 postsynapse" srcPort="v" source="Cortex" dstPort="v">
-  <start x="-1.809034466809045" y="9.169597053744951"/>
+ <genericInput destination="Ch2_input to Cortex Synapse 1 postsynapse" srcPort="v" source="Cortex" dstPort="v">
+  <start x="-1.809034466743469" y="9.153005218089106"/>
   <curves>
    <curve>
-    <C1 xpos="-1.833011388844263" ypos="9.599883461215654"/>
-    <C2 xpos="-1.593099713391076" ypos="9.403592491367021"/>
-    <end xpos="-1.600671768254053" ypos="9.169597053744951"/>
+    <C1 xpos="-1.833011388778687" ypos="9.583291625559809"/>
+    <C2 xpos="-1.5930997133255" ypos="9.387000655711176"/>
+    <end xpos="-1.600671768188477" ypos="9.153005218089106"/>
    </curve>
   </curves>
   <connection/>
  </genericInput>
- <population name="Selected">
-  <xPos value="-1.36908"/>
-  <yPos value="10.6997"/>
+ <population name="Ch1_input">
+  <xPos value="-1.41535"/>
+  <yPos value="10.6689"/>
   <animSpeed value="0.2"/>
   <aspectRatio value="1.66667"/>
   <colour blue="0" green="0" red="0"/>
@@ -342,49 +348,49 @@
   <z3D value="4"/>
   <is_visualised value="1"/>
  </population>
- <projection destination="Cortex" showlabel="0" source="Selected" style="4">
-  <start x="-1.26284" y="10.2128"/>
+ <projection destination="Cortex" showlabel="0" source="Ch1_input" style="4">
+  <start x="-1.30954" y="10.1851"/>
   <curves>
    <curve>
-    <C1 xpos="-1.10234" ypos="9.47558"/>
-    <C2 xpos="-2.19021" ypos="10.2711"/>
-    <end xpos="-2.17314" ypos="9.1696"/>
+    <C1 xpos="-1.14904" ypos="9.44788"/>
+    <C2 xpos="-2.19021" ypos="10.2545"/>
+    <end xpos="-2.17314" ypos="9.15301"/>
    </curve>
   </curves>
-  <synapseConnection name="Selected to Cortex Synapse 0 weight_update">
-   <Script text="#Name: StochasticToOneChannel&#xa;#Author: Seb James&#xa;#PARNAME=dst_channels #LOC=1,1&#xa;#PARNAME=conn_to_channel #LOC=1,2&#xa;#Note: conn_to_channel counts from 0&#xa;#PARNAME=conn_prob #LOC=2,1&#xa;def connectionFunc(srclocs,dstlocs,dst_channels,conn_to_channel,conn_prob):&#xa;&#xa;    import math&#xa;    import random&#xa;&#xa;    weight = 1&#xa;    delay = 0&#xa;&#xa;    dstsize = len(dstlocs)&#xa;    dstrunlen = int(dstsize/dst_channels)&#xa;    &#xa;    out = []&#xa;    &#xa;    dststart = int(conn_to_channel) * dstrunlen&#xa;    dstend = ((int(conn_to_channel)+1) * dstrunlen)&#xa;    &#xa;    i = 0&#xa;    for srcloc in srclocs:&#xa;        j = dststart&#xa;        for dstloc in dstlocs[dststart:dstend]:&#xa;            if random.random() &lt; conn_prob:&#xa;                conn = (i,j,delay)&#xa;                out.append(conn)&#xa;            j = j + 1&#xa;        i = i + 1    &#xa;    &#xa;    return out" conn_prob="0.1" dst_channels="3" name="StochasticToOneChannel" conn_to_channel="0"/>
+  <synapseConnection name="Ch1_input to Cortex Synapse 0 weight_update">
+   <Script text="#Name: StochasticToOneChannel&#xa;#Author: Seb James&#xa;#PARNAME=dst_channels #LOC=1,1&#xa;#PARNAME=conn_to_channel #LOC=1,2&#xa;#Note: conn_to_channel counts from 0&#xa;#PARNAME=conn_prob #LOC=2,1&#xa;def connectionFunc(srclocs,dstlocs,dst_channels,conn_to_channel,conn_prob):&#xa;&#xa;    import math&#xa;    import random&#xa;&#xa;    weight = 1&#xa;    delay = 0&#xa;&#xa;    dstsize = len(dstlocs)&#xa;    dstrunlen = int(dstsize/dst_channels)&#xa;    &#xa;    out = []&#xa;    &#xa;    dststart = int(conn_to_channel) * dstrunlen&#xa;    dstend = ((int(conn_to_channel)+1) * dstrunlen)&#xa;    &#xa;    i = 0&#xa;    for srcloc in srclocs:&#xa;        j = dststart&#xa;        for dstloc in dstlocs[dststart:dstend]:&#xa;            if random.random() &lt; conn_prob:&#xa;                conn = (i,j,delay)&#xa;                out.append(conn)&#xa;            j = j + 1&#xa;        i = i + 1    &#xa;    &#xa;    return out" conn_prob="0.1" dst_channels="3" name="StochasticToOneChannel" conn_to_channel="1"/>
    <Config/>
   </synapseConnection>
-  <synapseConnection name="Selected to Cortex Synapse 1 weight_update">
-   <Script text="#Name: StochasticToOneChannel&#xa;#Author: Seb James&#xa;#PARNAME=dst_channels #LOC=1,1&#xa;#PARNAME=conn_to_channel #LOC=1,2&#xa;#Note: conn_to_channel counts from 0&#xa;#PARNAME=conn_prob #LOC=2,1&#xa;def connectionFunc(srclocs,dstlocs,dst_channels,conn_to_channel,conn_prob):&#xa;&#xa;    import math&#xa;    import random&#xa;&#xa;    weight = 1&#xa;    delay = 0&#xa;&#xa;    dstsize = len(dstlocs)&#xa;    dstrunlen = int(dstsize/dst_channels)&#xa;    &#xa;    out = []&#xa;    &#xa;    dststart = int(conn_to_channel) * dstrunlen&#xa;    dstend = ((int(conn_to_channel)+1) * dstrunlen)&#xa;    &#xa;    i = 0&#xa;    for srcloc in srclocs:&#xa;        j = dststart&#xa;        for dstloc in dstlocs[dststart:dstend]:&#xa;            if random.random() &lt; conn_prob:&#xa;                conn = (i,j,delay)&#xa;                out.append(conn)&#xa;            j = j + 1&#xa;        i = i + 1    &#xa;    &#xa;    return out" conn_prob="0.1" dst_channels="3" name="StochasticToOneChannel" conn_to_channel="0"/>
+  <synapseConnection name="Ch1_input to Cortex Synapse 1 weight_update">
+   <Script text="#Name: StochasticToOneChannel&#xa;#Author: Seb James&#xa;#PARNAME=dst_channels #LOC=1,1&#xa;#PARNAME=conn_to_channel #LOC=1,2&#xa;#Note: conn_to_channel counts from 0&#xa;#PARNAME=conn_prob #LOC=2,1&#xa;def connectionFunc(srclocs,dstlocs,dst_channels,conn_to_channel,conn_prob):&#xa;&#xa;    import math&#xa;    import random&#xa;&#xa;    weight = 1&#xa;    delay = 0&#xa;&#xa;    dstsize = len(dstlocs)&#xa;    dstrunlen = int(dstsize/dst_channels)&#xa;    &#xa;    out = []&#xa;    &#xa;    dststart = int(conn_to_channel) * dstrunlen&#xa;    dstend = ((int(conn_to_channel)+1) * dstrunlen)&#xa;    &#xa;    i = 0&#xa;    for srcloc in srclocs:&#xa;        j = dststart&#xa;        for dstloc in dstlocs[dststart:dstend]:&#xa;            if random.random() &lt; conn_prob:&#xa;                conn = (i,j,delay)&#xa;                out.append(conn)&#xa;            j = j + 1&#xa;        i = i + 1    &#xa;    &#xa;    return out" conn_prob="0.1" dst_channels="3" name="StochasticToOneChannel" conn_to_channel="1"/>
    <Config/>
   </synapseConnection>
  </projection>
- <genericInput destination="Selected to Cortex Synapse 0 postsynapse" srcPort="v" source="Cortex" dstPort="v">
-  <start x="-2.005779028004419" y="9.169597053744951"/>
+ <genericInput destination="Ch1_input to Cortex Synapse 0 postsynapse" srcPort="v" source="Cortex" dstPort="v">
+  <start x="-2.005779027938843" y="9.153005218089106"/>
   <curves>
    <curve>
-    <C1 xpos="-2.011824607914697" ypos="9.42676773093001"/>
-    <C2 xpos="-2.166421651905786" ypos="9.438659095981279"/>
-    <end xpos="-2.173142671650659" ypos="9.169597053744951"/>
+    <C1 xpos="-2.011824607849121" ypos="9.410175895274165"/>
+    <C2 xpos="-2.16642165184021" ypos="9.422067260325434"/>
+    <end xpos="-2.173142671585083" ypos="9.153005218089106"/>
    </curve>
   </curves>
   <connection/>
  </genericInput>
- <genericInput destination="Selected to Cortex Synapse 1 postsynapse" srcPort="v" source="Cortex" dstPort="v">
-  <start x="-1.987956643170129" y="9.169597053744951"/>
+ <genericInput destination="Ch1_input to Cortex Synapse 1 postsynapse" srcPort="v" source="Cortex" dstPort="v">
+  <start x="-1.987956643104553" y="9.153005218089106"/>
   <curves>
    <curve>
-    <C1 xpos="-1.988040447300683" ypos="9.307846451022783"/>
-    <C2 xpos="-2.130745410984765" ypos="9.557580375888506"/>
-    <end xpos="-2.173142671650659" ypos="9.169597053744951"/>
+    <C1 xpos="-1.988040447235107" ypos="9.291254615366938"/>
+    <C2 xpos="-2.130745410919189" ypos="9.540988540232661"/>
+    <end xpos="-2.173142671585083" ypos="9.153005218089106"/>
    </curve>
   </curves>
   <connection/>
  </genericInput>
- <population name="Selected2">
-  <xPos value="-3.18947"/>
-  <yPos value="10.777"/>
+ <population name="Ch0_input">
+  <xPos value="-3.14321"/>
+  <yPos value="10.7616"/>
   <animSpeed value="0.2"/>
   <aspectRatio value="1.66667"/>
   <colour blue="0" green="0" red="0"/>
@@ -395,49 +401,49 @@
   <z3D value="0"/>
   <is_visualised value="0"/>
  </population>
- <projection destination="Cortex" showlabel="0" source="Selected2" style="4">
-  <start x="-3.22855" y="10.2737"/>
+ <projection destination="Cortex" showlabel="0" source="Ch0_input" style="4">
+  <start x="-3.18147" y="10.2613"/>
   <curves>
    <curve>
-    <C1 xpos="-3.22855" ypos="9.46789"/>
-    <C2 xpos="-2.57075" ypos="10.4733"/>
-    <end xpos="-2.62369" ypos="9.1696"/>
+    <C1 xpos="-3.18147" ypos="9.45547"/>
+    <C2 xpos="-2.57075" ypos="10.4567"/>
+    <end xpos="-2.62369" ypos="9.15301"/>
    </curve>
   </curves>
-  <synapseConnection name="Selected2 to Cortex Synapse 0 weight_update">
-   <Script text="#Name: StochasticToOneChannel&#xa;#Author: Seb James&#xa;#PARNAME=dst_channels #LOC=1,1&#xa;#PARNAME=conn_to_channel #LOC=1,2&#xa;#Note: conn_to_channel counts from 0&#xa;#PARNAME=conn_prob #LOC=2,1&#xa;def connectionFunc(srclocs,dstlocs,dst_channels,conn_to_channel,conn_prob):&#xa;&#xa;    import math&#xa;    import random&#xa;&#xa;    weight = 1&#xa;    delay = 0&#xa;&#xa;    dstsize = len(dstlocs)&#xa;    dstrunlen = int(dstsize/dst_channels)&#xa;    &#xa;    out = []&#xa;    &#xa;    dststart = int(conn_to_channel) * dstrunlen&#xa;    dstend = ((int(conn_to_channel)+1) * dstrunlen)&#xa;    &#xa;    i = 0&#xa;    for srcloc in srclocs:&#xa;        j = dststart&#xa;        for dstloc in dstlocs[dststart:dstend]:&#xa;            if random.random() &lt; conn_prob:&#xa;                conn = (i,j,delay)&#xa;                out.append(conn)&#xa;            j = j + 1&#xa;        i = i + 1    &#xa;    &#xa;    return out" conn_prob="0.1" dst_channels="3" name="StochasticToOneChannel" conn_to_channel="1"/>
+  <synapseConnection name="Ch0_input to Cortex Synapse 0 weight_update">
+   <Script text="#Name: StochasticToOneChannel&#xa;#Author: Seb James&#xa;#PARNAME=dst_channels #LOC=1,1&#xa;#PARNAME=conn_to_channel #LOC=1,2&#xa;#Note: conn_to_channel counts from 0&#xa;#PARNAME=conn_prob #LOC=2,1&#xa;def connectionFunc(srclocs,dstlocs,dst_channels,conn_to_channel,conn_prob):&#xa;&#xa;    import math&#xa;    import random&#xa;&#xa;    weight = 1&#xa;    delay = 0&#xa;&#xa;    dstsize = len(dstlocs)&#xa;    dstrunlen = int(dstsize/dst_channels)&#xa;    &#xa;    out = []&#xa;    &#xa;    dststart = int(conn_to_channel) * dstrunlen&#xa;    dstend = ((int(conn_to_channel)+1) * dstrunlen)&#xa;    &#xa;    i = 0&#xa;    for srcloc in srclocs:&#xa;        j = dststart&#xa;        for dstloc in dstlocs[dststart:dstend]:&#xa;            if random.random() &lt; conn_prob:&#xa;                conn = (i,j,delay)&#xa;                out.append(conn)&#xa;            j = j + 1&#xa;        i = i + 1    &#xa;    &#xa;    return out" conn_prob="0.1" dst_channels="3" name="StochasticToOneChannel" conn_to_channel="0"/>
    <Config/>
   </synapseConnection>
-  <synapseConnection name="Selected2 to Cortex Synapse 1 weight_update">
-   <Script text="#Name: StochasticToOneChannel&#xa;#Author: Seb James&#xa;#PARNAME=dst_channels #LOC=1,1&#xa;#PARNAME=conn_to_channel #LOC=1,2&#xa;#Note: conn_to_channel counts from 0&#xa;#PARNAME=conn_prob #LOC=2,1&#xa;def connectionFunc(srclocs,dstlocs,dst_channels,conn_to_channel,conn_prob):&#xa;&#xa;    import math&#xa;    import random&#xa;&#xa;    weight = 1&#xa;    delay = 0&#xa;&#xa;    dstsize = len(dstlocs)&#xa;    dstrunlen = int(dstsize/dst_channels)&#xa;    &#xa;    out = []&#xa;    &#xa;    dststart = int(conn_to_channel) * dstrunlen&#xa;    dstend = ((int(conn_to_channel)+1) * dstrunlen)&#xa;    &#xa;    i = 0&#xa;    for srcloc in srclocs:&#xa;        j = dststart&#xa;        for dstloc in dstlocs[dststart:dstend]:&#xa;            if random.random() &lt; conn_prob:&#xa;                conn = (i,j,delay)&#xa;                out.append(conn)&#xa;            j = j + 1&#xa;        i = i + 1    &#xa;    &#xa;    return out" conn_prob="0.1" dst_channels="3" name="StochasticToOneChannel" conn_to_channel="1"/>
+  <synapseConnection name="Ch0_input to Cortex Synapse 1 weight_update">
+   <Script text="#Name: StochasticToOneChannel&#xa;#Author: Seb James&#xa;#PARNAME=dst_channels #LOC=1,1&#xa;#PARNAME=conn_to_channel #LOC=1,2&#xa;#Note: conn_to_channel counts from 0&#xa;#PARNAME=conn_prob #LOC=2,1&#xa;def connectionFunc(srclocs,dstlocs,dst_channels,conn_to_channel,conn_prob):&#xa;&#xa;    import math&#xa;    import random&#xa;&#xa;    weight = 1&#xa;    delay = 0&#xa;&#xa;    dstsize = len(dstlocs)&#xa;    dstrunlen = int(dstsize/dst_channels)&#xa;    &#xa;    out = []&#xa;    &#xa;    dststart = int(conn_to_channel) * dstrunlen&#xa;    dstend = ((int(conn_to_channel)+1) * dstrunlen)&#xa;    &#xa;    i = 0&#xa;    for srcloc in srclocs:&#xa;        j = dststart&#xa;        for dstloc in dstlocs[dststart:dstend]:&#xa;            if random.random() &lt; conn_prob:&#xa;                conn = (i,j,delay)&#xa;                out.append(conn)&#xa;            j = j + 1&#xa;        i = i + 1    &#xa;    &#xa;    return out" conn_prob="0.1" dst_channels="3" name="StochasticToOneChannel" conn_to_channel="0"/>
    <Config/>
   </synapseConnection>
  </projection>
- <genericInput destination="Selected2 to Cortex Synapse 0 postsynapse" srcPort="v" source="Cortex" dstPort="v">
-  <start x="-2.453327417439233" y="9.169597053744951"/>
+ <genericInput destination="Ch0_input to Cortex Synapse 0 postsynapse" srcPort="v" source="Cortex" dstPort="v">
+  <start x="-2.453327417373657" y="9.153005218089106"/>
   <curves>
    <curve>
-    <C1 xpos="-2.392370939320337" ypos="9.521904373386064"/>
-    <C2 xpos="-2.653996467655908" ypos="9.617041015842119"/>
-    <end xpos="-2.623691082066308" ypos="9.169597053744951"/>
+    <C1 xpos="-2.392370939254761" ypos="9.505312537730219"/>
+    <C2 xpos="-2.653996467590332" ypos="9.600449180186274"/>
+    <end xpos="-2.623691082000732" ypos="9.153005218089106"/>
    </curve>
   </curves>
   <connection/>
  </genericInput>
- <genericInput destination="Selected2 to Cortex Synapse 1 postsynapse" srcPort="v" source="Cortex" dstPort="v">
-  <start x="-2.452904462879907" y="9.169597053744951"/>
+ <genericInput destination="Ch0_input to Cortex Synapse 1 postsynapse" srcPort="v" source="Cortex" dstPort="v">
+  <start x="-2.452904462814331" y="9.153005218089106"/>
   <curves>
    <curve>
-    <C1 xpos="-2.309126377171289" ypos="9.42676773093001"/>
-    <C2 xpos="-2.689672708576929" ypos="9.771637344577471"/>
-    <end xpos="-2.623691082066308" ypos="9.169597053744951"/>
+    <C1 xpos="-2.309126377105713" ypos="9.410175895274165"/>
+    <C2 xpos="-2.689672708511353" ypos="9.755045508921626"/>
+    <end xpos="-2.623691082000732" ypos="9.153005218089106"/>
    </curve>
   </curves>
   <connection/>
  </genericInput>
  <population name="Cortex">
   <xPos value="-2.13766"/>
-  <yPos value="8.66761"/>
+  <yPos value="8.65219"/>
   <animSpeed value="0.2"/>
   <aspectRatio value="1.66667"/>
   <colour blue="0" green="0" red="0"/>
@@ -449,10 +455,10 @@
   <is_visualised value="0"/>
  </population>
  <projection destination="Thalamus" showlabel="0" source="Cortex" style="4">
-  <start x="-2.51667" y="8.17015"/>
+  <start x="-2.51667" y="8.15356"/>
   <curves>
    <curve>
-    <C1 xpos="-2.51667" ypos="6.42153"/>
+    <C1 xpos="-2.51667" ypos="6.40494"/>
     <C2 xpos="-4.13803" ypos="7.24141"/>
     <end xpos="-4.26234" ypos="5.00507"/>
    </curve>
@@ -467,32 +473,32 @@
   </synapseConnection>
  </projection>
  <genericInput destination="Cortex to Thalamus Synapse 0 postsynapse" srcPort="v" source="Thalamus" dstPort="v">
-  <start x="-3.984437942694086" y="5.00512170791626"/>
+  <start x="-3.984437942504883" y="5.00512170791626"/>
   <curves>
    <curve>
-    <C1 xpos="-3.914132833670038" ypos="5.223141193389893"/>
-    <C2 xpos="-4.114620208929438" ypos="5.331080436706543"/>
-    <end xpos="-4.26233530063476" ypos="5.005066394805908"/>
+    <C1 xpos="-3.914132833480835" ypos="5.223141193389893"/>
+    <C2 xpos="-4.114620208740234" ypos="5.331080436706543"/>
+    <end xpos="-4.262335300445557" ypos="5.005066394805908"/>
    </curve>
   </curves>
   <connection/>
  </genericInput>
  <genericInput destination="Cortex to Thalamus Synapse 1 postsynapse" srcPort="v" source="Thalamus" dstPort="v">
-  <start x="-3.984441518972773" y="5.005130290985107"/>
+  <start x="-3.984441518783569" y="5.005130290985107"/>
   <curves>
    <curve>
-    <C1 xpos="-3.929554939459223" ypos="5.485367774963379"/>
-    <C2 xpos="-4.237997055242914" ypos="5.207744121551514"/>
-    <end xpos="-4.26233530063476" ypos="5.005066394805908"/>
+    <C1 xpos="-3.92955493927002" ypos="5.485367774963379"/>
+    <C2 xpos="-4.237997055053711" ypos="5.207744121551514"/>
+    <end xpos="-4.262335300445557" ypos="5.005066394805908"/>
    </curve>
   </curves>
   <connection/>
  </genericInput>
  <projection destination="D1 MSN" showlabel="0" source="Cortex" style="4">
-  <start x="-1.30502" y="8.48322"/>
+  <start x="-1.30502" y="8.46663"/>
   <curves>
    <curve>
-    <C1 xpos="-0.291335" ypos="8.55762"/>
+    <C1 xpos="-0.291335" ypos="8.54103"/>
     <C2 xpos="-0.0329027" ypos="6.74278"/>
     <end xpos="-0.0329027" ypos="5.80962"/>
    </curve>
@@ -507,32 +513,32 @@
   </synapseConnection>
  </projection>
  <genericInput destination="Cortex to D1 MSN Synapse 0 postsynapse" srcPort="v" source="D1 MSN" dstPort="v">
-  <start x="0.2743857746338767" y="5.809621811180961"/>
+  <start x="0.2743857800960541" y="5.809621810913086"/>
   <curves>
    <curve>
-    <C1 xpos="0.1745173876500052" ypos="6.902988910942923"/>
-    <C2 xpos="-0.6251806139954557" ypos="6.613393020643599"/>
-    <end xpos="-0.0329027379536706" ypos="5.809621811180961"/>
+    <C1 xpos="0.1745173931121826" ypos="6.902988910675049"/>
+    <C2 xpos="-0.6251806020736694" ypos="6.61339282989502"/>
+    <end xpos="-0.03290273621678352" ypos="5.809621810913086"/>
    </curve>
   </curves>
   <connection/>
  </genericInput>
  <genericInput destination="Cortex to D1 MSN Synapse 1 postsynapse" srcPort="v" source="D1 MSN" dstPort="v">
-  <start x="0.2743858044361991" y="5.809621811180961"/>
+  <start x="0.2743858098983765" y="5.809621810913086"/>
   <curves>
    <curve>
-    <C1 xpos="0.1745174174523276" ypos="6.902988910942923"/>
-    <C2 xpos="-0.6026676649832803" ypos="6.616748810082328"/>
-    <end xpos="-0.03290272305250941" ypos="5.809621811180961"/>
+    <C1 xpos="0.174517422914505" ypos="6.902988910675049"/>
+    <C2 xpos="-0.6026676893234253" ypos="6.616748809814453"/>
+    <end xpos="-0.03290272131562233" ypos="5.809621810913086"/>
    </curve>
   </curves>
   <connection/>
  </genericInput>
  <projection destination="STN" showlabel="0" source="Cortex" style="4">
-  <start x="-1.30499" y="8.69468"/>
+  <start x="-1.30499" y="8.67809"/>
   <curves>
    <curve>
-    <C1 xpos="0.592903" ypos="8.75181"/>
+    <C1 xpos="0.592903" ypos="8.73522"/>
     <C2 xpos="1.6963" ypos="5.94643"/>
     <end xpos="1.6963" ypos="3.90244"/>
    </curve>
@@ -547,32 +553,32 @@
   </synapseConnection>
  </projection>
  <genericInput destination="Cortex to STN Synapse 0 postsynapse" srcPort="v" source="STN" dstPort="v">
-  <start x="2.020110607147217" y="3.902443027057174"/>
+  <start x="2.020110607147217" y="3.902442932128906"/>
   <curves>
    <curve>
-    <C1 xpos="1.855485183732419" ypos="4.984232008676242"/>
-    <C2 xpos="1.096840361804434" ypos="4.651955065772389"/>
-    <end xpos="1.696300029754639" ypos="3.902443027057174"/>
+    <C1 xpos="1.855485200881958" ypos="4.984231948852539"/>
+    <C2 xpos="1.096840381622314" ypos="4.651955127716064"/>
+    <end xpos="1.696300029754639" ypos="3.902442932128906"/>
    </curve>
   </curves>
   <connection/>
  </genericInput>
  <genericInput destination="Cortex to STN Synapse 1 postsynapse" srcPort="v" source="STN" dstPort="v">
-  <start x="2.020110607147217" y="3.902443027057174"/>
+  <start x="2.020110607147217" y="3.902442932128906"/>
   <curves>
    <curve>
-    <C1 xpos="1.855485183732419" ypos="4.984232008676242"/>
-    <C2 xpos="1.096840361804434" ypos="4.651955065772389"/>
-    <end xpos="1.696300029754639" ypos="3.902443027057174"/>
+    <C1 xpos="1.855485200881958" ypos="4.984231948852539"/>
+    <C2 xpos="1.096840381622314" ypos="4.651955127716064"/>
+    <end xpos="1.696300029754639" ypos="3.902442932128906"/>
    </curve>
   </curves>
   <connection/>
  </genericInput>
  <projection destination="D2 MSN" showlabel="0" source="Cortex" style="4">
-  <start x="-1.30481" y="8.92972"/>
+  <start x="-1.30481" y="8.91313"/>
   <curves>
    <curve>
-    <C1 xpos="0.621113" ypos="8.97157"/>
+    <C1 xpos="0.621113" ypos="8.95498"/>
     <C2 xpos="4.37344" ypos="7.96174"/>
     <end xpos="4.243" ypos="5.80038"/>
    </curve>
@@ -587,23 +593,23 @@
   </synapseConnection>
  </projection>
  <genericInput destination="Cortex to D2 MSN Synapse 0 postsynapse" srcPort="v" source="D2 MSN" dstPort="v">
-  <start x="4.543180180499618" y="5.800376032809595"/>
+  <start x="4.543179988861084" y="5.800375938415527"/>
   <curves>
    <curve>
-    <C1 xpos="5.094840718219345" ypos="6.635304068545679"/>
-    <C2 xpos="4.309207631061142" ypos="6.897470091800074"/>
-    <end xpos="4.242993546435898" ypos="5.800376032809595"/>
+    <C1 xpos="5.094840526580811" ypos="6.635303974151611"/>
+    <C2 xpos="4.309207439422607" ypos="6.897469997406006"/>
+    <end xpos="4.242993354797363" ypos="5.800375938415527"/>
    </curve>
   </curves>
   <connection/>
  </genericInput>
  <genericInput destination="Cortex to D2 MSN Synapse 1 postsynapse" srcPort="v" source="D2 MSN" dstPort="v">
-  <start x="4.543180180499618" y="5.800376032809595"/>
+  <start x="4.543179988861084" y="5.800375938415527"/>
   <curves>
    <curve>
-    <C1 xpos="5.094840718219345" ypos="6.635304068545679"/>
-    <C2 xpos="4.309207631061142" ypos="6.897470091800074"/>
-    <end xpos="4.242993546435898" ypos="5.800376032809595"/>
+    <C1 xpos="5.094840526580811" ypos="6.635303974151611"/>
+    <C2 xpos="4.309207439422607" ypos="6.897469997406006"/>
+    <end xpos="4.242993354797363" ypos="5.800375938415527"/>
    </curve>
   </curves>
   <connection/>
@@ -626,8 +632,8 @@
   <curves>
    <curve>
     <C1 xpos="-3.46018" ypos="6.70626"/>
-    <C2 xpos="-1.61601" ypos="6.46118"/>
-    <end xpos="-1.59756" ypos="8.1696"/>
+    <C2 xpos="-1.61601" ypos="6.44459"/>
+    <end xpos="-1.59756" ypos="8.15301"/>
    </curve>
   </curves>
   <synapseConnection name="Thalamus to Cortex Synapse 0 weight_update">
@@ -640,23 +646,23 @@
   </synapseConnection>
  </projection>
  <genericInput destination="Thalamus to Cortex Synapse 0 postsynapse" srcPort="v" source="Cortex" dstPort="v">
-  <start x="-2.025399684971582" y="8.169597053744951"/>
+  <start x="-2.025399684906006" y="8.153005218089106"/>
   <curves>
    <curve>
-    <C1 xpos="-2.023850202626001" ypos="7.751473331668535"/>
-    <C2 xpos="-1.833011388844263" ypos="7.642422580936113"/>
-    <end xpos="-1.597559213703882" ypos="8.169597053744951"/>
+    <C1 xpos="-2.023850202560425" ypos="7.734881972849848"/>
+    <C2 xpos="-1.833011388778687" ypos="7.625831222117426"/>
+    <end xpos="-1.597559213638306" ypos="8.153005218089106"/>
    </curve>
   </curves>
   <connection/>
  </genericInput>
  <genericInput destination="Thalamus to Cortex Synapse 1 postsynapse" srcPort="v" source="Cortex" dstPort="v">
-  <start x="-1.983154058521997" y="8.169597053744951"/>
+  <start x="-1.983154058456421" y="8.153005218089106"/>
   <curves>
    <curve>
-    <C1 xpos="-2.019839763706933" ypos="7.826806450107256"/>
-    <C2 xpos="-1.881040573185693" ypos="7.610896969058672"/>
-    <end xpos="-1.597559213703882" ypos="8.169597053744951"/>
+    <C1 xpos="-2.019839763641357" ypos="7.810215091288569"/>
+    <C2 xpos="-1.881040573120117" ypos="7.594305610239985"/>
+    <end xpos="-1.597559213638306" ypos="8.153005218089106"/>
    </curve>
   </curves>
   <connection/>
