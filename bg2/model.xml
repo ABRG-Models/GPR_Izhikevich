@@ -52,19 +52,19 @@
             </Property>
         </LL:Neuron>
         <Layout url="none.xml" seed="123" minimum_distance="0"/>
-        <LL:Projection dst_population="SNr">
+        <LL:Projection dst_population="GPi">
             <LL:Synapse>
                 <AllToAllConnection>
                     <Delay dimension="ms">
                         <FixedValue value="2"/>
                     </Delay>
                 </AllToAllConnection>
-                <LL:WeightUpdate name="STN to SNr Synapse 0 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
+                <LL:WeightUpdate name="STN to GPi Synapse 0 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
                     <Property name="S" dimension="?">
                         <FixedValue value="0.1"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="STN to SNr Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA">
+                <LL:PostSynapse name="STN to GPi Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA">
                     <Property name="tau_ampa" dimension="ms">
                         <FixedValue value="6"/>
                     </Property>
@@ -84,7 +84,7 @@
                         <FixedValue value="0"/>
                     </Property>
                     <Property name="v_syn" dimension="mV"/>
-                    <LL:Input src="SNr" src_port="v" dst_port="v">
+                    <LL:Input src="GPi" src_port="v" dst_port="v">
                         <OneToOneConnection>
                             <Delay dimension="ms">
                                 <FixedValue value="0"/>
@@ -99,12 +99,12 @@
                         <FixedValue value="2"/>
                     </Delay>
                 </AllToAllConnection>
-                <LL:WeightUpdate name="STN to SNr Synapse 1 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
+                <LL:WeightUpdate name="STN to GPi Synapse 1 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
                     <Property name="S" dimension="?">
                         <FixedValue value="0.1"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="STN to SNr Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_NMDA">
+                <LL:PostSynapse name="STN to GPi Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_NMDA">
                     <Property name="tau_nmda" dimension="ms">
                         <FixedValue value="160"/>
                     </Property>
@@ -127,7 +127,7 @@
                         <FixedValue value="0.002"/>
                     </Property>
                     <Property name="v_syn" dimension="mV"/>
-                    <LL:Input src="SNr" src_port="v" dst_port="v">
+                    <LL:Input src="GPi" src_port="v" dst_port="v">
                         <OneToOneConnection>
                             <Delay dimension="ms">
                                 <FixedValue value="0"/>
@@ -224,7 +224,7 @@
         </LL:Projection>
     </LL:Population>
     <LL:Population>
-        <LL:Neuron name="SNr" size="60" url="IzhiABCTFast.xml">
+        <LL:Neuron name="GPi" size="60" url="IzhiABCTFast.xml">
             <Property name="aT" dimension="?">
                 <FixedValue value="0.012"/>
             </Property>
@@ -304,20 +304,20 @@
             </Property>
         </LL:Neuron>
         <Layout url="none.xml" seed="123" minimum_distance="6"/>
-        <LL:Projection dst_population="SNr">
+        <LL:Projection dst_population="GPi">
             <LL:Synapse>
                 <ConnectionList>
-                    <BinaryFile file_name="conn_GPe_to_SNr_syn0.bin" num_connections="241" explicit_delay_flag="0" packed_data="true"/>
+                    <BinaryFile file_name="conn_GPe_to_GPi_syn0.bin" num_connections="241" explicit_delay_flag="0" packed_data="true"/>
                     <Delay dimension="ms">
                         <FixedValue value="2"/>
                     </Delay>
                 </ConnectionList>
-                <LL:WeightUpdate name="GPe to SNr Synapse 0 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
+                <LL:WeightUpdate name="GPe to GPi Synapse 0 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
                     <Property name="S" dimension="?">
                         <FixedValue value="2"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="GPe to SNr Synapse 0 postsynapse" url="GABAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_gaba" output_dst_port="I_GABA">
+                <LL:PostSynapse name="GPe to GPi Synapse 0 postsynapse" url="GABAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_gaba" output_dst_port="I_GABA">
                     <Property name="tau_gaba" dimension="ms">
                         <FixedValue value="4"/>
                     </Property>
@@ -337,7 +337,7 @@
                         <FixedValue value="0"/>
                     </Property>
                     <Property name="v_syn" dimension="mV"/>
-                    <LL:Input src="SNr" src_port="v" dst_port="v">
+                    <LL:Input src="GPi" src_port="v" dst_port="v">
                         <OneToOneConnection>
                             <Delay dimension="ms">
                                 <FixedValue value="0"/>
@@ -433,6 +433,78 @@
                 </LL:PostSynapse>
             </LL:Synapse>
         </LL:Projection>
+        <LL:Projection dst_population="D1 MSN">
+            <LL:Synapse>
+                <ConnectionList>
+                    <BinaryFile file_name="conn_GPe_to_D1_MSN_syn0.bin" num_connections="233" explicit_delay_flag="0" packed_data="true"/>
+                    <Delay dimension="ms">
+                        <FixedValue value="1"/>
+                    </Delay>
+                </ConnectionList>
+                <LL:WeightUpdate name="GPe to D1 MSN Synapse 0 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
+                    <Property name="S" dimension="?">
+                        <FixedValue value="0.1"/>
+                    </Property>
+                </LL:WeightUpdate>
+                <LL:PostSynapse name="GPe to D1 MSN Synapse 0 postsynapse" url="GABAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_gaba" output_dst_port="I_NMDA_orig">
+                    <Property name="tau_gaba" dimension="ms">
+                        <FixedValue value="4"/>
+                    </Property>
+                    <Property name="E_gaba" dimension="mV">
+                        <FixedValue value="-60"/>
+                    </Property>
+                    <Property name="g_gaba" dimension="nS">
+                        <FixedValue value="0.2"/>
+                    </Property>
+                    <Property name="N_gaba" dimension="?">
+                        <FixedValue value="1000"/>
+                    </Property>
+                    <Property name="tau_syn" dimension="ms">
+                        <FixedValue value="1"/>
+                    </Property>
+                    <Property name="h_gaba" dimension="?">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <Property name="v_syn" dimension="mV"/>
+                </LL:PostSynapse>
+            </LL:Synapse>
+        </LL:Projection>
+        <LL:Projection dst_population="D2 MSN">
+            <LL:Synapse>
+                <ConnectionList>
+                    <BinaryFile file_name="conn_GPe_to_D2_MSN_syn0.bin" num_connections="252" explicit_delay_flag="0" packed_data="true"/>
+                    <Delay dimension="ms">
+                        <FixedValue value="1"/>
+                    </Delay>
+                </ConnectionList>
+                <LL:WeightUpdate name="GPe to D2 MSN Synapse 0 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
+                    <Property name="S" dimension="?">
+                        <FixedValue value="0.1"/>
+                    </Property>
+                </LL:WeightUpdate>
+                <LL:PostSynapse name="GPe to D2 MSN Synapse 0 postsynapse" url="GABAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_gaba" output_dst_port="I_NMDA">
+                    <Property name="tau_gaba" dimension="ms">
+                        <FixedValue value="4"/>
+                    </Property>
+                    <Property name="E_gaba" dimension="mV">
+                        <FixedValue value="-60"/>
+                    </Property>
+                    <Property name="g_gaba" dimension="nS">
+                        <FixedValue value="0.2"/>
+                    </Property>
+                    <Property name="N_gaba" dimension="?">
+                        <FixedValue value="1000"/>
+                    </Property>
+                    <Property name="tau_syn" dimension="ms">
+                        <FixedValue value="1"/>
+                    </Property>
+                    <Property name="h_gaba" dimension="?">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <Property name="v_syn" dimension="mV"/>
+                </LL:PostSynapse>
+            </LL:Synapse>
+        </LL:Projection>
     </LL:Population>
     <LL:Population>
         <LL:Neuron name="D1 MSN" size="60" url="D1_MSN.xml">
@@ -483,20 +555,20 @@
             </Property>
         </LL:Neuron>
         <Layout url="none.xml" seed="123" minimum_distance="0"/>
-        <LL:Projection dst_population="SNr">
+        <LL:Projection dst_population="GPi">
             <LL:Synapse>
                 <ConnectionList>
-                    <BinaryFile file_name="conn_D1_MSN_to_SNr_syn0.bin" num_connections="244" explicit_delay_flag="0" packed_data="true"/>
+                    <BinaryFile file_name="conn_D1_MSN_to_GPi_syn0.bin" num_connections="244" explicit_delay_flag="0" packed_data="true"/>
                     <Delay dimension="ms">
                         <FixedValue value="2"/>
                     </Delay>
                 </ConnectionList>
-                <LL:WeightUpdate name="D1 MSN to SNr Synapse 0 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
+                <LL:WeightUpdate name="D1 MSN to GPi Synapse 0 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
                     <Property name="S" dimension="?">
                         <FixedValue value="60"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="D1 MSN to SNr Synapse 0 postsynapse" url="GABAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_gaba" output_dst_port="I_GABA">
+                <LL:PostSynapse name="D1 MSN to GPi Synapse 0 postsynapse" url="GABAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_gaba" output_dst_port="I_GABA">
                     <Property name="tau_gaba" dimension="ms">
                         <FixedValue value="4"/>
                     </Property>
@@ -516,13 +588,49 @@
                         <FixedValue value="0"/>
                     </Property>
                     <Property name="v_syn" dimension="mV"/>
-                    <LL:Input src="SNr" src_port="v" dst_port="v">
+                    <LL:Input src="GPi" src_port="v" dst_port="v">
                         <OneToOneConnection>
                             <Delay dimension="ms">
                                 <FixedValue value="0"/>
                             </Delay>
                         </OneToOneConnection>
                     </LL:Input>
+                </LL:PostSynapse>
+            </LL:Synapse>
+        </LL:Projection>
+        <LL:Projection dst_population="D1 MSN">
+            <LL:Synapse>
+                <ConnectionList>
+                    <BinaryFile file_name="conn_D1_MSN_to_D1_MSN_syn0.bin" num_connections="261" explicit_delay_flag="0" packed_data="true"/>
+                    <Delay dimension="ms">
+                        <FixedValue value="1"/>
+                    </Delay>
+                </ConnectionList>
+                <LL:WeightUpdate name="D1 MSN to D1 MSN Synapse 0 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
+                    <Property name="S" dimension="?">
+                        <FixedValue value="0.2"/>
+                    </Property>
+                </LL:WeightUpdate>
+                <LL:PostSynapse name="D1 MSN to D1 MSN Synapse 0 postsynapse" url="GABAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_gaba" output_dst_port="I_NMDA_orig">
+                    <Property name="tau_gaba" dimension="ms">
+                        <FixedValue value="4"/>
+                    </Property>
+                    <Property name="E_gaba" dimension="mV">
+                        <FixedValue value="-60"/>
+                    </Property>
+                    <Property name="g_gaba" dimension="nS">
+                        <FixedValue value="0.2"/>
+                    </Property>
+                    <Property name="N_gaba" dimension="?">
+                        <FixedValue value="1000"/>
+                    </Property>
+                    <Property name="tau_syn" dimension="ms">
+                        <FixedValue value="1"/>
+                    </Property>
+                    <Property name="h_gaba" dimension="?">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <Property name="v_syn" dimension="mV"/>
                 </LL:PostSynapse>
             </LL:Synapse>
         </LL:Projection>
@@ -616,6 +724,42 @@
                 </LL:PostSynapse>
             </LL:Synapse>
         </LL:Projection>
+        <LL:Projection dst_population="D2 MSN">
+            <LL:Synapse>
+                <ConnectionList>
+                    <BinaryFile file_name="conn_D2_MSN_to_D2_MSN_syn0.bin" num_connections="241" explicit_delay_flag="0" packed_data="true"/>
+                    <Delay dimension="ms">
+                        <FixedValue value="1"/>
+                    </Delay>
+                </ConnectionList>
+                <LL:WeightUpdate name="D2 MSN to D2 MSN Synapse 0 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
+                    <Property name="S" dimension="?">
+                        <FixedValue value="0.2"/>
+                    </Property>
+                </LL:WeightUpdate>
+                <LL:PostSynapse name="D2 MSN to D2 MSN Synapse 0 postsynapse" url="GABAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_gaba" output_dst_port="I_NMDA">
+                    <Property name="tau_gaba" dimension="ms">
+                        <FixedValue value="4"/>
+                    </Property>
+                    <Property name="E_gaba" dimension="mV">
+                        <FixedValue value="-60"/>
+                    </Property>
+                    <Property name="g_gaba" dimension="nS">
+                        <FixedValue value="0.2"/>
+                    </Property>
+                    <Property name="N_gaba" dimension="?">
+                        <FixedValue value="1000"/>
+                    </Property>
+                    <Property name="tau_syn" dimension="ms">
+                        <FixedValue value="1"/>
+                    </Property>
+                    <Property name="h_gaba" dimension="?">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <Property name="v_syn" dimension="mV"/>
+                </LL:PostSynapse>
+            </LL:Synapse>
+        </LL:Projection>
     </LL:Population>
     <LL:Population>
         <LL:Neuron name="Background" size="600" url="SpikeSource"/>
@@ -632,7 +776,7 @@
                         <FixedValue value="4"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="Background to D1 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA">
+                <LL:PostSynapse name="Background to D1 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_GABA">
                     <Property name="tau_ampa" dimension="ms">
                         <FixedValue value="6"/>
                     </Property>
@@ -753,7 +897,7 @@
                         <FixedValue value="4"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="Background to D2 MSN Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_NMDA">
+                <LL:PostSynapse name="Background to D2 MSN Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_AMPA_orig">
                     <Property name="tau_nmda" dimension="ms">
                         <FixedValue value="160"/>
                     </Property>
@@ -798,7 +942,7 @@
                         <FixedValue value="1"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="Background to STN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA">
+                <LL:PostSynapse name="Background to STN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_GABA">
                     <Property name="tau_ampa" dimension="ms">
                         <FixedValue value="6"/>
                     </Property>
@@ -871,6 +1015,322 @@
         </LL:Projection>
     </LL:Population>
     <LL:Population>
+        <LL:Neuron name="CortIntCh1" size="20" url="IzhiIntegEvidence.xml">
+            <Property name="aT" dimension="?">
+                <FixedValue value="0.02"/>
+            </Property>
+            <Property name="b" dimension="?">
+                <FixedValue value="0.2"/>
+            </Property>
+            <Property name="c" dimension="?">
+                <FixedValue value="-65"/>
+            </Property>
+            <Property name="d" dimension="?">
+                <FixedValue value="8"/>
+            </Property>
+            <Property name="Vpeak" dimension="?">
+                <FixedValue value="30"/>
+            </Property>
+            <Property name="AT" dimension="?">
+                <FixedValue value="0.04"/>
+            </Property>
+            <Property name="BT" dimension="?">
+                <FixedValue value="5"/>
+            </Property>
+            <Property name="CT" dimension="?">
+                <FixedValue value="140"/>
+            </Property>
+            <Property name="T" dimension="?">
+                <FixedValue value="1"/>
+            </Property>
+            <Property name="ToverSI" dimension="?">
+                <FixedValue value="1"/>
+            </Property>
+            <Property name="I_sample_mean" dimension="?">
+                <FixedValue value="0.008"/>
+            </Property>
+            <Property name="I_sample_sigma" dimension="?">
+                <FixedValue value="0.03"/>
+            </Property>
+            <Property name="disable_spiking" dimension="?">
+                <FixedValue value="0"/>
+            </Property>
+            <Property name="v" dimension="mV">
+                <FixedValue value="0"/>
+            </Property>
+            <Property name="u" dimension="?">
+                <FixedValue value="0"/>
+            </Property>
+            <Property name="I" dimension="?">
+                <FixedValue value="0"/>
+            </Property>
+        </LL:Neuron>
+        <Layout url="none.xml" seed="123" minimum_distance="0"/>
+        <LL:Projection dst_population="D1 MSN">
+            <LL:Synapse>
+                <ConnectionList>
+                    <BinaryFile file_name="conn_CortIntCh1_to_D1_MSN_syn0.bin" num_connections="41" explicit_delay_flag="0" packed_data="true"/>
+                    <Delay dimension="ms">
+                        <FixedValue value="0"/>
+                    </Delay>
+                </ConnectionList>
+                <LL:WeightUpdate name="CortIntCh1 to D1 MSN Synapse 0 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
+                    <Property name="S" dimension="?">
+                        <FixedValue value="4"/>
+                    </Property>
+                </LL:WeightUpdate>
+                <LL:PostSynapse name="CortIntCh1 to D1 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_GABA">
+                    <Property name="tau_ampa" dimension="ms">
+                        <FixedValue value="6"/>
+                    </Property>
+                    <Property name="E_ampa" dimension="mV">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <Property name="g_ampa" dimension="nS">
+                        <FixedValue value="0.4"/>
+                    </Property>
+                    <Property name="N_ampa" dimension="?">
+                        <FixedValue value="2000"/>
+                    </Property>
+                    <Property name="tau_syn" dimension="ms">
+                        <FixedValue value="1"/>
+                    </Property>
+                    <Property name="h_ampa" dimension="?">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <Property name="v_syn" dimension="mV"/>
+                    <LL:Input src="D1 MSN" src_port="v" dst_port="v">
+                        <OneToOneConnection>
+                            <Delay dimension="ms">
+                                <FixedValue value="0"/>
+                            </Delay>
+                        </OneToOneConnection>
+                    </LL:Input>
+                </LL:PostSynapse>
+            </LL:Synapse>
+            <LL:Synapse>
+                <ConnectionList>
+                    <BinaryFile file_name="conn_CortIntCh1_to_D1_MSN_syn1.bin" num_connections="54" explicit_delay_flag="0" packed_data="true"/>
+                    <Delay dimension="ms">
+                        <FixedValue value="0"/>
+                    </Delay>
+                </ConnectionList>
+                <LL:WeightUpdate name="CortIntCh1 to D1 MSN Synapse 1 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
+                    <Property name="S" dimension="?">
+                        <FixedValue value="4"/>
+                    </Property>
+                </LL:WeightUpdate>
+                <LL:PostSynapse name="CortIntCh1 to D1 MSN Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_NMDA_orig">
+                    <Property name="tau_nmda" dimension="ms">
+                        <FixedValue value="160"/>
+                    </Property>
+                    <Property name="E_nmda" dimension="mV">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <Property name="g_nmda" dimension="nS">
+                        <FixedValue value="0.2"/>
+                    </Property>
+                    <Property name="MgIon" dimension="mmol">
+                        <FixedValue value="1"/>
+                    </Property>
+                    <Property name="N_nmda" dimension="?">
+                        <FixedValue value="600"/>
+                    </Property>
+                    <Property name="tau_syn" dimension="ms">
+                        <FixedValue value="1"/>
+                    </Property>
+                    <Property name="h_nmda" dimension="?">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <Property name="v_syn" dimension="mV"/>
+                    <LL:Input src="D1 MSN" src_port="v" dst_port="v">
+                        <OneToOneConnection>
+                            <Delay dimension="ms">
+                                <FixedValue value="0"/>
+                            </Delay>
+                        </OneToOneConnection>
+                    </LL:Input>
+                </LL:PostSynapse>
+            </LL:Synapse>
+        </LL:Projection>
+        <LL:Projection dst_population="STN">
+            <LL:Synapse>
+                <ConnectionList>
+                    <BinaryFile file_name="conn_CortIntCh1_to_STN_syn0.bin" num_connections="40" explicit_delay_flag="0" packed_data="true"/>
+                    <Delay dimension="ms">
+                        <FixedValue value="0"/>
+                    </Delay>
+                </ConnectionList>
+                <LL:WeightUpdate name="CortIntCh1 to STN Synapse 0 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
+                    <Property name="S" dimension="?">
+                        <FixedValue value="1"/>
+                    </Property>
+                </LL:WeightUpdate>
+                <LL:PostSynapse name="CortIntCh1 to STN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA">
+                    <Property name="tau_ampa" dimension="ms">
+                        <FixedValue value="6"/>
+                    </Property>
+                    <Property name="E_ampa" dimension="mV">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <Property name="g_ampa" dimension="nS">
+                        <FixedValue value="0.4"/>
+                    </Property>
+                    <Property name="N_ampa" dimension="?">
+                        <FixedValue value="2000"/>
+                    </Property>
+                    <Property name="tau_syn" dimension="ms">
+                        <FixedValue value="1"/>
+                    </Property>
+                    <Property name="h_ampa" dimension="?">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <Property name="v_syn" dimension="mV"/>
+                    <LL:Input src="STN" src_port="v" dst_port="v">
+                        <OneToOneConnection>
+                            <Delay dimension="ms">
+                                <FixedValue value="0"/>
+                            </Delay>
+                        </OneToOneConnection>
+                    </LL:Input>
+                </LL:PostSynapse>
+            </LL:Synapse>
+            <LL:Synapse>
+                <ConnectionList>
+                    <BinaryFile file_name="conn_CortIntCh1_to_STN_syn1.bin" num_connections="36" explicit_delay_flag="0" packed_data="true"/>
+                    <Delay dimension="ms">
+                        <FixedValue value="0"/>
+                    </Delay>
+                </ConnectionList>
+                <LL:WeightUpdate name="CortIntCh1 to STN Synapse 1 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
+                    <Property name="S" dimension="?">
+                        <FixedValue value="1"/>
+                    </Property>
+                </LL:WeightUpdate>
+                <LL:PostSynapse name="CortIntCh1 to STN Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_NMDA">
+                    <Property name="tau_nmda" dimension="ms">
+                        <FixedValue value="160"/>
+                    </Property>
+                    <Property name="E_nmda" dimension="mV">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <Property name="g_nmda" dimension="nS">
+                        <FixedValue value="0.2"/>
+                    </Property>
+                    <Property name="MgIon" dimension="mmol">
+                        <FixedValue value="1"/>
+                    </Property>
+                    <Property name="N_nmda" dimension="?">
+                        <FixedValue value="600"/>
+                    </Property>
+                    <Property name="tau_syn" dimension="ms">
+                        <FixedValue value="1"/>
+                    </Property>
+                    <Property name="h_nmda" dimension="?">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <Property name="v_syn" dimension="mV"/>
+                    <LL:Input src="STN" src_port="v" dst_port="v">
+                        <OneToOneConnection>
+                            <Delay dimension="ms">
+                                <FixedValue value="0"/>
+                            </Delay>
+                        </OneToOneConnection>
+                    </LL:Input>
+                </LL:PostSynapse>
+            </LL:Synapse>
+        </LL:Projection>
+        <LL:Projection dst_population="D2 MSN">
+            <LL:Synapse>
+                <ConnectionList>
+                    <BinaryFile file_name="conn_CortIntCh1_to_D2_MSN_syn0.bin" num_connections="41" explicit_delay_flag="0" packed_data="true"/>
+                    <Delay dimension="ms">
+                        <FixedValue value="0"/>
+                    </Delay>
+                </ConnectionList>
+                <LL:WeightUpdate name="CortIntCh1 to D2 MSN Synapse 0 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
+                    <Property name="S" dimension="?">
+                        <FixedValue value="4"/>
+                    </Property>
+                </LL:WeightUpdate>
+                <LL:PostSynapse name="CortIntCh1 to D2 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_NMDA">
+                    <Property name="tau_ampa" dimension="ms">
+                        <FixedValue value="6"/>
+                    </Property>
+                    <Property name="E_ampa" dimension="mV">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <Property name="g_ampa" dimension="nS">
+                        <FixedValue value="0.4"/>
+                    </Property>
+                    <Property name="N_ampa" dimension="?">
+                        <FixedValue value="2000"/>
+                    </Property>
+                    <Property name="tau_syn" dimension="ms">
+                        <FixedValue value="1"/>
+                    </Property>
+                    <Property name="h_ampa" dimension="?">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <Property name="v_syn" dimension="mV"/>
+                    <LL:Input src="D2 MSN" src_port="v" dst_port="v">
+                        <OneToOneConnection>
+                            <Delay dimension="ms">
+                                <FixedValue value="0"/>
+                            </Delay>
+                        </OneToOneConnection>
+                    </LL:Input>
+                </LL:PostSynapse>
+            </LL:Synapse>
+            <LL:Synapse>
+                <ConnectionList>
+                    <BinaryFile file_name="conn_CortIntCh1_to_D2_MSN_syn1.bin" num_connections="41" explicit_delay_flag="0" packed_data="true"/>
+                    <Delay dimension="ms">
+                        <FixedValue value="0"/>
+                    </Delay>
+                </ConnectionList>
+                <LL:WeightUpdate name="CortIntCh1 to D2 MSN Synapse 1 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
+                    <Property name="S" dimension="?">
+                        <FixedValue value="4"/>
+                    </Property>
+                </LL:WeightUpdate>
+                <LL:PostSynapse name="CortIntCh1 to D2 MSN Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_NMDA">
+                    <Property name="tau_nmda" dimension="ms">
+                        <FixedValue value="160"/>
+                    </Property>
+                    <Property name="E_nmda" dimension="mV">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <Property name="g_nmda" dimension="nS">
+                        <FixedValue value="0.2"/>
+                    </Property>
+                    <Property name="MgIon" dimension="mmol">
+                        <FixedValue value="1"/>
+                    </Property>
+                    <Property name="N_nmda" dimension="?">
+                        <FixedValue value="600"/>
+                    </Property>
+                    <Property name="tau_syn" dimension="ms">
+                        <FixedValue value="1"/>
+                    </Property>
+                    <Property name="h_nmda" dimension="?">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <Property name="v_syn" dimension="mV">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <LL:Input src="D2 MSN" src_port="v" dst_port="v">
+                        <OneToOneConnection>
+                            <Delay dimension="ms">
+                                <FixedValue value="0"/>
+                            </Delay>
+                        </OneToOneConnection>
+                    </LL:Input>
+                </LL:PostSynapse>
+            </LL:Synapse>
+        </LL:Projection>
+    </LL:Population>
+    <LL:Population>
         <LL:Neuron name="CortIntCh2" size="20" url="IzhiIntegEvidence.xml">
             <Property name="aT" dimension="?">
                 <FixedValue value="0.02"/>
@@ -925,7 +1385,7 @@
         <LL:Projection dst_population="D1 MSN">
             <LL:Synapse>
                 <ConnectionList>
-                    <BinaryFile file_name="conn_CortIntCh2_to_D1_MSN_syn0.bin" num_connections="41" explicit_delay_flag="0" packed_data="true"/>
+                    <BinaryFile file_name="conn_CortIntCh2_to_D1_MSN_syn0.bin" num_connections="32" explicit_delay_flag="0" packed_data="true"/>
                     <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
@@ -935,7 +1395,7 @@
                         <FixedValue value="4"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="CortIntCh2 to D1 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA">
+                <LL:PostSynapse name="CortIntCh2 to D1 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_GABA">
                     <Property name="tau_ampa" dimension="ms">
                         <FixedValue value="6"/>
                     </Property>
@@ -966,7 +1426,7 @@
             </LL:Synapse>
             <LL:Synapse>
                 <ConnectionList>
-                    <BinaryFile file_name="conn_CortIntCh2_to_D1_MSN_syn1.bin" num_connections="54" explicit_delay_flag="0" packed_data="true"/>
+                    <BinaryFile file_name="conn_CortIntCh2_to_D1_MSN_syn1.bin" num_connections="44" explicit_delay_flag="0" packed_data="true"/>
                     <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
@@ -1012,7 +1472,7 @@
         <LL:Projection dst_population="STN">
             <LL:Synapse>
                 <ConnectionList>
-                    <BinaryFile file_name="conn_CortIntCh2_to_STN_syn0.bin" num_connections="40" explicit_delay_flag="0" packed_data="true"/>
+                    <BinaryFile file_name="conn_CortIntCh2_to_STN_syn0.bin" num_connections="47" explicit_delay_flag="0" packed_data="true"/>
                     <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
@@ -1053,7 +1513,7 @@
             </LL:Synapse>
             <LL:Synapse>
                 <ConnectionList>
-                    <BinaryFile file_name="conn_CortIntCh2_to_STN_syn1.bin" num_connections="36" explicit_delay_flag="0" packed_data="true"/>
+                    <BinaryFile file_name="conn_CortIntCh2_to_STN_syn1.bin" num_connections="47" explicit_delay_flag="0" packed_data="true"/>
                     <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
@@ -1099,7 +1559,7 @@
         <LL:Projection dst_population="D2 MSN">
             <LL:Synapse>
                 <ConnectionList>
-                    <BinaryFile file_name="conn_CortIntCh2_to_D2_MSN_syn0.bin" num_connections="41" explicit_delay_flag="0" packed_data="true"/>
+                    <BinaryFile file_name="conn_CortIntCh2_to_D2_MSN_syn0.bin" num_connections="35" explicit_delay_flag="0" packed_data="true"/>
                     <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
@@ -1187,323 +1647,7 @@
         </LL:Projection>
     </LL:Population>
     <LL:Population>
-        <LL:Neuron name="CortIntCh3" size="20" url="IzhiIntegEvidence.xml">
-            <Property name="aT" dimension="?">
-                <FixedValue value="0.02"/>
-            </Property>
-            <Property name="b" dimension="?">
-                <FixedValue value="0.2"/>
-            </Property>
-            <Property name="c" dimension="?">
-                <FixedValue value="-65"/>
-            </Property>
-            <Property name="d" dimension="?">
-                <FixedValue value="8"/>
-            </Property>
-            <Property name="Vpeak" dimension="?">
-                <FixedValue value="30"/>
-            </Property>
-            <Property name="AT" dimension="?">
-                <FixedValue value="0.04"/>
-            </Property>
-            <Property name="BT" dimension="?">
-                <FixedValue value="5"/>
-            </Property>
-            <Property name="CT" dimension="?">
-                <FixedValue value="140"/>
-            </Property>
-            <Property name="T" dimension="?">
-                <FixedValue value="1"/>
-            </Property>
-            <Property name="ToverSI" dimension="?">
-                <FixedValue value="1"/>
-            </Property>
-            <Property name="I_sample_mean" dimension="?">
-                <FixedValue value="0.008"/>
-            </Property>
-            <Property name="I_sample_sigma" dimension="?">
-                <FixedValue value="0.03"/>
-            </Property>
-            <Property name="disable_spiking" dimension="?">
-                <FixedValue value="0"/>
-            </Property>
-            <Property name="v" dimension="mV">
-                <FixedValue value="0"/>
-            </Property>
-            <Property name="u" dimension="?">
-                <FixedValue value="0"/>
-            </Property>
-            <Property name="I" dimension="?">
-                <FixedValue value="0"/>
-            </Property>
-        </LL:Neuron>
-        <Layout url="none.xml" seed="123" minimum_distance="0"/>
-        <LL:Projection dst_population="D1 MSN">
-            <LL:Synapse>
-                <ConnectionList>
-                    <BinaryFile file_name="conn_CortIntCh3_to_D1_MSN_syn0.bin" num_connections="32" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay dimension="ms">
-                        <FixedValue value="0"/>
-                    </Delay>
-                </ConnectionList>
-                <LL:WeightUpdate name="CortIntCh3 to D1 MSN Synapse 0 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
-                    <Property name="S" dimension="?">
-                        <FixedValue value="4"/>
-                    </Property>
-                </LL:WeightUpdate>
-                <LL:PostSynapse name="CortIntCh3 to D1 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA">
-                    <Property name="tau_ampa" dimension="ms">
-                        <FixedValue value="6"/>
-                    </Property>
-                    <Property name="E_ampa" dimension="mV">
-                        <FixedValue value="0"/>
-                    </Property>
-                    <Property name="g_ampa" dimension="nS">
-                        <FixedValue value="0.4"/>
-                    </Property>
-                    <Property name="N_ampa" dimension="?">
-                        <FixedValue value="2000"/>
-                    </Property>
-                    <Property name="tau_syn" dimension="ms">
-                        <FixedValue value="1"/>
-                    </Property>
-                    <Property name="h_ampa" dimension="?">
-                        <FixedValue value="0"/>
-                    </Property>
-                    <Property name="v_syn" dimension="mV"/>
-                    <LL:Input src="D1 MSN" src_port="v" dst_port="v">
-                        <OneToOneConnection>
-                            <Delay dimension="ms">
-                                <FixedValue value="0"/>
-                            </Delay>
-                        </OneToOneConnection>
-                    </LL:Input>
-                </LL:PostSynapse>
-            </LL:Synapse>
-            <LL:Synapse>
-                <ConnectionList>
-                    <BinaryFile file_name="conn_CortIntCh3_to_D1_MSN_syn1.bin" num_connections="44" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay dimension="ms">
-                        <FixedValue value="0"/>
-                    </Delay>
-                </ConnectionList>
-                <LL:WeightUpdate name="CortIntCh3 to D1 MSN Synapse 1 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
-                    <Property name="S" dimension="?">
-                        <FixedValue value="4"/>
-                    </Property>
-                </LL:WeightUpdate>
-                <LL:PostSynapse name="CortIntCh3 to D1 MSN Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_NMDA_orig">
-                    <Property name="tau_nmda" dimension="ms">
-                        <FixedValue value="160"/>
-                    </Property>
-                    <Property name="E_nmda" dimension="mV">
-                        <FixedValue value="0"/>
-                    </Property>
-                    <Property name="g_nmda" dimension="nS">
-                        <FixedValue value="0.2"/>
-                    </Property>
-                    <Property name="MgIon" dimension="mmol">
-                        <FixedValue value="1"/>
-                    </Property>
-                    <Property name="N_nmda" dimension="?">
-                        <FixedValue value="600"/>
-                    </Property>
-                    <Property name="tau_syn" dimension="ms">
-                        <FixedValue value="1"/>
-                    </Property>
-                    <Property name="h_nmda" dimension="?">
-                        <FixedValue value="0"/>
-                    </Property>
-                    <Property name="v_syn" dimension="mV"/>
-                    <LL:Input src="D1 MSN" src_port="v" dst_port="v">
-                        <OneToOneConnection>
-                            <Delay dimension="ms">
-                                <FixedValue value="0"/>
-                            </Delay>
-                        </OneToOneConnection>
-                    </LL:Input>
-                </LL:PostSynapse>
-            </LL:Synapse>
-        </LL:Projection>
-        <LL:Projection dst_population="STN">
-            <LL:Synapse>
-                <ConnectionList>
-                    <BinaryFile file_name="conn_CortIntCh3_to_STN_syn0.bin" num_connections="47" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay dimension="ms">
-                        <FixedValue value="0"/>
-                    </Delay>
-                </ConnectionList>
-                <LL:WeightUpdate name="CortIntCh3 to STN Synapse 0 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
-                    <Property name="S" dimension="?">
-                        <FixedValue value="1"/>
-                    </Property>
-                </LL:WeightUpdate>
-                <LL:PostSynapse name="CortIntCh3 to STN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA">
-                    <Property name="tau_ampa" dimension="ms">
-                        <FixedValue value="6"/>
-                    </Property>
-                    <Property name="E_ampa" dimension="mV">
-                        <FixedValue value="0"/>
-                    </Property>
-                    <Property name="g_ampa" dimension="nS">
-                        <FixedValue value="0.4"/>
-                    </Property>
-                    <Property name="N_ampa" dimension="?">
-                        <FixedValue value="2000"/>
-                    </Property>
-                    <Property name="tau_syn" dimension="ms">
-                        <FixedValue value="1"/>
-                    </Property>
-                    <Property name="h_ampa" dimension="?">
-                        <FixedValue value="0"/>
-                    </Property>
-                    <Property name="v_syn" dimension="mV"/>
-                    <LL:Input src="STN" src_port="v" dst_port="v">
-                        <OneToOneConnection>
-                            <Delay dimension="ms">
-                                <FixedValue value="0"/>
-                            </Delay>
-                        </OneToOneConnection>
-                    </LL:Input>
-                </LL:PostSynapse>
-            </LL:Synapse>
-            <LL:Synapse>
-                <ConnectionList>
-                    <BinaryFile file_name="conn_CortIntCh3_to_STN_syn1.bin" num_connections="47" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay dimension="ms">
-                        <FixedValue value="0"/>
-                    </Delay>
-                </ConnectionList>
-                <LL:WeightUpdate name="CortIntCh3 to STN Synapse 1 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
-                    <Property name="S" dimension="?">
-                        <FixedValue value="1"/>
-                    </Property>
-                </LL:WeightUpdate>
-                <LL:PostSynapse name="CortIntCh3 to STN Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_NMDA">
-                    <Property name="tau_nmda" dimension="ms">
-                        <FixedValue value="160"/>
-                    </Property>
-                    <Property name="E_nmda" dimension="mV">
-                        <FixedValue value="0"/>
-                    </Property>
-                    <Property name="g_nmda" dimension="nS">
-                        <FixedValue value="0.2"/>
-                    </Property>
-                    <Property name="MgIon" dimension="mmol">
-                        <FixedValue value="1"/>
-                    </Property>
-                    <Property name="N_nmda" dimension="?">
-                        <FixedValue value="600"/>
-                    </Property>
-                    <Property name="tau_syn" dimension="ms">
-                        <FixedValue value="1"/>
-                    </Property>
-                    <Property name="h_nmda" dimension="?">
-                        <FixedValue value="0"/>
-                    </Property>
-                    <Property name="v_syn" dimension="mV"/>
-                    <LL:Input src="STN" src_port="v" dst_port="v">
-                        <OneToOneConnection>
-                            <Delay dimension="ms">
-                                <FixedValue value="0"/>
-                            </Delay>
-                        </OneToOneConnection>
-                    </LL:Input>
-                </LL:PostSynapse>
-            </LL:Synapse>
-        </LL:Projection>
-        <LL:Projection dst_population="D2 MSN">
-            <LL:Synapse>
-                <ConnectionList>
-                    <BinaryFile file_name="conn_CortIntCh3_to_D2_MSN_syn0.bin" num_connections="35" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay dimension="ms">
-                        <FixedValue value="0"/>
-                    </Delay>
-                </ConnectionList>
-                <LL:WeightUpdate name="CortIntCh3 to D2 MSN Synapse 0 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
-                    <Property name="S" dimension="?">
-                        <FixedValue value="4"/>
-                    </Property>
-                </LL:WeightUpdate>
-                <LL:PostSynapse name="CortIntCh3 to D2 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA_orig">
-                    <Property name="tau_ampa" dimension="ms">
-                        <FixedValue value="6"/>
-                    </Property>
-                    <Property name="E_ampa" dimension="mV">
-                        <FixedValue value="0"/>
-                    </Property>
-                    <Property name="g_ampa" dimension="nS">
-                        <FixedValue value="0.4"/>
-                    </Property>
-                    <Property name="N_ampa" dimension="?">
-                        <FixedValue value="2000"/>
-                    </Property>
-                    <Property name="tau_syn" dimension="ms">
-                        <FixedValue value="1"/>
-                    </Property>
-                    <Property name="h_ampa" dimension="?">
-                        <FixedValue value="0"/>
-                    </Property>
-                    <Property name="v_syn" dimension="mV"/>
-                    <LL:Input src="D2 MSN" src_port="v" dst_port="v">
-                        <OneToOneConnection>
-                            <Delay dimension="ms">
-                                <FixedValue value="0"/>
-                            </Delay>
-                        </OneToOneConnection>
-                    </LL:Input>
-                </LL:PostSynapse>
-            </LL:Synapse>
-            <LL:Synapse>
-                <ConnectionList>
-                    <BinaryFile file_name="conn_CortIntCh3_to_D2_MSN_syn1.bin" num_connections="41" explicit_delay_flag="0" packed_data="true"/>
-                    <Delay dimension="ms">
-                        <FixedValue value="0"/>
-                    </Delay>
-                </ConnectionList>
-                <LL:WeightUpdate name="CortIntCh3 to D2 MSN Synapse 1 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
-                    <Property name="S" dimension="?">
-                        <FixedValue value="4"/>
-                    </Property>
-                </LL:WeightUpdate>
-                <LL:PostSynapse name="CortIntCh3 to D2 MSN Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_NMDA">
-                    <Property name="tau_nmda" dimension="ms">
-                        <FixedValue value="160"/>
-                    </Property>
-                    <Property name="E_nmda" dimension="mV">
-                        <FixedValue value="0"/>
-                    </Property>
-                    <Property name="g_nmda" dimension="nS">
-                        <FixedValue value="0.2"/>
-                    </Property>
-                    <Property name="MgIon" dimension="mmol">
-                        <FixedValue value="1"/>
-                    </Property>
-                    <Property name="N_nmda" dimension="?">
-                        <FixedValue value="600"/>
-                    </Property>
-                    <Property name="tau_syn" dimension="ms">
-                        <FixedValue value="1"/>
-                    </Property>
-                    <Property name="h_nmda" dimension="?">
-                        <FixedValue value="0"/>
-                    </Property>
-                    <Property name="v_syn" dimension="mV">
-                        <FixedValue value="0"/>
-                    </Property>
-                    <LL:Input src="D2 MSN" src_port="v" dst_port="v">
-                        <OneToOneConnection>
-                            <Delay dimension="ms">
-                                <FixedValue value="0"/>
-                            </Delay>
-                        </OneToOneConnection>
-                    </LL:Input>
-                </LL:PostSynapse>
-            </LL:Synapse>
-        </LL:Projection>
-    </LL:Population>
-    <LL:Population>
-        <LL:Neuron name="CortIntCh1" size="20" url="IzhiIntegEvidence.xml">
+        <LL:Neuron name="CortIntCh0" size="20" url="IzhiIntegEvidence.xml">
             <Property name="aT" dimension="?">
                 <FixedValue value="0.02"/>
             </Property>
@@ -1557,17 +1701,17 @@
         <LL:Projection dst_population="D2 MSN">
             <LL:Synapse>
                 <ConnectionList>
-                    <BinaryFile file_name="conn_CortIntCh1_to_D2_MSN_syn0.bin" num_connections="44" explicit_delay_flag="0" packed_data="true"/>
+                    <BinaryFile file_name="conn_CortIntCh0_to_D2_MSN_syn0.bin" num_connections="44" explicit_delay_flag="0" packed_data="true"/>
                     <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
-                <LL:WeightUpdate name="CortIntCh1 to D2 MSN Synapse 0 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
+                <LL:WeightUpdate name="CortIntCh0 to D2 MSN Synapse 0 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
                     <Property name="S" dimension="?">
                         <FixedValue value="4"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="CortIntCh1 to D2 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA_orig">
+                <LL:PostSynapse name="CortIntCh0 to D2 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA_orig">
                     <Property name="tau_ampa" dimension="ms">
                         <FixedValue value="6"/>
                     </Property>
@@ -1598,17 +1742,17 @@
             </LL:Synapse>
             <LL:Synapse>
                 <ConnectionList>
-                    <BinaryFile file_name="conn_CortIntCh1_to_D2_MSN_syn1.bin" num_connections="33" explicit_delay_flag="0" packed_data="true"/>
+                    <BinaryFile file_name="conn_CortIntCh0_to_D2_MSN_syn1.bin" num_connections="33" explicit_delay_flag="0" packed_data="true"/>
                     <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
-                <LL:WeightUpdate name="CortIntCh1 to D2 MSN Synapse 1 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
+                <LL:WeightUpdate name="CortIntCh0 to D2 MSN Synapse 1 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
                     <Property name="S" dimension="?">
                         <FixedValue value="4"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="CortIntCh1 to D2 MSN Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_NMDA">
+                <LL:PostSynapse name="CortIntCh0 to D2 MSN Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_NMDA">
                     <Property name="tau_nmda" dimension="ms">
                         <FixedValue value="160"/>
                     </Property>
@@ -1644,17 +1788,17 @@
         <LL:Projection dst_population="STN">
             <LL:Synapse>
                 <ConnectionList>
-                    <BinaryFile file_name="conn_CortIntCh1_to_STN_syn0.bin" num_connections="32" explicit_delay_flag="0" packed_data="true"/>
+                    <BinaryFile file_name="conn_CortIntCh0_to_STN_syn0.bin" num_connections="32" explicit_delay_flag="0" packed_data="true"/>
                     <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
-                <LL:WeightUpdate name="CortIntCh1 to STN Synapse 0 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
+                <LL:WeightUpdate name="CortIntCh0 to STN Synapse 0 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
                     <Property name="S" dimension="?">
                         <FixedValue value="1"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="CortIntCh1 to STN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA">
+                <LL:PostSynapse name="CortIntCh0 to STN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA">
                     <Property name="tau_ampa" dimension="ms">
                         <FixedValue value="6"/>
                     </Property>
@@ -1685,17 +1829,17 @@
             </LL:Synapse>
             <LL:Synapse>
                 <ConnectionList>
-                    <BinaryFile file_name="conn_CortIntCh1_to_STN_syn1.bin" num_connections="37" explicit_delay_flag="0" packed_data="true"/>
+                    <BinaryFile file_name="conn_CortIntCh0_to_STN_syn1.bin" num_connections="37" explicit_delay_flag="0" packed_data="true"/>
                     <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
-                <LL:WeightUpdate name="CortIntCh1 to STN Synapse 1 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
+                <LL:WeightUpdate name="CortIntCh0 to STN Synapse 1 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
                     <Property name="S" dimension="?">
                         <FixedValue value="1"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="CortIntCh1 to STN Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_NMDA">
+                <LL:PostSynapse name="CortIntCh0 to STN Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_NMDA">
                     <Property name="tau_nmda" dimension="ms">
                         <FixedValue value="160"/>
                     </Property>
@@ -1731,17 +1875,17 @@
         <LL:Projection dst_population="D1 MSN">
             <LL:Synapse>
                 <ConnectionList>
-                    <BinaryFile file_name="conn_CortIntCh1_to_D1_MSN_syn0.bin" num_connections="33" explicit_delay_flag="0" packed_data="true"/>
+                    <BinaryFile file_name="conn_CortIntCh0_to_D1_MSN_syn0.bin" num_connections="33" explicit_delay_flag="0" packed_data="true"/>
                     <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
-                <LL:WeightUpdate name="CortIntCh1 to D1 MSN Synapse 0 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
+                <LL:WeightUpdate name="CortIntCh0 to D1 MSN Synapse 0 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
                     <Property name="S" dimension="?">
                         <FixedValue value="4"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="CortIntCh1 to D1 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA">
+                <LL:PostSynapse name="CortIntCh0 to D1 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA">
                     <Property name="tau_ampa" dimension="ms">
                         <FixedValue value="6"/>
                     </Property>
@@ -1772,17 +1916,547 @@
             </LL:Synapse>
             <LL:Synapse>
                 <ConnectionList>
-                    <BinaryFile file_name="conn_CortIntCh1_to_D1_MSN_syn1.bin" num_connections="43" explicit_delay_flag="0" packed_data="true"/>
+                    <BinaryFile file_name="conn_CortIntCh0_to_D1_MSN_syn1.bin" num_connections="43" explicit_delay_flag="0" packed_data="true"/>
                     <Delay dimension="ms">
                         <FixedValue value="0"/>
                     </Delay>
                 </ConnectionList>
-                <LL:WeightUpdate name="CortIntCh1 to D1 MSN Synapse 1 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
+                <LL:WeightUpdate name="CortIntCh0 to D1 MSN Synapse 1 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
                     <Property name="S" dimension="?">
                         <FixedValue value="4"/>
                     </Property>
                 </LL:WeightUpdate>
-                <LL:PostSynapse name="CortIntCh1 to D1 MSN Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_NMDA_orig">
+                <LL:PostSynapse name="CortIntCh0 to D1 MSN Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_NMDA_orig">
+                    <Property name="tau_nmda" dimension="ms">
+                        <FixedValue value="160"/>
+                    </Property>
+                    <Property name="E_nmda" dimension="mV">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <Property name="g_nmda" dimension="nS">
+                        <FixedValue value="0.2"/>
+                    </Property>
+                    <Property name="MgIon" dimension="mmol">
+                        <FixedValue value="1"/>
+                    </Property>
+                    <Property name="N_nmda" dimension="?">
+                        <FixedValue value="600"/>
+                    </Property>
+                    <Property name="tau_syn" dimension="ms">
+                        <FixedValue value="1"/>
+                    </Property>
+                    <Property name="h_nmda" dimension="?">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <Property name="v_syn" dimension="mV"/>
+                    <LL:Input src="D1 MSN" src_port="v" dst_port="v">
+                        <OneToOneConnection>
+                            <Delay dimension="ms">
+                                <FixedValue value="0"/>
+                            </Delay>
+                        </OneToOneConnection>
+                    </LL:Input>
+                </LL:PostSynapse>
+            </LL:Synapse>
+        </LL:Projection>
+    </LL:Population>
+    <LL:Population>
+        <LL:Neuron name="Ch0IN" size="200" url="SpikeSource"/>
+        <Layout url="none.xml" seed="123" minimum_distance="0"/>
+        <LL:Projection dst_population="D1 MSN">
+            <LL:Synapse>
+                <ConnectionList>
+                    <BinaryFile file_name="conn_Ch0IN_to_D1_MSN_syn0.bin" num_connections="407" explicit_delay_flag="0" packed_data="true"/>
+                    <Delay dimension="ms">
+                        <FixedValue value="0"/>
+                    </Delay>
+                </ConnectionList>
+                <LL:WeightUpdate name="Ch0IN to D1 MSN Synapse 0 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
+                    <Property name="S" dimension="?">
+                        <FixedValue value="4"/>
+                    </Property>
+                </LL:WeightUpdate>
+                <LL:PostSynapse name="Ch0IN to D1 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA">
+                    <Property name="tau_ampa" dimension="ms">
+                        <FixedValue value="6"/>
+                    </Property>
+                    <Property name="E_ampa" dimension="mV">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <Property name="g_ampa" dimension="nS">
+                        <FixedValue value="0.4"/>
+                    </Property>
+                    <Property name="N_ampa" dimension="?">
+                        <FixedValue value="2000"/>
+                    </Property>
+                    <Property name="tau_syn" dimension="ms">
+                        <FixedValue value="1"/>
+                    </Property>
+                    <Property name="h_ampa" dimension="?">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <Property name="v_syn" dimension="mV"/>
+                    <LL:Input src="D1 MSN" src_port="v" dst_port="v">
+                        <OneToOneConnection>
+                            <Delay dimension="ms">
+                                <FixedValue value="0"/>
+                            </Delay>
+                        </OneToOneConnection>
+                    </LL:Input>
+                </LL:PostSynapse>
+            </LL:Synapse>
+            <LL:Synapse>
+                <ConnectionList>
+                    <BinaryFile file_name="conn_Ch0IN_to_D1_MSN_syn1.bin" num_connections="425" explicit_delay_flag="0" packed_data="true"/>
+                    <Delay dimension="ms">
+                        <FixedValue value="0"/>
+                    </Delay>
+                </ConnectionList>
+                <LL:WeightUpdate name="Ch0IN to D1 MSN Synapse 1 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
+                    <Property name="S" dimension="?">
+                        <FixedValue value="4"/>
+                    </Property>
+                </LL:WeightUpdate>
+                <LL:PostSynapse name="Ch0IN to D1 MSN Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_NMDA_orig">
+                    <Property name="tau_nmda" dimension="ms">
+                        <FixedValue value="160"/>
+                    </Property>
+                    <Property name="E_nmda" dimension="mV">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <Property name="g_nmda" dimension="nS">
+                        <FixedValue value="0.2"/>
+                    </Property>
+                    <Property name="MgIon" dimension="mmol">
+                        <FixedValue value="1"/>
+                    </Property>
+                    <Property name="N_nmda" dimension="?">
+                        <FixedValue value="600"/>
+                    </Property>
+                    <Property name="tau_syn" dimension="ms">
+                        <FixedValue value="1"/>
+                    </Property>
+                    <Property name="h_nmda" dimension="?">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <Property name="v_syn" dimension="mV"/>
+                    <LL:Input src="D1 MSN" src_port="v" dst_port="v">
+                        <OneToOneConnection>
+                            <Delay dimension="ms">
+                                <FixedValue value="0"/>
+                            </Delay>
+                        </OneToOneConnection>
+                    </LL:Input>
+                </LL:PostSynapse>
+            </LL:Synapse>
+        </LL:Projection>
+        <LL:Projection dst_population="STN">
+            <LL:Synapse>
+                <ConnectionList>
+                    <BinaryFile file_name="conn_Ch0IN_to_STN_syn0.bin" num_connections="400" explicit_delay_flag="0" packed_data="true"/>
+                    <Delay dimension="ms">
+                        <FixedValue value="0"/>
+                    </Delay>
+                </ConnectionList>
+                <LL:WeightUpdate name="Ch0IN to STN Synapse 0 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
+                    <Property name="S" dimension="?">
+                        <FixedValue value="1"/>
+                    </Property>
+                </LL:WeightUpdate>
+                <LL:PostSynapse name="Ch0IN to STN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA">
+                    <Property name="tau_ampa" dimension="ms">
+                        <FixedValue value="6"/>
+                    </Property>
+                    <Property name="E_ampa" dimension="mV">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <Property name="g_ampa" dimension="nS">
+                        <FixedValue value="0.4"/>
+                    </Property>
+                    <Property name="N_ampa" dimension="?">
+                        <FixedValue value="2000"/>
+                    </Property>
+                    <Property name="tau_syn" dimension="ms">
+                        <FixedValue value="1"/>
+                    </Property>
+                    <Property name="h_ampa" dimension="?">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <Property name="v_syn" dimension="mV"/>
+                    <LL:Input src="STN" src_port="v" dst_port="v">
+                        <OneToOneConnection>
+                            <Delay dimension="ms">
+                                <FixedValue value="0"/>
+                            </Delay>
+                        </OneToOneConnection>
+                    </LL:Input>
+                </LL:PostSynapse>
+            </LL:Synapse>
+            <LL:Synapse>
+                <ConnectionList>
+                    <BinaryFile file_name="conn_Ch0IN_to_STN_syn1.bin" num_connections="404" explicit_delay_flag="0" packed_data="true"/>
+                    <Delay dimension="ms">
+                        <FixedValue value="0"/>
+                    </Delay>
+                </ConnectionList>
+                <LL:WeightUpdate name="Ch0IN to STN Synapse 1 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
+                    <Property name="S" dimension="?">
+                        <FixedValue value="1"/>
+                    </Property>
+                </LL:WeightUpdate>
+                <LL:PostSynapse name="Ch0IN to STN Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_NMDA">
+                    <Property name="tau_nmda" dimension="ms">
+                        <FixedValue value="160"/>
+                    </Property>
+                    <Property name="E_nmda" dimension="mV">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <Property name="g_nmda" dimension="nS">
+                        <FixedValue value="0.2"/>
+                    </Property>
+                    <Property name="MgIon" dimension="mmol">
+                        <FixedValue value="1"/>
+                    </Property>
+                    <Property name="N_nmda" dimension="?">
+                        <FixedValue value="600"/>
+                    </Property>
+                    <Property name="tau_syn" dimension="ms">
+                        <FixedValue value="1"/>
+                    </Property>
+                    <Property name="h_nmda" dimension="?">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <Property name="v_syn" dimension="mV"/>
+                    <LL:Input src="STN" src_port="v" dst_port="v">
+                        <OneToOneConnection>
+                            <Delay dimension="ms">
+                                <FixedValue value="0"/>
+                            </Delay>
+                        </OneToOneConnection>
+                    </LL:Input>
+                </LL:PostSynapse>
+            </LL:Synapse>
+        </LL:Projection>
+        <LL:Projection dst_population="D2 MSN">
+            <LL:Synapse>
+                <ConnectionList>
+                    <BinaryFile file_name="conn_Ch0IN_to_D2_MSN_syn0.bin" num_connections="397" explicit_delay_flag="0" packed_data="true"/>
+                    <Delay dimension="ms">
+                        <FixedValue value="0"/>
+                    </Delay>
+                </ConnectionList>
+                <LL:WeightUpdate name="Ch0IN to D2 MSN Synapse 0 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
+                    <Property name="S" dimension="?">
+                        <FixedValue value="4"/>
+                    </Property>
+                </LL:WeightUpdate>
+                <LL:PostSynapse name="Ch0IN to D2 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA_orig">
+                    <Property name="tau_ampa" dimension="ms">
+                        <FixedValue value="6"/>
+                    </Property>
+                    <Property name="E_ampa" dimension="mV">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <Property name="g_ampa" dimension="nS">
+                        <FixedValue value="0.4"/>
+                    </Property>
+                    <Property name="N_ampa" dimension="?">
+                        <FixedValue value="2000"/>
+                    </Property>
+                    <Property name="tau_syn" dimension="ms">
+                        <FixedValue value="1"/>
+                    </Property>
+                    <Property name="h_ampa" dimension="?">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <Property name="v_syn" dimension="mV"/>
+                    <LL:Input src="D2 MSN" src_port="v" dst_port="v">
+                        <OneToOneConnection>
+                            <Delay dimension="ms">
+                                <FixedValue value="0"/>
+                            </Delay>
+                        </OneToOneConnection>
+                    </LL:Input>
+                </LL:PostSynapse>
+            </LL:Synapse>
+            <LL:Synapse>
+                <ConnectionList>
+                    <BinaryFile file_name="conn_Ch0IN_to_D2_MSN_syn1.bin" num_connections="382" explicit_delay_flag="0" packed_data="true"/>
+                    <Delay dimension="ms">
+                        <FixedValue value="0"/>
+                    </Delay>
+                </ConnectionList>
+                <LL:WeightUpdate name="Ch0IN to D2 MSN Synapse 1 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
+                    <Property name="S" dimension="?">
+                        <FixedValue value="4"/>
+                    </Property>
+                </LL:WeightUpdate>
+                <LL:PostSynapse name="Ch0IN to D2 MSN Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_NMDA">
+                    <Property name="tau_nmda" dimension="ms">
+                        <FixedValue value="160"/>
+                    </Property>
+                    <Property name="E_nmda" dimension="mV">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <Property name="g_nmda" dimension="nS">
+                        <FixedValue value="0.2"/>
+                    </Property>
+                    <Property name="MgIon" dimension="mmol">
+                        <FixedValue value="1"/>
+                    </Property>
+                    <Property name="N_nmda" dimension="?">
+                        <FixedValue value="600"/>
+                    </Property>
+                    <Property name="tau_syn" dimension="ms">
+                        <FixedValue value="1"/>
+                    </Property>
+                    <Property name="h_nmda" dimension="?">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <Property name="v_syn" dimension="mV"/>
+                    <LL:Input src="D2 MSN" src_port="v" dst_port="v">
+                        <OneToOneConnection>
+                            <Delay dimension="ms">
+                                <FixedValue value="0"/>
+                            </Delay>
+                        </OneToOneConnection>
+                    </LL:Input>
+                </LL:PostSynapse>
+            </LL:Synapse>
+        </LL:Projection>
+    </LL:Population>
+    <LL:Population>
+        <LL:Neuron name="Ch1IN" size="200" url="SpikeSource"/>
+        <Layout url="none.xml" seed="123" minimum_distance="0"/>
+        <LL:Projection dst_population="D2 MSN">
+            <LL:Synapse>
+                <ConnectionList>
+                    <BinaryFile file_name="conn_Ch1IN_to_D2_MSN_syn0.bin" num_connections="391" explicit_delay_flag="0" packed_data="true"/>
+                    <Delay dimension="ms">
+                        <FixedValue value="0"/>
+                    </Delay>
+                </ConnectionList>
+                <LL:WeightUpdate name="Ch1IN to D2 MSN Synapse 0 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
+                    <Property name="S" dimension="?">
+                        <FixedValue value="4"/>
+                    </Property>
+                </LL:WeightUpdate>
+                <LL:PostSynapse name="Ch1IN to D2 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA_orig">
+                    <Property name="tau_ampa" dimension="ms">
+                        <FixedValue value="6"/>
+                    </Property>
+                    <Property name="E_ampa" dimension="mV">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <Property name="g_ampa" dimension="nS">
+                        <FixedValue value="0.4"/>
+                    </Property>
+                    <Property name="N_ampa" dimension="?">
+                        <FixedValue value="2000"/>
+                    </Property>
+                    <Property name="tau_syn" dimension="ms">
+                        <FixedValue value="1"/>
+                    </Property>
+                    <Property name="h_ampa" dimension="?">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <Property name="v_syn" dimension="mV"/>
+                    <LL:Input src="D2 MSN" src_port="v" dst_port="v">
+                        <OneToOneConnection>
+                            <Delay dimension="ms">
+                                <FixedValue value="0"/>
+                            </Delay>
+                        </OneToOneConnection>
+                    </LL:Input>
+                </LL:PostSynapse>
+            </LL:Synapse>
+            <LL:Synapse>
+                <ConnectionList>
+                    <BinaryFile file_name="conn_Ch1IN_to_D2_MSN_syn1.bin" num_connections="400" explicit_delay_flag="0" packed_data="true"/>
+                    <Delay dimension="ms">
+                        <FixedValue value="0"/>
+                    </Delay>
+                </ConnectionList>
+                <LL:WeightUpdate name="Ch1IN to D2 MSN Synapse 1 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
+                    <Property name="S" dimension="?">
+                        <FixedValue value="4"/>
+                    </Property>
+                </LL:WeightUpdate>
+                <LL:PostSynapse name="Ch1IN to D2 MSN Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_NMDA">
+                    <Property name="tau_nmda" dimension="ms">
+                        <FixedValue value="160"/>
+                    </Property>
+                    <Property name="E_nmda" dimension="mV">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <Property name="g_nmda" dimension="nS">
+                        <FixedValue value="0.2"/>
+                    </Property>
+                    <Property name="MgIon" dimension="mmol">
+                        <FixedValue value="1"/>
+                    </Property>
+                    <Property name="N_nmda" dimension="?">
+                        <FixedValue value="600"/>
+                    </Property>
+                    <Property name="tau_syn" dimension="ms">
+                        <FixedValue value="1"/>
+                    </Property>
+                    <Property name="h_nmda" dimension="?">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <Property name="v_syn" dimension="mV"/>
+                    <LL:Input src="D2 MSN" src_port="v" dst_port="v">
+                        <OneToOneConnection>
+                            <Delay dimension="ms">
+                                <FixedValue value="0"/>
+                            </Delay>
+                        </OneToOneConnection>
+                    </LL:Input>
+                </LL:PostSynapse>
+            </LL:Synapse>
+        </LL:Projection>
+        <LL:Projection dst_population="STN">
+            <LL:Synapse>
+                <ConnectionList>
+                    <BinaryFile file_name="conn_Ch1IN_to_STN_syn0.bin" num_connections="406" explicit_delay_flag="0" packed_data="true"/>
+                    <Delay dimension="ms">
+                        <FixedValue value="0"/>
+                    </Delay>
+                </ConnectionList>
+                <LL:WeightUpdate name="Ch1IN to STN Synapse 0 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
+                    <Property name="S" dimension="?">
+                        <FixedValue value="1"/>
+                    </Property>
+                </LL:WeightUpdate>
+                <LL:PostSynapse name="Ch1IN to STN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA">
+                    <Property name="tau_ampa" dimension="ms">
+                        <FixedValue value="6"/>
+                    </Property>
+                    <Property name="E_ampa" dimension="mV">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <Property name="g_ampa" dimension="nS">
+                        <FixedValue value="0.4"/>
+                    </Property>
+                    <Property name="N_ampa" dimension="?">
+                        <FixedValue value="2000"/>
+                    </Property>
+                    <Property name="tau_syn" dimension="ms">
+                        <FixedValue value="1"/>
+                    </Property>
+                    <Property name="h_ampa" dimension="?">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <Property name="v_syn" dimension="mV"/>
+                    <LL:Input src="STN" src_port="v" dst_port="v">
+                        <OneToOneConnection>
+                            <Delay dimension="ms">
+                                <FixedValue value="0"/>
+                            </Delay>
+                        </OneToOneConnection>
+                    </LL:Input>
+                </LL:PostSynapse>
+            </LL:Synapse>
+            <LL:Synapse>
+                <ConnectionList>
+                    <BinaryFile file_name="conn_Ch1IN_to_STN_syn1.bin" num_connections="376" explicit_delay_flag="0" packed_data="true"/>
+                    <Delay dimension="ms">
+                        <FixedValue value="0"/>
+                    </Delay>
+                </ConnectionList>
+                <LL:WeightUpdate name="Ch1IN to STN Synapse 1 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
+                    <Property name="S" dimension="?">
+                        <FixedValue value="1"/>
+                    </Property>
+                </LL:WeightUpdate>
+                <LL:PostSynapse name="Ch1IN to STN Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_NMDA">
+                    <Property name="tau_nmda" dimension="ms">
+                        <FixedValue value="160"/>
+                    </Property>
+                    <Property name="E_nmda" dimension="mV">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <Property name="g_nmda" dimension="nS">
+                        <FixedValue value="0.2"/>
+                    </Property>
+                    <Property name="MgIon" dimension="mmol">
+                        <FixedValue value="1"/>
+                    </Property>
+                    <Property name="N_nmda" dimension="?">
+                        <FixedValue value="600"/>
+                    </Property>
+                    <Property name="tau_syn" dimension="ms">
+                        <FixedValue value="1"/>
+                    </Property>
+                    <Property name="h_nmda" dimension="?">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <Property name="v_syn" dimension="mV"/>
+                    <LL:Input src="STN" src_port="v" dst_port="v">
+                        <OneToOneConnection>
+                            <Delay dimension="ms">
+                                <FixedValue value="0"/>
+                            </Delay>
+                        </OneToOneConnection>
+                    </LL:Input>
+                </LL:PostSynapse>
+            </LL:Synapse>
+        </LL:Projection>
+        <LL:Projection dst_population="D1 MSN">
+            <LL:Synapse>
+                <ConnectionList>
+                    <BinaryFile file_name="conn_Ch1IN_to_D1_MSN_syn0.bin" num_connections="382" explicit_delay_flag="0" packed_data="true"/>
+                    <Delay dimension="ms">
+                        <FixedValue value="0"/>
+                    </Delay>
+                </ConnectionList>
+                <LL:WeightUpdate name="Ch1IN to D1 MSN Synapse 0 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
+                    <Property name="S" dimension="?">
+                        <FixedValue value="4"/>
+                    </Property>
+                </LL:WeightUpdate>
+                <LL:PostSynapse name="Ch1IN to D1 MSN Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA">
+                    <Property name="tau_ampa" dimension="ms">
+                        <FixedValue value="6"/>
+                    </Property>
+                    <Property name="E_ampa" dimension="mV">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <Property name="g_ampa" dimension="nS">
+                        <FixedValue value="0.4"/>
+                    </Property>
+                    <Property name="N_ampa" dimension="?">
+                        <FixedValue value="2000"/>
+                    </Property>
+                    <Property name="tau_syn" dimension="ms">
+                        <FixedValue value="1"/>
+                    </Property>
+                    <Property name="h_ampa" dimension="?">
+                        <FixedValue value="0"/>
+                    </Property>
+                    <Property name="v_syn" dimension="mV"/>
+                    <LL:Input src="D1 MSN" src_port="v" dst_port="v">
+                        <OneToOneConnection>
+                            <Delay dimension="ms">
+                                <FixedValue value="0"/>
+                            </Delay>
+                        </OneToOneConnection>
+                    </LL:Input>
+                </LL:PostSynapse>
+            </LL:Synapse>
+            <LL:Synapse>
+                <ConnectionList>
+                    <BinaryFile file_name="conn_Ch1IN_to_D1_MSN_syn1.bin" num_connections="377" explicit_delay_flag="0" packed_data="true"/>
+                    <Delay dimension="ms">
+                        <FixedValue value="0"/>
+                    </Delay>
+                </ConnectionList>
+                <LL:WeightUpdate name="Ch1IN to D1 MSN Synapse 1 weight_update" url="Static_weight.xml" input_src_port="spike" input_dst_port="spike_rcv">
+                    <Property name="S" dimension="?">
+                        <FixedValue value="4"/>
+                    </Property>
+                </LL:WeightUpdate>
+                <LL:PostSynapse name="Ch1IN to D1 MSN Synapse 1 postsynapse" url="NMDAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_nmda" output_dst_port="I_NMDA_orig">
                     <Property name="tau_nmda" dimension="ms">
                         <FixedValue value="160"/>
                     </Property>
