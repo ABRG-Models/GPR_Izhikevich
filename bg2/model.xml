@@ -66,7 +66,7 @@
                 </LL:WeightUpdate>
                 <LL:PostSynapse name="STN to GPi Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA">
                     <Property name="tau_ampa" dimension="ms">
-                        <FixedValue value="6"/>
+                        <FixedValue value="1.1"/>
                     </Property>
                     <Property name="E_ampa" dimension="mV">
                         <FixedValue value="0"/>
@@ -151,7 +151,7 @@
                 </LL:WeightUpdate>
                 <LL:PostSynapse name="STN to GPe Synapse 0 postsynapse" url="AMPAvsyn.xml" input_src_port="S" input_dst_port="S" output_src_port="I_ampa" output_dst_port="I_AMPA">
                     <Property name="tau_ampa" dimension="ms">
-                        <FixedValue value="6"/>
+                        <FixedValue value="1.1"/>
                     </Property>
                     <Property name="E_ampa" dimension="mV">
                         <FixedValue value="0"/>
@@ -619,10 +619,10 @@
                         <FixedValue value="-60"/>
                     </Property>
                     <Property name="g_gaba" dimension="nS">
-                        <FixedValue value="0.2"/>
+                        <FixedValue value="1.1"/>
                     </Property>
                     <Property name="N_gaba" dimension="?">
-                        <FixedValue value="1000"/>
+                        <FixedValue value="2000"/>
                     </Property>
                     <Property name="tau_syn" dimension="ms">
                         <FixedValue value="1"/>
@@ -745,10 +745,10 @@
                         <FixedValue value="-60"/>
                     </Property>
                     <Property name="g_gaba" dimension="nS">
-                        <FixedValue value="0.2"/>
+                        <FixedValue value="1.1"/>
                     </Property>
                     <Property name="N_gaba" dimension="?">
-                        <FixedValue value="1000"/>
+                        <FixedValue value="2000"/>
                     </Property>
                     <Property name="tau_syn" dimension="ms">
                         <FixedValue value="1"/>
