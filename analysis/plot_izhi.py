@@ -50,5 +50,5 @@ def plot_izhi (title, v, u, Vn, nc_v, nc_u, Vg, ug, vdot, udot,
             plt.plot(v[p],u[p],marker='o',linewidth=3)
 
     title_no_space = title.replace(' ','_')
-    plt.savefig('/home/seb/izhibg/abrg_local/IzhiBG/labbook/{0}.svg'.format(title_no_space))
+    plt.savefig('/home/seb/izhibg/GPR_Izhikevich/labbook/{0}.svg'.format(title_no_space))
     plt.show()
